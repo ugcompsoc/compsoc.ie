@@ -476,7 +476,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/keithrabbitte.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -484,7 +484,7 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Keith Rabbitte</h5>
                                         <h6 class="subtitle mb-3">System Administrator</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">Keith is in first year Computer Science. He likes to spend his free time drawing and listening to Limp Bizkit.</div>
                                         </p>
                                         <ul class="list-inline">
 
