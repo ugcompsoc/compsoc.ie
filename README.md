@@ -8,6 +8,6 @@ The new and improved (WordPress free) CompSoc website, built on Bootstrap &amp; 
 ## Requirements
 
 - PHP 5.2+
-- MySQL Server (for events)
+
 
 
