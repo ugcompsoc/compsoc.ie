@@ -188,7 +188,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/conormcgovern.jpg" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -196,19 +196,11 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Conor Mc Govern</h5>
                                         <h6 class="subtitle mb-3">Vice Auditor & Chief System Administrator</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....
+                                        <div class="text-left">Conor is in third year Computer Science and thinking about how much spare time he'd have if not for postfix's main.cf config file.
                                         </div>
                                         </p>
                                         <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"
-                                                                            class="text-decoration-none d-block px-1"><i
-                                                            class="bx bxl-facebook"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"
-                                                                            class="text-decoration-none d-block px-1"><i
-                                                            class="bx bxl-twitter"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"
-                                                                            class="text-decoration-none d-block px-1"><i
-                                                            class="bx bxl-linkedin"></i></a></li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -456,34 +448,12 @@
                         </div>
 
 
-                        <div class="col-lg-3 mb-4">
-                            <!-- Row -->
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
-                                         class="img-fluid rounded-circle"/>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <div class="pt-2">
-                                        <h5 class="mt-4 font-weight-medium mb-0">Miquel Murillo Artigues</h5>
-                                        <h6 class="subtitle mb-3">System Administrator</h6>
-                                        <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
-                                        </p>
-                                        <ul class="list-inline">
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                        </div>
 
                         <div class="col-lg-3 mb-4">
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/davidkong.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -491,7 +461,7 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">David Kong</h5>
                                         <h6 class="subtitle mb-3">System Administrator</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">Computer nerd with interests in CPUs, GPUs, 3D printing and music. Also into Wearables.</div>
                                         </p>
                                         <ul class="list-inline">
 
@@ -552,7 +522,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/dylanoxley.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -560,10 +530,16 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Dylan Oxley</h5>
                                         <h6 class="subtitle mb-3">Helpdesk</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">I'm a Third year student in NUIG studying computer science and information technology. When im not doing assignments im busy playing video games mainly among us at the moment also enjoy going for the odd pint. </div>
                                         </p>
                                         <ul class="list-inline">
-
+                                            <li class="list-inline-item"><a href="https://github.com/burbur44"
+                                                                            class="text-decoration-none d-block px-1"><i
+                                                            class="bx bxl-github"></i></a></li>
+                                            <li class="list-inline-item"><a
+                                                        href="https://www.linkedin.com/in/dylan-oxley-8a8b70b3/"
+                                                        class="text-decoration-none d-block px-1"><i
+                                                            class="bx bxl-linkedin"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
