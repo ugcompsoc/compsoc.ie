@@ -84,9 +84,10 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="/"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                <li class="active"><a href="/#about"><i class="bx bx-user"></i> <span>About us</span></a></li>
+                <li ><a href="/#about"><i class="bx bx-user"></i> <span>About us</span></a></li>
                 <li><a href="/#services"><i class="bx bx-server"></i> CompSoc Account</a></li>
                 <li><a href="/#contact"><i class="bx bx-share-alt"></i> Social Media</a></li>
+                <li class="active"><a href="/committee"><i class="bx bx-group"></i>Committee 2020/21</a></li>
 
 
             </ul>

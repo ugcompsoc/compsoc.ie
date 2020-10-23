@@ -87,7 +87,7 @@ require("includes/allEvents.php");
 
 <main id="main">
     <!-- ======= Events Section ======= -->
-    <section id="about" class="about section-bg">
+    <section id="about1" class="about section-bg">
         <div class="container">
 
             <div id="accordion">
