@@ -5,7 +5,7 @@
  */
 
 require("includes/functions.php");
-require("allEvents.php");
+require("includes/allEvents.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

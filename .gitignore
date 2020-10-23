@@ -1,4 +1,4 @@
-allEvents.php
+includes/allEvents.php
 eventsadmin/
 forms/
 inner-page.html
@@ -8,3 +8,4 @@ sendEmail.php
 getAccountEmail.php
 error_log.txt
 PHPMailer/
+events/
