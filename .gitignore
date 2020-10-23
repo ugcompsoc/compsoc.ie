@@ -1,0 +1,10 @@
+allEvents.php
+eventsadmin/
+forms/
+inner-page.html
+portfolio-details.html
+.idea/
+sendEmail.php
+getAccountEmail.php
+error_log.txt
+PHPMailer/
