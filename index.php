@@ -4,6 +4,13 @@
  *  @author Shane Hastings
  */
 
+function error_found()
+{
+    echo "Unable to get events from server.";
+}
+
+set_error_handler('error_found');
+
 require("includes/functions.php");
 require("includes/allEvents.php");
 ?>
@@ -118,7 +125,7 @@ require("includes/allEvents.php");
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        <?php listEvents(); ?>
+                        <?php  listEvents();   ?>
                     </div>
                 </div>
 
