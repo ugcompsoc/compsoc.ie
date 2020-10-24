@@ -7,7 +7,7 @@ The new and improved (WordPress free) CompSoc website, built on Bootstrap &amp; 
 
 ### Requirements
 
-- PHP 5.2+
+- PHP 5.3.10+
 - php-curl
 
 ### Credit
