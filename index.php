@@ -66,10 +66,24 @@ require("includes/allEvents.php");
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178532999-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-178532999-1');
+
+        var nobodywilleverseethis = ["Why are you in the console?", "I'm just here for the pints","Please help me. I'm stuck inside Mojo and can't get out!","Why did the programmer quit his job? Because he didnt get arrays...", "An SEO expert walks into a bar, bars, pub, tavern, public house, irish pub, drinks, beer...",
+           "A SQL query walks up to 2 tables in a restaurant and asks 'Mind if I join you?'",
+            "Why did the developer leave the restaurant? Because of the table layout...", "Knock, Knock... Who's there? Very long pause...... It's me Java",
+            "How many programmers does it take to change a light bulb? None, that's a hardware problem...", "Whats the object-oriented way to become wealthy? Inheritance...",
+            "Why do Java programmers have to wear glasses? Because they don't see sharp...",
+            "!false ... it's funny because it's true",
+            "What's the best thing about UDP jokes? Nobody cares if you get them.", "What is the most used language in programming? Profanity.",
+            "4 fonts walk into a bar. Barman says \"we don't serve your type in here\""];
+        console.log('%c' + nobodywilleverseethis[Math.floor(Math.random() * nobodywilleverseethis.length)], 'background: #149ddd; color: #ffffff; font-size: 24px;');
     </script>
 
 </head>
@@ -122,10 +136,9 @@ require("includes/allEvents.php");
                 </h5>
 
 
-
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        <?php  listEvents();   ?>
+                        <?php listEvents(); ?>
                     </div>
                 </div>
 
@@ -252,7 +265,8 @@ require("includes/allEvents.php");
 
 
             </div>
-            If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with the following
+            If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with
+            the following
             information:<br><br>
 
             <li>Name</li>
@@ -260,7 +274,8 @@ require("includes/allEvents.php");
             <li>NUI Galway Student ID</li>
             <li>Preferred username</li>
 
-            <br>*To become a CompSoc member, you can <a href="https://yourspace.nuigalway.ie/">login to YourSpace and join</a> or include a membership request in your email.
+            <br>*To become a CompSoc member, you can <a href="https://yourspace.nuigalway.ie/">login to YourSpace and
+                join</a> or include a membership request in your email.
 
     </section><!-- End CompSoc Account Section -->
 

@@ -217,7 +217,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/ciaragalvin.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -225,7 +225,7 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Ciara Galvin</h5>
                                         <h6 class="subtitle mb-3">Secretary</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....
+                                        <div class="text-left">Ciara is in 3rd year studying Computer Science. Spends any and all spare time idolising Harry Styles < 3 and lying terribly in Among Us
                                         </div>
                                         </p>
                                         <ul class="list-inline">
@@ -351,7 +351,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
+                                    <img src="/assets/img/committee/cian-dillane.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -359,7 +359,12 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Cian Dillane</h5>
                                         <h6 class="subtitle mb-3">System Administrator</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">
+                                            <li>Last living proof of a long-forgotten argument</li>
+                                            <li>Has nostrils for eyes</li>
+                                            <li>Enjoys air when submerged in water</li>
+                                            <li>Interoperable with most things 5 % of the time on the 29th of February</li>
+                                            <li>Will run his hand through your imagination before you know it</li></div>
                                         </p>
                                         <ul class="list-inline">
  
@@ -552,7 +557,7 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/ciandillane.png" alt="wrapkit"
+                                    <img src="/assets/img/committee/tadhg.png" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
                                 <div class="col-md-12 text-center">
