@@ -21,6 +21,7 @@ $allEvents = json_decode($allEventsImport, true);
  * Takes all evenings in $allEvents array and does a jsonEvent async curl request on each
  */
 
+
 //create the multiple cURL handle
 $mh = curl_multi_init();
 $requests = array();
@@ -108,7 +109,7 @@ function listUpcomingEvents()
         $counterOfEvents++;
         // Check for events where thee event date is >= today's date.
         $today = date("F j, Y");
-        $eventDate = date("F j, Y", strtotime($events['start']));
+        $eventDate = date("Y-m-d G:i:s", strtotime(($events['start'])));
         if ($eventDate >= $today) {
             echo "<h3> " . $events['descriptionAbbrev'] . "</h3>";
             echo date("F j, Y", strtotime($events['start']));
