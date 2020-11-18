@@ -249,7 +249,7 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Ella Anderson</h5>
                                         <h6 class="subtitle mb-3">PRO</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">Ella is an Arts student and isn't sure how she got here. She studies Law and Soc & Pol. She's fairly impartial to a cup of coffee.</div>
                                         </p>
                                         <ul class="list-inline">
 
