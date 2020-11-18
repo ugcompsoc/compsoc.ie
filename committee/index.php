@@ -201,7 +201,18 @@
                                         </div>
                                         </p>
                                         <ul class="list-inline">
-
+                                            <li class="list-inline-item"><a href="https://github.com/McGovMan"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-github"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://twitter.com/McGovMan"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-twitter"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/conormcgov/"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-linkedin"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://mcgov.ie"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bx-link"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
