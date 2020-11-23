@@ -51,7 +51,8 @@ foreach($requests as $k => $ch) {
     $res = json_decode(curl_multi_getcontent($ch), true);
     $allEvents[$k]['descriptionHTML'] = $res[0]['descriptionHTML'];
     $allEvents[$k]['eventReadUrl'] = $res[0]['eventReadUrl'];
-
+    $allEvents[$k]['description'] = $res[0]['description'];
+    $allEvents[$k]['eventICalUrl'] = $res[0]['eventICalUrl'];
     curl_multi_remove_handle($mh, $ch);
 }
 
@@ -85,16 +86,18 @@ function listEvents()
         echo date("F j, Y", strtotime($events['start']));
         echo " | " . date("g:i a", strtotime($events['start'])) . " to " . date("g:i a", strtotime($events['end']));
 
-        echo "<br>" . html_entity_decode($events['descriptionHTML']) . "";
+        echo "<br>" . html_entity_decode($events['descriptionHTML']) ;
 
-        echo "<a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><span class=\"badge badge-primary\">View / Join event</span></a><br><hr>";
 
+        $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: ".$events['descriptionAbbrev']."&dates=".date("Ymd\THis\Z",strtotime($events['start'])). "/" .date("Ymd\THis\Z",strtotime($events['end'])) ;
+        echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View event info</button></a> </div><hr>";
     }
 
 }
 
 /*
  * Lists all upcoming events. (Based on today and beyond)
+ * Provides a link to add the event to Google Calendar, or download the ics file for adding to other calendars.
  */
 function listUpcomingEvents()
 {
@@ -117,7 +120,8 @@ function listUpcomingEvents()
 
             // html_entity_decode to actually parse and render the YourSpace HTML on the page for images/links.
             echo "<br>" . html_entity_decode($events['descriptionHTML']) . "<br>";
-            echo "<a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><span class=\"badge badge-primary\">View / Join event</span></a><br>";
+            $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: ".$events['descriptionAbbrev']."&dates=".date("Ymd\THis\Z",strtotime($events['start'])). "/" .date("Ymd\THis\Z",strtotime($events['end'])) ;
+            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='". $events['eventICalUrl']."'>.ics file</a></div></div><hr>";
         } else {
 
             // No upcoming events
@@ -134,6 +138,7 @@ function listUpcomingEvents()
     }
 
 }
+
 
 
 

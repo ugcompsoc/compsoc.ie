@@ -201,7 +201,18 @@
                                         </div>
                                         </p>
                                         <ul class="list-inline">
-
+                                            <li class="list-inline-item"><a href="https://github.com/McGovMan"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-github"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://twitter.com/McGovMan"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-twitter"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/conormcgov/"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bxl-linkedin"></i></a></li>
+                                            <li class="list-inline-item"><a href="https://mcgov.ie"
+                                                class="text-decoration-none d-block px-1"><i
+                                                    class="bx bx-link"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -249,7 +260,7 @@
                                         <h5 class="mt-4 font-weight-medium mb-0">Ella Anderson</h5>
                                         <h6 class="subtitle mb-3">PRO</h6>
                                         <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                        <div class="text-left">Ella is an Arts student and isn't sure how she got here. She studies Law and Soc & Pol. She's fairly impartial to a cup of coffee.</div>
                                         </p>
                                         <ul class="list-inline">
 
