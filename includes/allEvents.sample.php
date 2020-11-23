@@ -97,7 +97,6 @@ function listEvents()
 
 /*
  * Lists all upcoming events. (Based on today and beyond)
- * Provides a link to add the event to Google Calendar, or download the ics file for adding to other calendars.
  */
 function listUpcomingEvents()
 {
@@ -111,7 +110,7 @@ function listUpcomingEvents()
         // Add to total event counter (this is a lazy way of doing sizeof($array);
         $counterOfEvents++;
         // Check for events where thee event date is >= today's date.
-        $today = date("F j, Y");
+        $today = date("Y-m-d G:i:s");
         $eventDate = date("Y-m-d G:i:s", strtotime(($events['start'])));
         if ($eventDate >= $today) {
             echo "<h3> " . $events['descriptionAbbrev'] . "</h3>";
@@ -121,9 +120,8 @@ function listUpcomingEvents()
             // html_entity_decode to actually parse and render the YourSpace HTML on the page for images/links.
             echo "<br>" . html_entity_decode($events['descriptionHTML']) . "<br>";
             $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: ".$events['descriptionAbbrev']."&dates=".date("Ymd\THis\Z",strtotime($events['start'])). "/" .date("Ymd\THis\Z",strtotime($events['end'])) ;
-            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='". $events['eventICalUrl']."'>.ics file</a></div></div><hr>";
+            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='". $events['eventICalUrl']."'>.ics file</a></div></div><br>";
         } else {
-
             // No upcoming events
             $counterOfNoUpcomingEvents++;
         }
@@ -138,8 +136,6 @@ function listUpcomingEvents()
     }
 
 }
-
-
 
 
 
