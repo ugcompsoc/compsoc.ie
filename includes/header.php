@@ -8,6 +8,7 @@
                 <a href="https://twitter.com/NUIGCompsoc" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="https://www.facebook.com/nuigcompsoc/" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="https://www.linkedin.com/company/nuig-compsoc?originalSubdomain=ie" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://discord.compsoc.ie" class="discord"><i class="bx bxl-discord"></i></a>
                 <a href="mailto:commitee@compsoc.ie" class="linkedin"><i class="bx bx-mail-send"></i></a>
             </div>
         </div>
