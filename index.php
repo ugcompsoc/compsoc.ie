@@ -209,7 +209,7 @@ require("includes/allEvents.php");
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="count-box">
                         <i class="icofont-document-folder"></i>
-                        <span data-toggle="counter-up">1,000</span>
+                        <span data-toggle="counter-up">1,100</span>
                         <p><strong>members</strong> and growing each year</p>
                     </div>
                 </div>
@@ -262,10 +262,82 @@ require("includes/allEvents.php");
                     <h4 class="title"><a href="">Email</a></h4>
                     <p class="description">CompSoc members will receive their own @compsoc.ie email account.</p>
                 </div>
-
-
             </div>
-            If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with
+
+            <!-- I promise to make this look nice later shane -->
+            <script src="assets/vendor/jquery/jquery.min.js"></script>
+            <script>
+                $(function() {
+                    $("#submit").click(function (event) {
+                        event.preventDefault();
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost:8000/webservices.php",
+                            data: $('#createAccountForm').serialize(),
+                            dataType: 'json',
+                            success: function(json) {
+                                if (json.success != true) {
+                                    $('#ajaxMessageCreateAccountForm').html('<div class="alert alert-danger" role="alert">' + json.message + '</div>');
+                                } else {
+                                    $('#ajaxMessageCreateAccountForm').html('<div class="alert alert-success" role="alert">' + json.message + '</div>');
+                                }
+                            },
+                            error: function(){
+                                alert("failure");
+                            }
+                        });
+                    });
+                });
+            </script>
+
+
+            <div class="section-title">
+                <h2>CompSoc Account Utilities</h2>
+                <p>
+                    If you are here to create an account, I highly recommend you go away and think of creative username and not to use seamus. 
+                    This username will become the unique identifier for every service we provide.<br/>
+                    Here you can also check if you have account, clicking this link will also send a password reset link to the email address we have for you.
+                </p>
+            </div>
+
+            <div id="ajaxMessageCreateAccountForm"></div>
+            <div class="row">
+                <div class="col-7">
+                    <div class="row">
+                        <form id="createAccountForm" class="form-inline">
+                            <input name="method" value="createAccount" type="hidden">
+
+                            <label class="sr-only" for="studentID">Student ID</label>
+                            <input name="studentID" type="text" class="form-control mb-2 mr-sm-2" id="studentID" placeholder="183XXXXX">
+
+                            <label class="sr-only" for="preferredUsername">Username</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                                </div>
+                                <input name="preferredUsername" type="text" class="form-control" id="preferredUsername" placeholder="seamus">
+                            </div>
+
+                            <button id="submit" type="submit" class="btn btn-primary mb-2">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <form id="createAccountForm" class="form-inline">
+                            <input name="method" value="checkAccount" type="hidden">
+
+                            <label class="sr-only" for="studentID">Student ID</label>
+                            <input name="studentID" type="text" class="form-control mb-2 mr-sm-2" id="studentID" placeholder="183XXXXX">
+
+                            <button id="submit" type="submit" class="btn btn-primary mb-2">Check for account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!--If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with
             the following
             information:<br><br>
 
@@ -275,7 +347,7 @@ require("includes/allEvents.php");
             <li>Preferred username</li>
 
             <br>*To become a CompSoc member, you can <a href="https://yourspace.nuigalway.ie/">login to YourSpace and
-                join</a> or include a membership request in your email.
+                join</a> or include a membership request in your email.-->
 
     </section><!-- End CompSoc Account Section -->
 
