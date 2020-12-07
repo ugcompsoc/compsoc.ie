@@ -9,9 +9,9 @@
 date_default_timezone_set('Europe/Dublin');
 
 // jsonEvents (all CompSoc events)
-$compsocEvents = "ENDPOINTURL";
+$compsocEvents = "REDACTED";
 // jsonEvent (URL + $eventID)
-$eventDetail = "ENDPOINTURL";
+$eventDetail = "REDACTED";
 
 // Import events from Socs Portal endpoint
 $allEventsImport = file_get_contents("$compsocEvents");
@@ -28,8 +28,7 @@ $requests = array();
 $results = array();
 
 // init all requests
-foreach ($allEvents as $i => $e)
-{
+foreach ($allEvents as $i => $e) {
     $requests[$i] = curl_init();
 
     curl_setopt($requests[$i], CURLOPT_URL, $eventDetail . $e['eventDetailsID']);
@@ -39,15 +38,15 @@ foreach ($allEvents as $i => $e)
     curl_multi_add_handle($mh, $requests[$i]);
 }
 
-$index=null;
+$index = null;
 
 // Exec all requests
 do {
-    curl_multi_exec($mh,$index);
-} while($index > 0);
+    curl_multi_exec($mh, $index);
+} while ($index > 0);
 
 // get content and remove handles
-foreach($requests as $k => $ch) {
+foreach ($requests as $k => $ch) {
     $res = json_decode(curl_multi_getcontent($ch), true);
     $allEvents[$k]['descriptionHTML'] = $res[0]['descriptionHTML'];
     $allEvents[$k]['eventReadUrl'] = $res[0]['eventReadUrl'];
@@ -86,10 +85,10 @@ function listEvents()
         echo date("F j, Y", strtotime($events['start']));
         echo " | " . date("g:i a", strtotime($events['start'])) . " to " . date("g:i a", strtotime($events['end']));
 
-        echo "<br>" . html_entity_decode($events['descriptionHTML']) ;
+        echo "<br>" . html_entity_decode($events['descriptionHTML']);
 
 
-        $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: ".$events['descriptionAbbrev']."&dates=".date("Ymd\THis\Z",strtotime($events['start'])). "/" .date("Ymd\THis\Z",strtotime($events['end'])) ;
+        $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: " . $events['descriptionAbbrev'] . "&dates=" . date("Ymd\THis\Z", strtotime($events['start'])) . "/" . date("Ymd\THis\Z", strtotime($events['end']));
         echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View event info</button></a> </div><hr>";
     }
 
@@ -119,8 +118,8 @@ function listUpcomingEvents()
 
             // html_entity_decode to actually parse and render the YourSpace HTML on the page for images/links.
             echo "<br>" . html_entity_decode($events['descriptionHTML']) . "<br>";
-            $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: ".$events['descriptionAbbrev']."&dates=".date("Ymd\THis\Z",strtotime($events['start'])). "/" .date("Ymd\THis\Z",strtotime($events['end'])) ;
-            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='". $events['eventICalUrl']."'>.ics file</a></div></div><br>";
+            $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: " . $events['descriptionAbbrev'] . "&dates=" . date("Ymd\THis\Z", strtotime($events['start'])) . "/" . date("Ymd\THis\Z", strtotime($events['end']));
+            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='" . $events['eventICalUrl'] . "'>.ics file</a></div></div><br>";
         } else {
             // No upcoming events
             $counterOfNoUpcomingEvents++;
@@ -137,6 +136,47 @@ function listUpcomingEvents()
 
 }
 
+/*
+ * Lists all previous events. (Based on today and before)
+ */
+function listPreviousEvents()
+{
+    // Count how many events there are, and also how many events happened in the past. If these are equal, there are no upcoming events.
+    $counterOfNoPreviousEvents = 0;
+    $counterOfEvents = 0;
+
+    global $allEvents;
+
+    foreach ($allEvents as $events) {
+        // Add to total event counter (this is a lazy way of doing sizeof($array);
+        $counterOfEvents++;
+        // Check for events where thee event date is >= today's date.
+        $today = date("Y-m-d G:i:s");
+        $eventDate = date("Y-m-d G:i:s", strtotime(($events['start'])));
+        if ($eventDate <= $today) {
+            echo "<h3> " . $events['descriptionAbbrev'] . "</h3>";
+            echo date("F j, Y", strtotime($events['start']));
+            echo " | " . date("g:i a", strtotime($events['start'])) . " to " . date("g:i a", strtotime($events['end']));
+
+            // html_entity_decode to actually parse and render the YourSpace HTML on the page for images/links.
+            echo "<br>" . html_entity_decode($events['descriptionHTML']) . "<br>";
+            $eventURL = "https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe%2FDublin&text=NUIG+CompSoc: " . $events['descriptionAbbrev'] . "&dates=" . date("Ymd\THis\Z", strtotime($events['start'])) . "/" . date("Ymd\THis\Z", strtotime($events['end']));
+            echo "<div class='btn-toolbar'><a target='_blank' href='https://socs.nuigalway.ie/" . $events['eventReadUrl'] . "'><button type='button' class='btn btn-success'>View / Join event</button></a> &nbsp;<button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Add to calendar</button><div class='dropdown-menu'><a class='dropdown-item' target='_blank' href='" . $eventURL . "'>Google Calendar</a><div class='dropdown-divider'></div><a class='dropdown-item' href='" . $events['eventICalUrl'] . "'>.ics file</a></div></div><br>";
+        } else {
+            // No upcoming events
+            $counterOfNoPreviousEvents++;
+        }
+
+
+    }
+
+    if ($counterOfEvents == $counterOfNoPreviousEvents) {
+        echo "There are no recorded previous events. This is obviously not true, so something has gone wrong. Keep an eye on our Twitter for updates! ";
+    } else {
+        // Event(s) are displayed.
+    }
+
+}
 
 
 
