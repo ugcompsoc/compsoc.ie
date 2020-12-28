@@ -1,0 +1,19 @@
+<?php
+
+define('PASSWORD_GEN_FUNC_NAME', '');
+define('PASSWORD_GEN_FUNC_PARAM', '');
+define('BASE_DN', '');
+define('PEOPLE_DN', '');
+define('INACTIVE_PEOPLE_DN', '');
+define('LDAP_ADMIN_USER', '');
+define('LDAP_ADMIN_PASSWORD', '');
+define('LDAP_URL', '');
+define('SOCS_PORTAL_WEBSERVICES_URL', '');
+define('SOCS_PORTAL_WEBSERVICES_USER', '');
+define('SOCS_PORTAL_WEBSERVICES_PASSWORD', '');
+define('SOCS_PORTAL_WEBSERVICES_METHOD', '');
+define('SOCS_PORTAL_WEBSERVICES_SEARCH_BY_OPTION', '');
+
+
+
+?>

@@ -11,4 +11,4 @@ PHPMailer/
 events/
 includes/allEvents.php
 hal/
-webservices.php
+includes/config.php
