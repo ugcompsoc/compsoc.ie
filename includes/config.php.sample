@@ -14,5 +14,8 @@ define('SOCS_PORTAL_WEBSERVICES_PASSWORD', '');
 define('SOCS_PORTAL_WEBSERVICES_METHOD', '');
 define('SOCS_PORTAL_WEBSERVICES_SEARCH_BY_OPTION', '');
 define('RECAPTCHA_SECRET_KEY', '');
+define('SMTP_HOST', '');
+define('SMTP_USER', '');
+define('SMTP_PASSWORD', '');
 
 ?>

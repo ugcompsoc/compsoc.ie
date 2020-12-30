@@ -6,9 +6,13 @@
     * This script interfaces with our LDAP directory hosted on mona, this might be changed to interface with KeyCloak at some point
     */
 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
     require_once($_SERVER["DOCUMENT_ROOT"] . "/webservices.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/config.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/functions.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/vendor/autoload.php");
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -171,17 +175,28 @@
         $a = ldap_add($ds, "uid=" . $username . "," . PEOPLE_DN, $info);
         ldap_close($ds);
 
-        // Email the person
-        $to = $socsInfo["Email"];
-        $subject = 'Account Creation Request';
+        // PHPMailer Object
+        $mail = new PHPMailer(true);
 
-        $headers = "From: accounts@compsoc.ie\r\n";
-        $headers .= "Reply-To: accounts@compsoc.ie\r\n";
-        $headers .= "BCC: admin@compsoc.ie\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $mail->IsSMTP();
+        $mail->Host = SMTP_HOST;
+        $mail->SMTPAuth = true;
+        $mail->Username = SMTP_USER;
+        $mail->Password = SMTP_PASSWORD;
 
-        $message = "<p>Hi " . $socsInfo["FirstName"] . ",<br><br>
+        // From email address and name
+        $mail->From = "accounts@compsoc.ie";
+        $mail->FromName = "CompSoc Accounts";
+
+        $mail->addAddress($socsInfo["Email"], $socsInfo["FirstName"] . " " . $socsInfo["LastName"]);
+        $mail->addReplyTo("accounts@compsoc.ie", "Reply");
+        $mail->addBCC("admin@compsoc.ie");
+
+        $mail->isHTML(true);
+
+        $mail->Subject = "Account Creation Request";
+
+        $message = "<html><body><p>Hi " . $socsInfo["FirstName"] . ",<br><br>
 
         You have requested an account for the NUI Galway's Computer Society's server. If you have not requested this account, please <a href='mailto:support@compsoc.ie'>contact us</a> and we will happily undo this request.<br><br>
 
@@ -194,17 +209,22 @@
         Student/Staff ID: " . $socsInfo["MemberID"] . "<br>";
         if (!empty($socsInfo["PhoneNumber"])) $message .= "Mobile: " . $socsInfo["PhoneNumber"] . "<br><br>
 
-        If you take issue with us holding any of the above information, please do not hesitate to <a href='mailto:support@compsoc.ie'>contact us</a><br><br>
+        If you take issue with us holding any of the above information, please do not hesitate to <a href='mailto:support@compsoc.ie'>contact us</a>.<br><br>
         
         Kind Regards,<br>
-        CompSoc Admins";
-
-        // return true or false depending on if mail and account was added
-        return $a;
+        CompSoc Admins</body></html>";
         
-        // Mail on mojo not working currently (probably security in front of it)
-        //if (mail($to, $subject, $message, $headers)) return $a;
-        //else return false;
+        $mail->Body = $message;
+
+        try {
+            $mail->send();
+            if ($a) return true;
+        } catch (Exception $e) {
+            //echo "Mailer Error: " . $mail->ErrorInfo;
+            return false;
+        }
+
+        return false;
     }
 
     function verifyPassword($password, $hash)

@@ -201,6 +201,7 @@ require("../includes/functions.php");
 
             <!-- Form Functions in main.js -->
             <div class="row">
+
                 <div class="col-md">
                     <h3>Create an account</h3>
                     To create an account, enter your NUI Galway Student ID number below alongside your desired username. We'll send you an email with all the details shortly after.
@@ -278,7 +279,6 @@ require("../includes/functions.php");
                     </form>
                 </div>
             </div>
-
         </div>
 
     </section>

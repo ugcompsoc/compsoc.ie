@@ -199,8 +199,7 @@ function recaptcha_callback_create_submit() {
       data: $('#createAccountForm').serialize(),
       dataType: 'json',
       success: function(json) {
-        console.log(json);
-          if (json.code.charAt(0) == '4') {
+          if (parseInt(json.code.charAt(0)) >= 4) {
             if (json.message == null) json.message = ""; // We may not have a message, crude fix
             $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
             $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
@@ -209,6 +208,10 @@ function recaptcha_callback_create_submit() {
           }
 
           $("#createAccountForm")[0].reset();
+
+          $('html, body').animate({
+            scrollTop: 0
+          }, 1500, 'easeInOutExpo');
       },
       error: function(error) {
           console.log(error);
@@ -224,7 +227,7 @@ function recaptcha_callback_check_submit() {
       data: $('#checkAccountForm').serialize(),
       dataType: 'json',
       success: function(json) {
-          if (json.code.charAt(0) == '4') {
+          if (parseInt(json.code.charAt(0)) >= 4) {
             if (json.message == null) json.message = ""; // We may not have a message, crude fix
             $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
             $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
@@ -233,6 +236,10 @@ function recaptcha_callback_check_submit() {
           }
 
           $("#checkAccountForm")[0].reset();
+
+          $('html, body').animate({
+            scrollTop: 0
+          }, 1500, 'easeInOutExpo');
       },
       error: function(error) {
           console.log(error);
@@ -248,7 +255,7 @@ function recaptcha_callback_reset_password_submit() {
       data: $('#resetPasswordForm').serialize(),
       dataType: 'json',
       success: function(json) {
-          if (json.code.charAt(0) == '4') {
+          if (parseInt(json.code.charAt(0)) >= 4) {
             if (json.message == null) json.message = ""; // We may not have a message, crude fix
             $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
             $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
@@ -257,6 +264,10 @@ function recaptcha_callback_reset_password_submit() {
           }
 
           $("#resetPasswordForm")[0].reset();
+
+          $('html, body').animate({
+            scrollTop: 0
+          }, 1500, 'easeInOutExpo');
       },
       error: function(error) {
           console.log(error);

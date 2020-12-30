@@ -1089,3 +1089,9 @@ section {
   }
 }
 
+/* Move reCAPTCHA so not clashing */
+.grecaptcha-badge { 
+  bottom:75px !important;
+  position: fixed;
+  z-index: 999;
+}
