@@ -160,7 +160,7 @@
         $info["employeenumber"][0] = $socsInfo["MemberID"];
         $info["mail"][0] = $socsInfo["Email"];
         $info["mobile"][0] = $socsInfo["PhoneNumber"];
-        $info["uid"][0] = $username;
+        $info["uid"][0] = strtolower($username);
         $info["objectclass"][0] = "inetOrgPerson";
         $info["objectclass"][1] = "posixAccount";
         $info["objectclass"][2] = "top";
