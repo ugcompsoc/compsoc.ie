@@ -265,9 +265,8 @@ require("includes/allEvents.php");
 
 
             </div>
-            If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with
-            the following
-            information:<br><br>
+            If you are a CompSoc member* and would like an account, you can simply go <a href="https://compsoc.ie/accounts">get an account</a> 
+            or alternatively, can email us at <b>accounts@compsoc.ie</b> with the following information:<br><br>
 
             <li>Name</li>
             <li>NUI Galway Email Address</li>
