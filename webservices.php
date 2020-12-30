@@ -30,8 +30,10 @@ if (!empty($_POST["method"])) {
  */
 function createAccount() {
     // TODO SHANE: Should probably double check these for trailing slashes and injections
+    // TODO CONOR/DAVID: When discord bot is implemented we will need a way to bypass reCAPTCHA
     $ID = $_POST["ID"];
     $username = $_POST["username"];
+    $grecaptcharesponse = $_POST["g-recaptcha-response"];
 
     // check for required parameters
     $errors = array();
@@ -39,11 +41,11 @@ function createAccount() {
     // Check username is empty
     if (empty($_POST["username"]))
     {
-        $errors["username"] = "empty.";
+        $errors["Username"] = "empty.";
     }
     // Check username is not alphanumeric
     else if (!ctype_alnum($username)) {
-        $errors["username"] = "not alphanumeric.";
+        $errors["Username"] = "not alphanumeric.";
     }
 
     // Check ID is empty
@@ -51,6 +53,20 @@ function createAccount() {
     if (empty($ID))
     {
         $errors["ID"] = "empty.";
+    }
+
+    if (empty($_POST["termsCheckBox"])) {
+        $errors["Terms Check Box"] = "unchecked.";
+    }
+
+    if (empty($grecaptcharesponse)) {
+        $errors["reCAPTCHA"] = "invalid.";
+    } else {
+        $secret = RECAPTCHA_SECRET_KEY;
+
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $grecaptcharesponse);
+        $responseData = json_decode($verifyResponse);
+        if(!$responseData->success) $errors["reCAPTCHA"] = "invalid.";
     }
 
     // First we want to check if the user already exists on our side and that the username is free, then we check if they are in the society as that takes more time
@@ -101,14 +117,95 @@ function checkAccount() {
     if (empty($errors)) {
         $usr = searchByID($ID);
 
-        if (empty($usr)) {
-            echo json_encode(array("code" => "404", "message" => "Unfortunely we couldn't find an account associated with this ID. If you are sure you have an account, please contact accounts@compsoc.ie."));
-        } else {
-            echo json_encode(array("code" => "200", "message" => "We got you here " . $usr["firstName"] . " " . $usr["lastName"] . " :). Having issues? You can reset your password if you want here, a reset password link will go to your email on file."));
+        echo json_encode(array("code" => "200", "message" => "If an account exists under this ID, we will send an email to email address we have on file."));
+
+        if (!empty($usr["email"])) {
+            // Email the person
+            $to = $usr["email"];
+            $subject = 'Account Creation Request';
+
+            $headers = "From: accounts@compsoc.ie\r\n";
+            $headers .= "Reply-To: accounts@compsoc.ie\r\n";
+            $headers .= "BCC: admin@compsoc.ie\r\n";
+            $headers .= "X-Mailer: PHP/" . phpversion();
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+            $message = "<p>Hi " . $usr["firstName"] . ",<br><br>
+
+            We have recently have had a request made through <a href='https://compsoc.ie/accounts'>our website</a> to check if you have an account.<br>
+            We are emailing you to confirm that we do have your account here.<br><br>
+
+            If you have not made this request, you can safely ignore this email. Though, if you continually receive these emails please <a href='mailto:support@compsoc.ie'>contact us</a> and we will be happy to help.<br><br>
+
+            Please do not hesitate to <a href='mailto:support@compsoc.ie'>contact us</a> if you have any other issues.<br><br>
+            
+            Kind Regards,<br>
+            CompSoc Admins";
+
+            mail($to, $subject, $message, $headers);
         }
     } else {
         echo json_encode(array("code" => "400", "errors" => $errors));
     }
+}
+
+/*
+ *  REST route for resetPassword form, includes all responses for different eventuallities.
+ */
+function resetPassword() {
+    // check for required parameters
+    $errors = array();
+
+    // TODO SHANE: Should probably double check these for trailing slashes and injections
+    if (!empty($_POST["ID"])) $ID = $_POST["ID"];
+    else $errors["ID"] = "empty.";
+    if (!empty($_POST["oldPassword"])) $oldPassword = $_POST["oldPassword"];
+    else $errors["Old Password"] = "empty.";
+    if (!empty($_POST["newPassword"])) $newPassword = $_POST["newPassword"];
+    else $errors["New Password"] = "empty.";
+    if (!empty($_POST["newConfirmedPassword"])) $newConfirmedPassword = $_POST["newConfirmedPassword"];
+    else $errors["New Confirmed Password"] = "empty.";
+    if (!empty($_POST["g-recaptcha-response"])) $grecaptcharesponse = $_POST["g-recaptcha-response"];
+    else $errors["reCAPTCHA"] = "invalid.";
+
+    if ($_POST["newPassword"] != $_POST["newConfirmedPassword"]) $errors["New Password & New Confirmed Password"] = "not the same.";
+
+    // Validate password strength
+    $uppercase = preg_match('@[A-Z]@', $_POST["newPassword"]);
+    $lowercase = preg_match('@[a-z]@', $_POST["newPassword"]);
+    $number    = preg_match('@[0-9]@', $_POST["newPassword"]);
+    $specialChars = preg_match('@[^\w]@', $_POST["newPassword"]);
+
+    if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($_POST["newPassword"]) < 8) {
+        $errors["Password Strength"] = 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
+    }
+
+    if (empty($grecaptcharesponse)) {
+        $errors["reCAPTCHA"] = "invalid.";
+    } else {
+        $secret = RECAPTCHA_SECRET_KEY;
+
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $grecaptcharesponse);
+        $responseData = json_decode($verifyResponse);
+        if(!$responseData->success) $errors["reCAPTCHA"] = "invalid.";
+    }
+
+    if (empty($errors)) {
+        $usr = searchByID($ID);
+
+        if (verifyPassword($oldPassword, $usr["userpassword"])) {
+            if (changePassword($usr["dn"], $usr["userpassword"], $newPassword)) {
+                echo json_encode(array("code" => "200", "message" => "Password Successfully Changed."));
+            } else {
+                echo json_encode(array("code" => "500", "message" => "Error changing password, please try again."));
+            } 
+        } else {
+            echo json_encode(array("code" => "401", "message" => "Old password incorrect, try again."));
+        }
+    } else {
+        echo json_encode(array("code" => "400", "errors" => $errors));
+    }
+
 }
 
 ?>

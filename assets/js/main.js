@@ -191,3 +191,88 @@
   });
 
 })(jQuery);
+
+function recaptcha_callback_create_submit() {
+  $.ajax({
+      type: "POST",
+      url: "https://compsoc.ie/webservices.php",
+      data: $('#createAccountForm').serialize(),
+      dataType: 'json',
+      success: function(json) {
+        console.log(json);
+          if (json.code.charAt(0) == '4') {
+            if (json.message == null) json.message = ""; // We may not have a message, crude fix
+            $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
+            $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
+          } else {
+            $('#ajaxMessage').html('<div class="alert alert-success" role="alert">' + json.message + '</div>');
+          }
+
+          $("#createAccountForm")[0].reset();
+      },
+      error: function(error) {
+          console.log(error);
+          //alert("failure");
+      }
+  });
+}
+
+function recaptcha_callback_check_submit() {
+  $.ajax({
+      type: "POST",
+      url: "https://compsoc.ie/webservices.php",
+      data: $('#checkAccountForm').serialize(),
+      dataType: 'json',
+      success: function(json) {
+          if (json.code.charAt(0) == '4') {
+            if (json.message == null) json.message = ""; // We may not have a message, crude fix
+            $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
+            $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
+          } else {
+            $('#ajaxMessage').html("<div class='alert alert-success' role='alert'>" + json.message + "</div>");
+          }
+
+          $("#checkAccountForm")[0].reset();
+      },
+      error: function(error) {
+          console.log(error);
+          //alert("failure");
+      }
+  });
+}
+
+function recaptcha_callback_reset_password_submit() {
+  $.ajax({
+      type: "POST",
+      url: "https://compsoc.ie/webservices.php",
+      data: $('#resetPasswordForm').serialize(),
+      dataType: 'json',
+      success: function(json) {
+          if (json.code.charAt(0) == '4') {
+            if (json.message == null) json.message = ""; // We may not have a message, crude fix
+            $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
+            $.each(json.errors, function( index ) { $('#ajaxMessageErrors').append("<li>" + index + ": " + json.errors[index] + "</li>") } );
+          } else {
+            $('#ajaxMessage').html("<div class='alert alert-success' role='alert'>" + json.message + "</div>");
+          }
+
+          $("#resetPasswordForm")[0].reset();
+      },
+      error: function(error) {
+          console.log(error);
+          //alert("failure");
+      }
+  });
+}
+
+$(function() {
+  $("#createSubmit").click(function (event) {
+      event.preventDefault();
+      //recaptcha_callback_create_submit();
+  });
+
+  $("#checkSubmit").click(function (event) {
+      event.preventDefault();
+      //recaptcha_callback_check_submit();
+  });
+});

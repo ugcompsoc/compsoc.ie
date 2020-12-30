@@ -1,7 +1,7 @@
 <?php
 
 /*  CompSoc Website Redesign - 2020
- *  @author Conor Mc Govern
+ *  @author Conor Mc Govern & Shane Hastings
  */
 
 require("../includes/functions.php");
@@ -56,6 +56,10 @@ require("../includes/functions.php");
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178532999-1"></script>
+
+    <!-- reCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -68,6 +72,28 @@ require("../includes/functions.php");
         gtag('config', 'UA-178532999-1');
     </script>
 
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #149DDD;
+            border-color: #007bff;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #149DDD;
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem #149DDD;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            position: relative;
+            color: #173b6c;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,8 +125,6 @@ require("../includes/functions.php");
                 <li><a href="/#services"><i class="bx bx-server"></i> CompSoc Account</a></li>
                 <li><a href="/#contact"><i class="bx bx-share-alt"></i> Social Media</a></li>
                 <li><a href="/committee"><i class="bx bx-group"></i>Committee 2020/21</a></li>
-
-
             </ul>
         </nav><!-- .nav-menu -->
         <nav class="nav-menu">
@@ -127,7 +151,7 @@ require("../includes/functions.php");
                             <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"/>
                         </svg>
                     </a></li>
-                <li class="active"><a href="https://my.compsoc.ie/" target="_blank"><i class="bx bx-log-in"></i> Account Self Service
+                <li class="active"><a href="https://compsoc.ie/accounts" target="_blank"><i class="bx bx-log-in"></i> Account Self Service
                         &nbsp;<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                    aria-hidden="true" focusable="false" width="1em" height="1em"
                                    style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
@@ -138,8 +162,6 @@ require("../includes/functions.php");
                             <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"/>
                         </svg>
                     </a></li>
-
-
             </ul>
         </nav><!-- .nav-menu -->
         <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -150,116 +172,116 @@ require("../includes/functions.php");
 
 <main id="main">
 
-            <!-- I promise to make this look nice later shane -->
-            <script src="../assets/vendor/jquery/jquery.min.js"></script>
-            <script>
-                $(function() {
-                    $("#createSubmit").click(function (event) {
-                        event.preventDefault();
-                        $.ajax({
-                            type: "POST",
-                            url: "https://compsoc.ie/webservices.php",
-                            data: $('#createAccountForm').serialize(),
-                            dataType: 'json',
-                            success: function(json) {
-                                if (json.code.charAt(0) == '4') {
-                                    $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
-                                    $.each(json.errors, function( index ) { $('#ajaxMessageErrors').html("<li>" + index + ": " + json.errors[index] + "</li>") } );
-                                } else {
-                                    $('#ajaxMessage').html('<div class="alert alert-success" role="alert">' + json.message + '</div>');
-                                }
-                            },
-                            error: function(error) {
-                                console.log(error);
-                                //alert("failure");
-                            }
-                        });
-                    });
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
 
-                    $("#checkSubmit").click(function (event) {
-                        event.preventDefault();
-                        $.ajax({
-                            type: "POST",
-                            url: "https://compsoc.ie/webservices.php",
-                            data: $('#checkAccountForm').serialize(),
-                            dataType: 'json',
-                            success: function(json) {
-                                if (json.code.charAt(0) == '4') {
-                                    $('#ajaxMessage').html('<div class="alert alert-danger" role="alert">We encountered errors while processing your request.<br>' + json.message + '<div id="ajaxMessageErrors"></div></div>');
-                                    $.each(json.errors, function( index ) { $('#ajaxMessageErrors').html("<li>" + index + ": " + json.errors[index] + "</li>") } );
-                                } else {
-                                    $('#ajaxMessage').html("<div class='alert alert-success' role='alert'>" + json.message + "</div>");
-                                }
-                            },
-                            error: function(error) {
-                                console.log(error);
-                                //alert("failure");
-                            }
-                        });
-                    });
-                });
-            </script>
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Manage your account </h2>
+                <ol>
 
+                </ol>
+            </div>
 
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- Account utilities go in this section -->
+    <section id="about" class="inner-page">
+        <div class="container">
             <div class="section-title">
                 <h2>CompSoc Account Utilities</h2>
                 <p>
-                    If you are here to create an account, I highly recommend you go away and think of creative username and not to use seamus. 
-                    This username will become the unique identifier for every service we provide.<br/>
-                    Here you can also check if you have account, clicking this link will also send a password reset link to the email address we have for you.
+                    If you are here to create an account, I highly recommend you go away and think of creative username and not to use MoeLovesDuff.
+                    This username will become the unique identifier for every service we provide. Here you can also check if you have account, and reset your password.
                 </p>
             </div>
 
             <div id="ajaxMessage"></div>
+
+            <!-- Form Functions in main.js -->
             <div class="row">
-                <div class="col-7">
-                    <div class="row">
-                        <form id="createAccountForm" class="form-inline">
-                            <input name="method" value="createAccount" type="hidden">
-
-                            <label class="sr-only" for="ID">Student ID</label>
-                            <input name="ID" type="text" class="form-control mb-2 mr-sm-2" id="ID" placeholder="183XXXXX">
-
-                            <label class="sr-only" for="username">Username</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                <div class="input-group-text">@</div>
-                                </div>
-                                <input name="username" type="text" class="form-control" id="username" placeholder="seamus">
-                            </div>
-
-                            <button id="createSubmit" type="submit" class="btn btn-primary mb-2">Create Account</button>
-                        </form>
-                    </div>
+                <div class="col-md">
+                    <h3>Create an account</h3>
+                    To create an account, enter your NUI Galway Student ID number below alongside your desired username. We'll send you an email with all the details shortly after.
+                    <hr>
+                    <form id="createAccountForm">
+                        <input name="method" value="createAccount" type="hidden">
+                        <div class="form-group">
+                            <label for="ID">Student ID</label>
+                            <input type="text" class="form-control" name="ID" id="ID" aria-describedby="studentid" placeholder="e.g. 17XXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="e.g. MoeLovesDuff">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheckBox" name="termsCheckBox">
+                            <label class="form-check-label" for="termsCheckBox">I confirm that I have read and agree to the <b><a href="https://wiki.compsoc.ie/About-CompSoc/Terms-Of-Use">CompSoc Terms of Use</a></b> and <b><a href="http://www.nuigalway.ie/information-solutions-services/ictpolicies/">NUI Galway IT policies</a></b>.</label>
+                        </div>
+                        <hr>
+                        <button class="btn btn-primary mb-2 g-recaptcha" data-sitekey="6Lf8YRoaAAAAAFHvxu8SJ7MGzp7sajovZWANk3OA" data-callback='recaptcha_callback_create_submit'>Create Account</button>
+                    </form>
                 </div>
 
-                <div class="col">
-                    <div class="row">
-                        <form id="checkAccountForm" class="form-inline">
-                            <input name="method" value="checkAccount" type="hidden">
-
-                            <label class="sr-only" for="ID">Student ID</label>
-                            <input name="ID" type="text" class="form-control mb-2 mr-sm-2" id="ID" placeholder="183XXXXX">
-
-                            <button id="checkSubmit" type="submit" class="btn btn-primary mb-2">Check for account</button>
-                        </form>
-                    </div>
+                <div class="col-md">
+                    <h3>Not sure if you have an account?</h3>
+                    Enter your NUI Galway Student ID number below and we'll check if you have an account. If you do, we'll send you an email with your username.
+                    <hr>
+                    <form id="checkAccountForm">
+                        <input name="method" value="checkAccount" type="hidden">
+                        <div class="form-group">
+                            <label for="ID">Student ID</label>
+                            <input type="text" class="form-control" name="ID" id="ID" aria-describedby="studentID" placeholder="e.g. 17XXXXXX">
+                        </div>
+                        <hr>
+                        <button class="btn btn-primary mb-2 g-recaptcha" data-sitekey="6Lf8YRoaAAAAAFHvxu8SJ7MGzp7sajovZWANk3OA" data-callback='recaptcha_callback_check_submit'>Check for Account</button>
+                    </form>
                 </div>
             </div>
 
-            <!--If you are a CompSoc member* and would like an account, please email us at <b>accounts@compsoc.ie</b> with
-            the following
-            information:<br><br>
+            <hr>
 
-            <li>Name</li>
-            <li>NUI Galway Email Address</li>
-            <li>NUI Galway Student ID</li>
-            <li>Preferred username</li>
+            <div class="row">
+                <div class="col-md">
+                    <h3>Reset your password</h3>
+                    To reset your password you will need to input your old password and your new password into the form below. 
+                    We will send you an email letting you know that you have reset your password. If you cannot remember your old password, please <a href='mailto:accounts@compsoc.ie'>contact us</a> 
+                    and we will happily reset it for you. Your password must contain one uppercase letter, one lowercase letter, one number, one special character and a minimum of 8 characters altogether.
+                    <hr>
+                    <form id="resetPasswordForm">
+                        <input name="method" value="resetPassword" type="hidden">
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="ID">Student ID</label>
+                                    <input type="text" class="form-control" name="ID" id="ID" aria-describedby="studentID" placeholder="e.g. 17XXXXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ID">Old Password</label>
+                                    <input type="password" class="form-control" name="oldPassword" id="oldPassword" aria-describedby="oldPassword" placeholder="e.g. JimLovesRashers12*">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" class="form-control" name="newPassword" id="newPassword" aria-describedby="newPassword" placeholder="e.g. JessiesMomHasGotItGoingOn34!">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newConfirmedPassword">New Password Confirmed</label>
+                                    <input type="password" class="form-control" name="newConfirmedPassword" id="newConfirmedPassword" aria-describedby="newConfirmedPassword" placeholder="e.g. JessiesMomHasGotItGoingOn34!">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <button class="btn btn-primary mb-2 g-recaptcha" data-sitekey="6Lf8YRoaAAAAAFHvxu8SJ7MGzp7sajovZWANk3OA" data-callback='recaptcha_callback_reset_password_submit'>Reset Password</button>
+                    </form>
+                </div>
+            </div>
 
-            <br>*To become a CompSoc member, you can <a href="https://yourspace.nuigalway.ie/">login to YourSpace and
-                join</a> or include a membership request in your email.-->
+        </div>
 
-    </section><!-- End CompSoc Account Section -->
+    </section>
 
 </main><!-- End #main -->
 
