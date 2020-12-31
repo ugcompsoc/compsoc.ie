@@ -64,7 +64,7 @@
             if (!empty($info["mail"][0])) $arr["email"] = $info["mail"][0];
             if (!empty($info["uid"][0])) $arr["uid"] = $info["uid"][0];
             if (!empty($info["userpassword"][0])) $arr["userpassword"] = $info["userpassword"][0];
-            if (!empty($info["dn"][0])) $arr["dn"] = $info["dn"][0];
+            if (!empty($info["dn"][0])) $arr["dn"] = $info["dn"];
             
             return $arr;
         }
@@ -161,12 +161,16 @@
         $password = $func(PASSWORD_GEN_FUNC_PARAM);
         $username = strtolower($username);
 
+        // Password currently in cleartext, encrypt with SSHA
+        $salt = substr(str_shuffle(str_repeat(SSHA_SALT_CHARACTERS,4)),0,4);
+        $hashedPassword = '{SSHA}' . base64_encode(sha1($password . $salt, TRUE ) . $salt);
+
         $info["cn"][0] = $socsInfo["FirstName"] . " " . $socsInfo["LastName"];
         $info["givenname"][0] = $socsInfo["FirstName"];
         $info["sn"][0] = $socsInfo["LastName"];
         $info["employeenumber"][0] = $socsInfo["MemberID"];
         $info["mail"][0] = $socsInfo["Email"];
-        $info["mobile"][0] = $socsInfo["PhoneNumber"];
+        if (!empty($socsInfo["PhoneNumber"])) $info["mobile"][0] = $socsInfo["PhoneNumber"];
         $info["uid"][0] = $username;
         $info["objectclass"][0] = "inetOrgPerson";
         $info["objectclass"][1] = "posixAccount";
@@ -174,7 +178,7 @@
         $info["loginshell"][0] = "/bin/bash";
         $info["homedirectory"][0] = "/home/users/" . $username;
         $info["gidnumber"][0] = "100";
-        $info["userPassword"][0] = $password;
+        $info["userPassword"][0] = $hashedPassword;
         $info["uidnumber"][0] = getNextUIDNumber();
         $info["gecos"][0] = $info["cn"][0];
 
@@ -214,9 +218,9 @@
         Primary Email: " . $socsInfo["Email"] . "<br>
         CompSoc Email: " . $username . "@compsoc.ie<br>
         Student/Staff ID: " . $socsInfo["MemberID"] . "<br>";
-        if (!empty($socsInfo["PhoneNumber"])) $message .= "Mobile: " . $socsInfo["PhoneNumber"] . "<br><br>
+        if (!empty($socsInfo["PhoneNumber"])) $message .= "Mobile: " . $socsInfo["PhoneNumber"] . "<br>";
 
-        If you take issue with us holding any of the above information, please do not hesitate to <a href='mailto:support@compsoc.ie'>contact us</a>.<br><br>
+        $message .= "<br>If you take issue with us holding any of the above information, please do not hesitate to <a href='mailto:support@compsoc.ie'>contact us</a>.<br><br>
         
         Kind Regards,<br>
         CompSoc Admins</body></html>";
@@ -322,14 +326,15 @@
         }
         elseif (substr($oldPasswordHash,0,6) == '{SSHA}')
         {
-            $salt = substr(base64_decode(substr($oldPasswordHash,6)),20);
+            //$salt = substr(base64_decode(substr($oldPasswordHash,6)),20);
+            $salt = substr(str_shuffle(str_repeat(SSHA_SALT_CHARACTERS,4)),0,4);
             $values["userpassword"][0] = '{SSHA}' . base64_encode(sha1( $newPassword . $salt, TRUE ). $salt);
         }
         else
         {
             return FALSE;
         }
-
+        
         $m = ldap_modify($ds, $dn, $values);
         return $m;
     }
