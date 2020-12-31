@@ -56,14 +56,17 @@
             return false;
         } else {
             $info = $values[0];
-            return array("ID" => $info["employeenumber"][0], 
-                        "firstName" => $info["givenname"][0], 
-                        "lastName" => $info["sn"][0], 
-                        "email" => $info["mail"][0],
-                        "uid" => $info["uid"][0],
-                        "userpassword" => $info["userpassword"][0],
-                        "dn" => $info["dn"]
-                    );
+            $arr = array();
+
+            if (!empty($info["employeenumber"][0])) $arr["ID"] = $info["employeenumber"][0];
+            if (!empty($info["givenname"][0])) $arr["firstName"] = $info["givenname"][0];
+            if (!empty($info["sn"][0])) $arr["lastName"] = $info["sn"][0];
+            if (!empty($info["mail"][0])) $arr["email"] = $info["mail"][0];
+            if (!empty($info["uid"][0])) $arr["uid"] = $info["uid"][0];
+            if (!empty($info["userpassword"][0])) $arr["userpassword"] = $info["userpassword"][0];
+            if (!empty($info["dn"][0])) $arr["dn"] = $info["dn"][0];
+            
+            return $arr;
         }
     }
 
@@ -89,12 +92,15 @@
             return false;
         } else {
             $info = $values[0];
-            return array("ID" => $info["employeenumber"][0], 
-                        "firstName" => $info["givenname"][0], 
-                        "lastName" => $info["sn"][0], 
-                        "email" => $info["mail"][0], 
-                        "uid" => $info["uid"][0]
-                    );
+            $arr = array();
+
+            if (!empty($info["employeenumber"][0])) $arr["ID"] = $info["employeenumber"][0];
+            if (!empty($info["givenname"][0])) $arr["firstName"] = $info["givenname"][0];
+            if (!empty($info["sn"][0])) $arr["lastName"] = $info["sn"][0];
+            if (!empty($info["mail"][0])) $arr["email"] = $info["mail"][0];
+            if (!empty($info["uid"][0])) $arr["uid"] = $info["uid"][0];
+            
+            return $arr;
         }
     }
 
@@ -187,7 +193,7 @@
 
         // From email address and name
         $mail->From = "accounts@compsoc.ie";
-        $mail->FromName = "CompSoc Accounts";
+        $mail->FromName = "NUI Galway CompSoc Accounts";
 
         $mail->addAddress($socsInfo["Email"], $socsInfo["FirstName"] . " " . $socsInfo["LastName"]);
         $mail->addReplyTo("accounts@compsoc.ie", "Reply");
@@ -226,6 +232,25 @@
         }
 
         return false;
+    }
+
+    function checkUsername($username) {
+        $username = strtolower($username);
+        $json = json_decode(file_get_contents(UNUSUABLE_USERNAMES_FILENAME, true), true);
+
+        foreach ($json["servers"] as $server) {
+            if ($username == $server) return $server;
+        }
+
+        foreach ($json["names"] as $name) {
+            if ($username == $name) return $name;
+        }
+        
+        foreach ($json["cant-contain"] as $cantcontain) {
+            if (strpos($username, $cantcontain) !== false) return $cantcontain;
+        }
+
+        return true;
     }
 
     function verifyPassword($password, $hash)

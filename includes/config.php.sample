@@ -17,5 +17,6 @@ define('RECAPTCHA_SECRET_KEY', '');
 define('SMTP_HOST', '');
 define('SMTP_USER', '');
 define('SMTP_PASSWORD', '');
+define('UNUSUABLE_USERNAMES_FILENAME', '');
 
 ?>

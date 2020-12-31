@@ -78,17 +78,22 @@ function createAccount() {
 
         if (!searchByUsername($username)) {
             if (!searchByID($ID)) {
-                if (getSocietyMember($ID)) {
-                    // Passed all checks, make account
-                    if (addAccount($username, $ID)) {
-                        echo json_encode(array("code" => "201", "message" => "We have created your account, you should recieve an email shortly with more information."));
+                $checkUsername = checkUsername($username);
+                if ($checkUsername === true) {
+                    if (getSocietyMember($ID)) {
+                        // Passed all checks, make account
+                        if (addAccount($username, $ID)) {
+                            echo json_encode(array("code" => "201", "message" => "We have created your account, you should recieve an email shortly with more information."));
+                        } else {
+                            // Had an issue emailing or connecting to LDAP
+                            echo json_encode(array("code" => "500", "message" => "Unfortunetly we failed to create an account for you, we don't think this is an issue on your end. Please try again or contact us on support@compsoc.ie."));
+                        }
                     } else {
-                        // Had an issue emailing or connecting to LDAP
-                        echo json_encode(array("code" => "500", "message" => "Unfortunetly we failed to create an account for you, we don't think this is an issue on your end. Please try again or contact us on support@compsoc.ie."));
+                        echo json_encode(array("code" => "401", "message" => "You are not a society member, please follow <a href='https://yourspace.nuigalway.ie/account/index.php?object=VXNlck9yZ2FuaXNhdGlvbk1lbWJlcg==&method=am9pbk9yZ2FuaXNhdGlvblZpZXc=&action=Nw==&actionType=YWRk'>this link</a> to join the society."));
                     }
                 } else {
-                    echo json_encode(array("code" => "403", "message" => "You are not a society member, please follow <a href='https://yourspace.nuigalway.ie/account/index.php?object=VXNlck9yZ2FuaXNhdGlvbk1lbWJlcg==&method=am9pbk9yZ2FuaXNhdGlvblZpZXc=&action=Nw==&actionType=YWRk'>this link</a> to join the society."));
-                }
+                    echo json_encode(array("code" => "401", "message" => "This username is or contains a string which we deem to be sensitive. Please pick another username. Clashing string: " . $checkUsername));
+                }   
             } else {
                 echo json_encode(array("code" => "409", "message" => "You already have an account."));
             }
@@ -137,7 +142,7 @@ function checkAccount() {
 
             // From email address and name
             $mail->From = "accounts@compsoc.ie";
-            $mail->FromName = "CompSoc Accounts";
+            $mail->FromName = "NUI Galway CompSoc Accounts";
 
             $mail->addAddress($usr["email"], $usr["firstName"] . " " . $usr["lastName"]);
             $mail->addReplyTo("accounts@compsoc.ie", "Reply");
@@ -233,7 +238,7 @@ function resetPassword() {
 
                 // From email address and name
                 $mail->From = "accounts@compsoc.ie";
-                $mail->FromName = "CompSoc Accounts";
+                $mail->FromName = "NUI Galway CompSoc Accounts";
 
                 $mail->addAddress($usr["email"], $usr["firstName"] . " " . $usr["lastName"]);
                 $mail->addReplyTo("accounts@compsoc.ie", "Reply");
