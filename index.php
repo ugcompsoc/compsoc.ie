@@ -217,7 +217,7 @@ require("includes/allEvents.php");
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="count-box">
                         <i class="icofont-live-support"></i>
-                        <span data-toggle="counter-up">13</span>
+                        <span data-toggle="counter-up">15</span>
                         <p><strong>committee members</strong> in 2020/21</p>
                     </div>
                 </div>

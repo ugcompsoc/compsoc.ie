@@ -391,29 +391,6 @@
                             <!-- Row -->
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <img src="/assets/img/committee/default.jpg" alt="wrapkit"
-                                         class="img-fluid rounded-circle"/>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <div class="pt-2">
-                                        <h5 class="mt-4 font-weight-medium mb-0"> Daniel Hannon</h5>
-                                        <h6 class="subtitle mb-3">System Administrator</h6>
-                                        <p>
-                                        <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
-                                        </p>
-                                        <ul class="list-inline">
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Row -->
-                        </div>
-
-                        <div class="col-lg-3 mb-4">
-                            <!-- Row -->
-                            <div class="row">
-                                <div class="col-md-12 text-center">
                                     <img src="/assets/img/committee/davidnoone.jpg" alt="wrapkit"
                                          class="img-fluid rounded-circle"/>
                                 </div>
@@ -593,7 +570,6 @@
                             </div>
                             <!-- Row -->
                         </div>
-
 
                     </div>
                 </div>
