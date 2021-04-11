@@ -246,37 +246,8 @@ require("../includes/functions.php");
             <div class="row">
                 <div class="col-md">
                     <h3>Reset your password</h3>
-                    To reset your password you will need to input your old password and your new password into the form below. 
-                    We will send you an email letting you know that you have reset your password. If you cannot remember your old password, please <a href='mailto:accounts@compsoc.ie'>contact us</a> 
-                    and we will happily reset it for you. Your password must contain one uppercase letter, one lowercase letter, one number, one special character and a minimum of 8 characters altogether.
-                    <hr>
-                    <form id="resetPasswordForm">
-                        <input name="method" value="resetPassword" type="hidden">
-                        <div class="row">
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label for="ID">Student ID</label>
-                                    <input type="text" class="form-control" name="ID" id="ID" aria-describedby="studentID" placeholder="e.g. 17XXXXXX">
-                                </div>
-                                <div class="form-group">
-                                    <label for="ID">Old Password</label>
-                                    <input type="password" class="form-control" name="oldPassword" id="oldPassword" aria-describedby="oldPassword" placeholder="e.g. JimLovesRashers12*">
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label for="newPassword">New Password</label>
-                                    <input type="password" class="form-control" name="newPassword" id="newPassword" aria-describedby="newPassword" placeholder="e.g. JessiesMomHasGotItGoingOn34!">
-                                </div>
-                                <div class="form-group">
-                                    <label for="newConfirmedPassword">New Password Confirmed</label>
-                                    <input type="password" class="form-control" name="newConfirmedPassword" id="newConfirmedPassword" aria-describedby="newConfirmedPassword" placeholder="e.g. JessiesMomHasGotItGoingOn34!">
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <button class="btn btn-primary mb-2 g-recaptcha" data-sitekey="6Lf8YRoaAAAAAFHvxu8SJ7MGzp7sajovZWANk3OA" data-callback='recaptcha_callback_reset_password_submit'>Reset Password</button>
-                    </form>
+                    To reset your password you will need to go to <a href="https://sso.compsoc.ie/auth/realms/base/account">this site</a> and click 'Forgot Password?'. Enter your username and click submit.
+                    We will send you an email with a link to our SSO where you can reset your password.
                 </div>
             </div>
         </div>
