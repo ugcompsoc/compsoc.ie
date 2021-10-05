@@ -303,7 +303,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/keithrabbitte.png" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -311,7 +311,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Keith Rabbitte</h5>
                                             <h6 class="subtitle mb-3">System Administrator</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Keith is a 2nd year Compsoc sys admin and Ireland's #1 Donald Knuth stan. Years of breakcore have left his brain looking like the dilapitated area outside the city walls in Jak II. He loves you!</div>
                                             </p>
                                             <ul class="list-inline">
 
