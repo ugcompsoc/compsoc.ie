@@ -13,4 +13,4 @@ The new and improved (WordPress free) CompSoc website, built on Bootstrap &amp; 
 ### Credit
 
 - ~shanehastings (2020/21 webmaster)
-- ~conor (2020/21 Chief System Administrator & Vice Auditor)
+- ~conor (2020/22 Chief System Administrator)
