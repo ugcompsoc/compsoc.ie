@@ -1,0 +1,11 @@
+--2021-10-12 00:08:27--  https://cdn.discordapp.com/attachments/666691372811681822/896796709898821712/pic.jpg
+Resolving cdn.discordapp.com (cdn.discordapp.com)... 162.159.130.233, 162.159.133.233, 162.159.134.233, ...
+Connecting to cdn.discordapp.com (cdn.discordapp.com)|162.159.130.233|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26551 (26K) [image/jpeg]
+Saving to: ‘pic.jpg’
+
+     0K .......... .......... .....                           100% 3.30M=0.008s
+
+2021-10-12 00:08:28 (3.30 MB/s) - ‘pic.jpg’ saved [26551/26551]
+

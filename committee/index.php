@@ -197,7 +197,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/lauraodonnell.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -205,7 +205,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Laura O'Donnell</h5>
                                             <h6 class="subtitle mb-3">Vice Auditor</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Laura is a fourth year CSIT student and vice-auditor of CompSoc. She is also involved with MathsSoc and WiSTEM, and enjoys archery and video games. Simply put, she doesn't have much free time.</div>
                                             </p>
                                             <ul class="list-inline">
                                                 
