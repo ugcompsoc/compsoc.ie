@@ -277,7 +277,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Conor Mc Govern</h5>
                                             <h6 class="subtitle mb-3">Chief System Administrator</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Conor is 4th year Computer Science. Having had grown up on a rural Co. Mayo farm, everyone's unsure how he managed to get this far. Some say he can even type without looking at the keyboard. Mayo4Sam.</div>
                                             </p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item"><a href="https://github.com/McGovMan"
