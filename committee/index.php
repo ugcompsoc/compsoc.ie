@@ -181,7 +181,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Ciarán McCarthy</h5>
                                             <h6 class="subtitle mb-3">Auditor</h6>
                                             <p>
-                                            <div class="text-left">CONTENT DUE IN THE MORNING</div>
+                                            <div class="text-left">Ciarán is in 4th year of Electronic & Computer Engineering. He laments the bygone days of assignments that could be finished in 10 minutes.</div>
                                             </p>
                                             <ul class="list-inline">
 
