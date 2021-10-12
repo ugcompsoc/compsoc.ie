@@ -349,7 +349,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/dylanoxley.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -357,7 +357,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Dylan Oxley</h5>
                                             <h6 class="subtitle mb-3">Helpdesk</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Im a 4th year student studying CSIT. Currently doing my final year project in deep learning and computer vision. Love playing video games and going for the odd pint.</div>
                                             </p>
                                             <ul class="list-inline">
 
