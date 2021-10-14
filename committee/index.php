@@ -465,7 +465,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/ruaidhrimadden.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -473,7 +473,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Ruaidhrí Madden</h5>
                                             <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">This is Ruaidhrí, he is doing Electrical Engineering in First Year. Don't worry, he's not sure how to pronounce his name either, and at this point he's too scared to ask.</div>
                                             </p>
                                             <ul class="list-inline">
         
