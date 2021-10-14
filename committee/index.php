@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta  charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Primary Meta Tags -->
@@ -252,7 +252,7 @@
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <div class="pt-2">
-                                            <h5 class="mt-4 font-weight-medium mb-0">Unknown Person</h5>
+                                            <h5 class="mt-4 font-weight-medium mb-0">Evan Liu</h5>
                                             <h6 class="subtitle mb-3">Treasurer</h6>
                                             <p>
                                             <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
@@ -378,7 +378,7 @@
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <div class="pt-2">
-                                            <h5 class="mt-4 font-weight-medium mb-0">Unknown Person</h5>
+                                            <h5 class="mt-4 font-weight-medium mb-0">Seán Kelly</h5>
                                             <h6 class="subtitle mb-3">Junior System Administrator</h6>
                                             <p>
                                             <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
@@ -424,7 +424,7 @@
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <div class="pt-2">
-                                            <h5 class="mt-4 font-weight-medium mb-0">Unknown Person</h5>
+                                            <h5 class="mt-4 font-weight-medium mb-0">Tara Parkinson</h5>
                                             <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
                                             <p>
                                             <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
@@ -447,7 +447,76 @@
                                     </div>
                                     <div class="col-md-12 text-center">
                                         <div class="pt-2">
-                                            <h5 class="mt-4 font-weight-medium mb-0">Unknown Person</h5>
+                                            <h5 class="mt-4 font-weight-medium mb-0">Adam McPadden</h5>
+                                            <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
+                                            <p>
+                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            </p>
+                                            <ul class="list-inline">
+        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row -->
+                            </div>
+
+                            <div class="col-lg-3 mb-4">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                            class="img-fluid rounded-circle"/>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <div class="pt-2">
+                                            <h5 class="mt-4 font-weight-medium mb-0">Ruaidhrí Madden</h5>
+                                            <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
+                                            <p>
+                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            </p>
+                                            <ul class="list-inline">
+        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row -->
+                            </div>
+
+                            <div class="col-lg-3 mb-4">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                            class="img-fluid rounded-circle"/>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <div class="pt-2">
+                                            <h5 class="mt-4 font-weight-medium mb-0">Aoife O'Loughlin</h5>
+                                            <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
+                                            <p>
+                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            </p>
+                                            <ul class="list-inline">
+        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row -->
+                            </div>
+
+                            <div class="col-lg-3 mb-4">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                            class="img-fluid rounded-circle"/>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <div class="pt-2">
+                                            <h5 class="mt-4 font-weight-medium mb-0">Andy Chong</h5>
                                             <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
                                             <p>
                                             <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
