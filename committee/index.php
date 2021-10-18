@@ -488,7 +488,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/andychong.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -496,7 +496,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Andy Chong</h5>
                                             <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">I'm a final year university student at studying BIS with a focus on cyber security and operations research.</div>
                                             </p>
                                             <ul class="list-inline">
         
