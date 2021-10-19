@@ -419,7 +419,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/adammcpadden.png" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -427,7 +427,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Adam McPadden</h5>
                                             <h6 class="subtitle mb-3">Ordinary Committee Member</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Hi, I'm Adam, a first year CS&IT student who should probably be studying maths instead. I like reading and not understanding my own code after a week.</div>
                                             </p>
                                             <ul class="list-inline">
         
