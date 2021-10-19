@@ -373,7 +373,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/seankelly.png" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -381,7 +381,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Seán Kelly</h5>
                                             <h6 class="subtitle mb-3">Junior System Administrator</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">Seán is a 1st year Engineering student. He used to be a farmer - nobody knows how he wound up as a SysAdmin. If he isn't out for a pint you'll find him complaining about netplan or tinkering with electronics.</div>
                                             </p>
                                             <ul class="list-inline">
     
