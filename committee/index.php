@@ -224,7 +224,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/tadhgcodyre.png" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/tadhgcodyre.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -269,7 +269,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/conormcgovern.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -303,7 +303,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/keithrabbitte.png" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/keithrabbitte.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -373,7 +373,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/seankelly.png" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/seankelly.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -419,7 +419,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/adammcpadden.png" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/adammcpadden.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
