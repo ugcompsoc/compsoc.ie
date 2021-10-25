@@ -247,7 +247,7 @@
                                 <!-- Row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <img src="/assets/img/committee/2021-22/default.jpg" alt="wrapkit"
+                                        <img src="/assets/img/committee/2021-22/evanliu.jpg" alt="wrapkit"
                                             class="img-fluid rounded-circle"/>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -255,7 +255,7 @@
                                             <h5 class="mt-4 font-weight-medium mb-0">Evan Liu</h5>
                                             <h6 class="subtitle mb-3">Treasurer</h6>
                                             <p>
-                                            <div class="text-left">This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....</div>
+                                            <div class="text-left">G’day, I’m Evan and am the allocated protector of the treasure. Currently studying Software Dev and my spare time is normally spent in two ways. Typically, I am learning new skills mostly in programming, or hopping on an adventure, camping, and partaking in nature related activities. :)</div>
                                             </p>
                                             <ul class="list-inline">
 
