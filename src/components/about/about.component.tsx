@@ -36,8 +36,8 @@ const AboutComponent = () => {
                 <div className="row">
                     <div className="col-sm">
                         <div className="section-title"><h2>Our constitution</h2></div>
-                        <p>You can find our constitution <b><a href="constitution/">here</a></b>, as ratified by the USCG
-                            (<i>"University Societies Coordination Group"</i>) on 30th November, 2015.</p>
+                        <p>You can find our constitution <b><a href="constitution">here</a></b>, as ratified by the USCG
+                            (<i>"University Societies Coordination Group"</i>) on 27th May, 2022.</p>
                     </div>
                 </div>
 
