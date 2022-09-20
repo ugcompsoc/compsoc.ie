@@ -1,7 +1,5 @@
 import { CommitteeYear, Person, DefaultBio, DefaultPhoto, CommitteeYears } from '../../services/committee';
 
-const committeeYears: CommitteeYear[] = JSON.parse(JSON.stringify(CommitteeYears)) as CommitteeYear[];
-
 const renderCommittee = () => {
     return (
         <>
@@ -16,7 +14,7 @@ const renderCommittee = () => {
             </div>
         </section>
 
-        { committeeYears.map((committeeYear: CommitteeYear, committeeYearIndex: number) => {
+        { CommitteeYears.map((committeeYear: CommitteeYear, committeeYearIndex: number) => {
             return (
                 <>
                 <div id="accordion">
