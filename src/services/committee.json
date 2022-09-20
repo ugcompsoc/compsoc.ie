@@ -68,7 +68,7 @@
                         { "bx bxl-github": "https://github.com/McGovMan" },
                         { "bx bxl-twitter": "https://twitter.com/McGovMan" },
                         { "bx bxl-linkedin": "https://www.linkedin.com/in/conormcgov/" },
-                        { "bx bxl-link": "https://mcgov.ie" }
+                        { "bx bx-link": "https://mcgov.ie" }
                     ],
                     "photo": "/assets/img/committee/2021-22/conormcgovern.jpg"
                 },
@@ -155,7 +155,7 @@
                         { "bx bxl-github": "https://github.com/McGovMan" },
                         { "bx bxl-twitter": "https://twitter.com/McGovMan" },
                         { "bx bxl-linkedin": "https://www.linkedin.com/in/conormcgov/" },
-                        { "bx bxl-link": "https://mcgov.ie" }
+                        { "bx bx-link": "https://mcgov.ie" }
                     ],
                     "photo": "/assets/img/committee/2020-21/conormcgovern.jpg"
                 },
@@ -181,7 +181,7 @@
                         { "bx bxl-github": "https://github.com/ShaneHastings" },
                         { "bx bxl-twitter": "https://twitter.com/ShaneHastingsIE" },
                         { "bx bxl-linkedin": "https://www.linkedin.com/in/shanehastings/" },
-                        { "bx bxl-link": "https://shanehastings.eu/" }
+                        { "bx bx-link": "https://shanehastings.eu/" }
                     ],
                     "photo": "/assets/img/committee/2020-21/shanehastings.jpg"
                 },

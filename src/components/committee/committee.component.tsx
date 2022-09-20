@@ -74,10 +74,12 @@ const renderPerson = (person: Person) => {
 
                             {
                                 person.social_links?.map((socialLink) => {
+                                    // TODO Probably not the best solution
+                                    const key = Object.keys(socialLink)[0];
                                     return (
                                         <li className="list-inline-item">
-                                            <a href={ socialLink.value } className="text-decoration-none d-block px-1">
-                                                <i className={ socialLink.id }></i>
+                                            <a href={ socialLink[key].valueOf() } className="text-decoration-none d-block px-1">
+                                                <i className={ key }></i>
                                             </a>
                                         </li>
                                     );
