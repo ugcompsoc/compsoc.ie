@@ -40,7 +40,7 @@ jobs:
           build-args: |
             ${{steps.version_step.outputs.version}}
   
-  deploy-prod-api:
+  deploy-prod-website:
     runs-on: ubuntu-latest
     needs: deploy-prod-image
     steps:
@@ -52,5 +52,5 @@ jobs:
           key: ${{ secrets.SSH_SECRET }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/api
+            cd ~/compsoc.ie
             ./deploy/deploy-prod.sh
