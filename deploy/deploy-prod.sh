@@ -8,8 +8,8 @@ docker-compose -f docker-compose.prod.yml down
 docker-compose -f docker-compose.prod.yml pull
 
 # Pull down any new workflow related stuff
-echo -e "\n > Pulling down new updates from main"
-git checkout main
+echo -e "\n > Pulling down new updates from master"
+git checkout master
 git pull 
 
 # Start the service again
