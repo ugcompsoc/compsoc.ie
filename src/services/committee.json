@@ -1,0 +1,263 @@
+{
+    "title": "Committee names, pictures, and details on each person from the last few years.",
+    "default_bio": "This person is so ominous, we don't know much else beyond their name and rank. But maybe soon....",
+    "default_photo": "/assets/img/committee/default.jpg",
+    "committee_years": [
+        {
+            "year": "22-23",
+            "committee": [
+                {
+                    "name": "Adam McPadden",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Seán Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "Seán is a 2nd year Engineering student. He used to be a farmer - nobody knows how he wound up as a SysAdmin. If he isn't out for a pint you'll find him complaining about netplan or tinkering with electronics.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2022-23/seankelly.jpg"
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Reuben Reynolds",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Max Chivers",
+                    "position": "System Administrator",
+                    "bio": "Third year science student specializing in applied mathematics",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2022-23/maxchivers.jpg"
+                }
+            ]
+        },
+        {
+            "year": "21-22",
+            "committee": [
+                {
+                    "name": "Adam McPadden",
+                    "position": "Auditor",
+                    "bio": "Hi, I'm Adam, a first year CS&IT student who should probably be studying maths instead. I like reading and not understanding my own code after a week.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/adammcpadden.jpg"
+                },
+                {
+                    "name": "Tadhg Codyre",
+                    "position": "Vice Auditor",
+                    "bio": "Paddy Englishman, Paddy Scottishman and Paddy Irishman were having dinner with thier wifes. Paddy Englishman says to hs wife \"Pass me the sugar, sugar\". Paddy Scottishman says \"Pass me the honey, honey\", while Paddy Irishman says \"Pass me the milk, you big fat cow\"",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/tadhgcodyre.jpg"
+                },
+                {
+                    "name": "Conor Mc Govern",
+                    "position": "Chief System Administrator & Secretary",
+                    "bio": "Conor is in 4th year Computer Science. Having had grown up on a rural Co. Mayo farm, everyone's unsure how he managed to get this far. Some say he can even type without looking at the keyboard. Mayo4Sam.",
+                    "social_links": [
+                        { "bx bxl-github": "https://github.com/McGovMan" },
+                        { "bx bxl-twitter": "https://twitter.com/McGovMan" },
+                        { "bx bxl-linkedin": "https://www.linkedin.com/in/conormcgov/" },
+                        { "bx bx-link": "https://mcgov.ie" }
+                    ],
+                    "photo": "/assets/img/committee/2021-22/conormcgovern.jpg"
+                },
+                {
+                    "name": "Evan Liu",
+                    "position": "Treasurer",
+                    "bio": "G’day, I’m Evan and am the allocated protector of the treasure. Currently studying Software Dev and my spare time is normally spent in two ways. Typically, I am learning new skills mostly in programming, or hopping on an adventure, camping, and partaking in nature related activities. :)",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/evanliu.jpg"
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "System Administrator",
+                    "bio": "Keith is a 2nd year Compsoc sys admin and Ireland's #1 Donald Knuth stan. Years of breakcore have left his brain looking like the dilapitated area outside the city walls in Jak II. He loves you!",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/keithrabbitte.jpg"
+                },
+                {
+                    "name": "David Kong",
+                    "position": "ystem Administrator",
+                    "bio": "Second year Computer Engineering student interested in computer hardware and IoT. Hobbies in music, gaming and 3D printing.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/davidkong.jpg"
+                },
+                {
+                    "name": "Dylan Oxley",
+                    "position": "Helpdesk",
+                    "bio": "Im a 4th year student studying CSIT. Currently doing my final year project in deep learning and computer vision. Love playing video games and going for the odd pint.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/dylanoxley.jpg"
+                },
+                {
+                    "name": "Seán Kelly",
+                    "position": "Junior System Administrator",
+                    "bio": "Seán is a 1st year Engineering student. He used to be a farmer - nobody knows how he wound up as a SysAdmin. If he isn't out for a pint you'll find him complaining about netplan or tinkering with electronics.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/seankelly.jpg"
+                },
+                {
+                    "name": "Ciara Galvin",
+                    "position": "Public Relations Officer",
+                    "bio": "Ciara is in 4th of year computer science & IT | Drinks 10 cups of tea a day | Up the Kingdom",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/ciaragalvin.jpg"
+                },
+                {
+                    "name": "Ruaidhrí Madden",
+                    "position": "Ordinary Committee Member",
+                    "bio": "This is Ruaidhrí, he is doing Electrical Engineering in First Year. Don't worry, he's not sure how to pronounce his name either, and at this point he's too scared to ask.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/ruaidhrimadden.jpg"
+                },
+                {
+                    "name": "Aoife O'Loughlin",
+                    "position": "Ordinary Committee Member",
+                    "bio": "Hi! I'm Aoife and an OCM! I'm a fourth year CS and IT student. I joined CompSoc because why not? And you'll mostly likely find me in the CompSoc Minecraft server building hogwarts :)",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/aoifeoloughlin.jpg"
+                },
+                {
+                    "name": "Andy Chong",
+                    "position": "Ordinary Committee Member",
+                    "bio": "I'm a final year university student at studying BIS with a focus on cyber security and operations research.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/andychong.jpg"
+                }
+            ]
+        },
+        {
+            "year": "20-21",
+            "committee": [
+                {
+                    "name": "Ciarán McCarthy",
+                    "position": "Auditor",
+                    "bio": "Ciarán is the Auditor for CompSoc and studying Electronic & Computer Engineering. He spends his free time reading and playing video games.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/ciaranmccarthy.png"
+                },
+                {
+                    "name": "Conor Mc Govern",
+                    "position": "Vice Auditor & Chief System Administrator",
+                    "bio": "Conor is in third year Computer Science and thinking about how much spare time he'd have if not for postfix's main.cf config file. ",
+                    "social_links": [
+                        { "bx bxl-github": "https://github.com/McGovMan" },
+                        { "bx bxl-twitter": "https://twitter.com/McGovMan" },
+                        { "bx bxl-linkedin": "https://www.linkedin.com/in/conormcgov/" },
+                        { "bx bx-link": "https://mcgov.ie" }
+                    ],
+                    "photo": "/assets/img/committee/2020-21/conormcgovern.jpg"
+                },
+                {
+                    "name": "Ciara Galvin",
+                    "position": "Secretary",
+                    "bio": "Ciara is in 3rd year studying Computer Science. Spends any and all spare time idolising Harry Styles < 3 and lying terribly in Among Us ",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/ciaragalvin.png"
+                },
+                {
+                    "name": "Ella Anderson",
+                    "position": "PRO",
+                    "bio": "Ella is an Arts student and isn't sure how she got here. She studies Law and Soc & Pol. She's fairly impartial to a cup of coffee.",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Shane Hastings",
+                    "position": "Webmaster",
+                    "bio": "Shane is in final year studying Business Information Systems and also CompSoc webmaster for 2020/21. Hobbies include drinking beer and then buying more. He also made this website! ",
+                    "social_links": [
+                        { "bx bxl-github": "https://github.com/ShaneHastings" },
+                        { "bx bxl-twitter": "https://twitter.com/ShaneHastingsIE" },
+                        { "bx bxl-linkedin": "https://www.linkedin.com/in/shanehastings/" },
+                        { "bx bx-link": "https://shanehastings.eu/" }
+                    ],
+                    "photo": "/assets/img/committee/2020-21/shanehastings.jpg"
+                },
+                {
+                    "name": "Mark Drinan",
+                    "position": "Treasurer",
+                    "bio": "Mark is a 4th Year Business Information Systems student and also Treasurer for the Computer Society. Hobbies include participating in CTF events and hitting the gym.",
+                    "social_links": [
+                        { "bx bxl-linkedin": "https://www.linkedin.com/in/mark-drinan/" }
+                    ],
+                    "photo": "/assets/img/committee/2020-21/markdrinan.png"
+                },
+                {
+                    "name": "Kilian McGovern",
+                    "position": "Vice Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Cian Dillane",
+                    "position": "System Administrator",
+                    "bio": "- Last living proof of a long-forgotten argument\n- Has nostrils for eyes\n- Enjoys air when submerged in water\n- Interoperable with most things 5 % of the time on the 29th of February\n- Will run his hand through your imagination before you know it",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/cian-dillane.png"
+                },
+                {
+                    "name": "David Noone",
+                    "position": "System Administrator",
+                    "bio": "David is System Admin drone #3 and is currently studying Computer Science & Information Technology. He enjoys playing Wonderwall on ukulele and vidya games. ",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/davidnoone.jpg"
+                },
+                {
+                    "name": "Laura O'Donnell",
+                    "position": "System Administrator",
+                    "bio": "Third year student studying CSIT with a focus on maths. Former treasurer and current system admin for CompSoc. Spends free time working on projects that will never be shared with others.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/lauraodonnell.jpg"
+                },
+                {
+                    "name": "David Kong",
+                    "position": "System Administrator",
+                    "bio": "Computer nerd with interests in CPUs, GPUs, 3D printing and music. Also into Wearables.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/davidkong.png"
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "System Administrator",
+                    "bio": "Keith is in first year Computer Science. He likes to spend his free time drawing and listening to Limp Bizkit.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/keithrabbitte.png"
+                },
+                {
+                    "name": "Matthew Finn",
+                    "position": "Video Game Administrator",
+                    "bio": "I'm Matthew, a Drama and Philosophy student in NUIG. I know a lot less about the technical side of computers then the rest of the committee, but still love computers none the less! Videogames and digital art are two of my favourite things to do, and if you need someone who's in CompSoc for the chill vibes and good company, I'm your man.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/matthewfinn.png"
+                },
+                {
+                    "name": "Dylan Oxley",
+                    "position": "Helpdesk",
+                    "bio": "I'm a Third year student in NUIG studying computer science and information technology. When im not doing assignments im busy playing video games mainly among us at the moment also enjoy going for the odd pint. ",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/dylanoxley.png"
+                },
+                {
+                    "name": "Tadhg Codyre",
+                    "position": "OCM",
+                    "bio": "Third year computer scientist. Hobbies are video games, cycling and drinking beer",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2020-21/tadhg.png"
+                }
+            ]
+        }
+    ]
+}
