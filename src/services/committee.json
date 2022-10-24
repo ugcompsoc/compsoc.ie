@@ -14,8 +14,15 @@
                     "photo": ""
                 },
                 {
-                    "name": "Keith Rabbitte",
+                    "name": "Seán Kelly",
                     "position": "Chief System Administrator",
+                    "bio": "Seán is a 2nd year Engineering student. He used to be a farmer - nobody knows how he wound up as a SysAdmin. If he isn't out for a pint you'll find him complaining about netplan or tinkering with electronics.",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2022-23/seankelly.jpg"
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "System Administrator",
                     "bio": "",
                     "social_links": [],
                     "photo": ""
@@ -23,13 +30,6 @@
                 {
                     "name": "Reuben Reynolds",
                     "position": "Treasurer",
-                    "bio": "",
-                    "social_links": [],
-                    "photo": ""
-                },
-                {
-                    "name": "Seán Kelly",
-                    "position": "System Administrator",
                     "bio": "",
                     "social_links": [],
                     "photo": ""
