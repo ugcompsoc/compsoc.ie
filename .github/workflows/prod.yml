@@ -3,7 +3,6 @@ on: push
 jobs:
   deploy-prod-image:
     runs-on: ubuntu-latest
-    needs: test
     steps:
       - name: Extract Version
         id: version_step
