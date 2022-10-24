@@ -32,25 +32,16 @@ export interface AllEventsType {
 
 // Returns all events that have an end time after the current time
 const getPastEvents = (async () => {
-    try {
-        // Todo need to change the domain
-        const response = await fetch('http://localhost:8080/v1/events/past/30')
-        const responseJson = await response.json()
-        return responseJson["data"]
-    } catch (error) {
-        console.error(error)
-    }
+    const response = await fetch('https://api.compsoc.ie/v1/events/past/30')
+    const responseJson = await response.json()
+    return responseJson["data"]
 })
 
 // Returns all events that have an end time before the current time
 const getUpcomingEvents = (async () => {
-    try {
-        const response = await fetch('http://localhost:8080/v1/events/upcoming/30')
-        const responseJson = await response.json()
-        return responseJson["data"]
-    } catch (error) {
-        console.error(error)
-    }
+    const response = await fetch('https://api.compsoc.ie/v1/events/upcoming/30')
+    const responseJson = await response.json()
+    return responseJson["data"]
 })
 
 // Returns all events seperated into two arrays, past and upcoming
