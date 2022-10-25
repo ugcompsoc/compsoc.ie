@@ -29,23 +29,22 @@ const EventsComponent = () => {
         })
 
         // Using dangerouslySetInnerHTML as we know the data has been sanitised
+        // Preparing to use Markdown instead of HTML
         return (
-            <div key={e.eventID + e.eventDetailsID}>
-                <h3>{e.title}</h3>
-                {<div dangerouslySetInnerHTML={{ __html: htmlDecode(e.startDateTimeFormatted) as string }} />}
+            <div key={e.EventID + e.EventDetailsID}>
+                <h3>{e.Title}</h3>
+                <p>{e.DatetimeFormatted}</p>
 
                 <br></br>
 
-                {<div dangerouslySetInnerHTML={{ __html: htmlDecode(e.descriptionHTML) as string }} />}
+                {<div dangerouslySetInnerHTML={{ __html: e.DangerousDescriptionHTML }} />}
 
                 <div className="btn-toolbar">
-                    <a target="_blank" href={e.eventReadUrl}>
+                    <a target="_blank" href={e.EventURL}>
                         <button type="button" className="btn btn-success">View / Join event</button>
                     </a>
 
                     &nbsp;
-
-                    <button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add to calendar</button>
                 </div>
             </div>
         )

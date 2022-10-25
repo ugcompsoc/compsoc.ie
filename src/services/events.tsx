@@ -1,28 +1,18 @@
 export interface EventType {
-    eventDetailsID:         number
-	eventID:                number
-	title:                  string
-	descriptionHTML:        string
-	description:            string
-	eventTypeTitle:         string
-	start:                  string
-	end:                    string
-	locationDetails:        string
-	startDateTimeFormatted: string
-	ownerID:                number
-	ownerTitle:             string
-	allDay:                 boolean
-	eventLocationGroupID:   number
-	tags:                   string
-	locationTypeTitle:      string
-	statusTypeTitle:        string
-	signUpUrl:              string
-	icon:                   string
-	eventLocationType:      string
-	className:              string
-	eventUrl:               string
-	eventReadUrl:           string
-	eventICalUrl:           string
+    EventDetailsID:         	number
+	EventID:                	number
+	Title:                  	string
+	SocietyID:					number
+	SocietyName: 				string
+	Location: 					string
+	DangerousDescriptionHTML:   string
+	DescriptionMarkdown:        string
+	Description: 				string
+	StartDatetime:              string
+	EndDatetime:                string
+	DatetimeFormatted: 			string
+	EventURL: 					string
+	EventICalURL: 				string
 }
 
 export interface AllEventsType {
