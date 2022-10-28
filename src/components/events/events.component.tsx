@@ -1,12 +1,16 @@
-import { useEffect, useState, createElement } from 'react';
+import { useEffect, useState, createElement, MouseEvent, useRef } from 'react';
 import { getEvents, AllEventsType, EventType } from '../../services/events';
 import Spinner from 'react-bootstrap/Spinner';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Isotope from 'isotope-layout';
 
 const EventsComponent = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [allEvents, setAllEvents] = useState<AllEventsType>({} as AllEventsType);
+    const isotope = useRef<Isotope | null>();
+    const [filterKey, setFilterKey] = useState('*');
 
-  
     useEffect(() => {
         const getData = async () => {
             try {
@@ -17,100 +21,99 @@ const EventsComponent = () => {
                 console.log(e)
             }
         }
+        getData();
 
-        getData()
+        AOS.init();
+        isotope.current = new Isotope('.portfolio-container', {
+            itemSelector: '.portfolio-item',
+        });
+        setFilterKey("filter-upcoming");
+        return () => isotope.current?.destroy();
     }, []);
 
-    const renderEvent = (e: EventType) => {
-        const htmlDecode = ((content: string) => {
-            let e = document.createElement('div');
-            e.innerHTML = content;
-            return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-        })
+    useEffect(() => {
+        if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
+        else isotope.current?.arrange({ filter: `.${filterKey}` });
+    }, [filterKey]);
 
-        // Using dangerouslySetInnerHTML as we know the data has been sanitised
-        // Preparing to use Markdown instead of HTML
+    const handleFilterKeyChange = async (e: MouseEvent<HTMLElement>) => {
+        const filters = document.getElementById('portfolio-filters')?.getElementsByTagName('li') as HTMLCollectionOf<HTMLLIElement>;
+        for(let i = 0; i < filters.length; i++) {
+            filters[i].classList.remove('filter-active');
+        }
+        e.currentTarget.classList.add('filter-active');
+        
+        const key = e.currentTarget.getAttribute('data-filter');
+        if (key === null) {
+            throw new Error(`Error: Expected data-filter attribute to be assigned on ${e.currentTarget.classList}`);
+        }
+        setFilterKey(key);
+    }
+
+    const getPastelColour = () => {
+        return "hsl(" + 360 * Math.random() + ',' +
+            (25 + 70 * Math.random()) + '%,' + 
+            (85 + 10 * Math.random()) + '%)';
+    }
+
+    const renderEvent = (e: EventType, catagory: string) => {
+        const pastelColour = getPastelColour();
         return (
-            <div key={e.EventID + e.EventDetailsID}>
-                <h3>{e.Title}</h3>
-                <p>{e.DatetimeFormatted}</p>
-
-                <br></br>
-
-                {<div dangerouslySetInnerHTML={{ __html: e.DangerousDescriptionHTML }} />}
-
-                <div className="btn-toolbar">
-                    <a target="_blank" href={e.EventURL}>
-                        <button type="button" className="btn btn-success">View / Join event</button>
-                    </a>
-
-                    &nbsp;
+            <div key={e.EventID + e.EventDetailsID} className={"col-lg-4 col-md-6 portfolio-item filter-" + catagory}>
+                <div className="portfolio-wrap">
+                    <div style={{backgroundColor: pastelColour}} className="fill-every-inch">
+                        <div style={{top: "25%"}} className="portfolio-item-caption border-yoke">{e.Title}</div>
+                        <div style={{top: "65%"}} className="portfolio-item-caption">{e.Location}</div>
+                        <div style={{top: "80%"}} className="portfolio-item-caption">{e.DatetimeFormatted}</div>
+                    </div>
+                    <div className="portfolio-links">
+                        <a href="https://i.kym-cdn.com/entries/icons/facebook/000/001/030/DButt.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title={e.Title}><i className="bx bx-plus"></i></a>
+                        <a href={e.EventURL} title="More Details"><i className="bx bx-link"></i></a>
+                    </div>
                 </div>
             </div>
         )
-    }
+    }           
 
     return (
-        <>
-        <section id="about1" className="about section-bg">
+        <section id="portfolio" className="portfolio section-bg">
             <div className="container">
+                <div className="section-title">
+                    <h2>Events</h2>
+                    <p>The society for all things tech-related; gaming, programming, robotics, hacking and more!</p>
+                </div>
 
-                <div id="accordion">
+                <div className="row" data-aos="fade-up">
+                    <div className="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-filters">
+                            <li onClick={handleFilterKeyChange} data-filter="*">All</li>
+                            <li onClick={handleFilterKeyChange} data-filter="filter-upcoming" className="filter-active">Upcoming</li>
+                            <li onClick={handleFilterKeyChange} data-filter="filter-past">Past</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <h5 className="mb-0">
-                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <div className="section-title"><h2>Upcoming events</h2></div>
-                        </button>
-                    </h5>
-                    <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div className="card-body">
+                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+                    {
+                        isLoading ? <Spinner animation="border" /> : (
+                            <>
                             {
-                                isLoading ? <Spinner animation="border" /> : (
-                                    <>
-                                    {
-                                        allEvents?.upcoming.map((e: EventType, i) => {
-                                            return (renderEvent(e))
-                                            // TODO Want to put space after each event, need better solution
-                                            {
-                                                return (<><br></br></>)
-                                            }
-                                        })
-                                    }
-                                    </>
-                                )
+                                allEvents?.upcoming.map((e: EventType) => {
+                                    return (renderEvent(e, 'upcoming'));
+                                })
                             }
-                        </div>
-                    </div>
-
-                    <hr></hr>
-
-                    <h5 className="mb-0">
-                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <div className="section-title"><h2>Past events <i className="bx bx-chevron-down"></i></h2></div>
-                        </button>
-                    </h5>
-
-                    <div id="collapseTwo" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div className="card-body">
-                        {
-                                isLoading ? <Spinner animation="border" /> : (
-                                    <>
-                                    {
-                                        allEvents?.past.map((e: EventType, i) => {
-                                            return (renderEvent(e))
-                                        })
-                                    }
-                                    </>
-                                )
+                            {
+                                allEvents?.past.map((e: EventType) => {
+                                    return (renderEvent(e, 'past'));
+                                })
                             }
-                        </div>
-                    </div>
-
+                            </>
+                        )
+                    }
                 </div>
 
             </div>
         </section>
-        </>
     );
 }
 
