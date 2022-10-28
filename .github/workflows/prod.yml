@@ -3,6 +3,7 @@ on: push
 jobs:
   deploy-prod-image:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Extract Version
         id: version_step
