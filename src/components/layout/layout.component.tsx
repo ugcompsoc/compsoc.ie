@@ -4,7 +4,8 @@ import { FooterComponent } from "../footer";
 import { HomePage } from '../../pages/home';
 import { CommitteePage } from '../../pages/committee';
 import { BackToTopComponent } from '../backtotop';
-import ConstitutionPage from '../../pages/constitution/constitution.page';
+import { ConstitutionPage } from '../../pages/constitution';
+import { EventDetailsPage } from '../../pages/eventdetails';
 
 const LayoutComponent = () => {
     return(
@@ -18,6 +19,7 @@ const LayoutComponent = () => {
                     <Route path ="/" element={<HomePage />}></Route>
                     <Route path ="/committee" element={<CommitteePage />}></Route>
                     <Route path ="/constitution" element={<ConstitutionPage />}></Route>
+                    <Route path ="/event/:eventID" element={<EventDetailsPage />}></Route>
                 </Routes>
             </Router>
 

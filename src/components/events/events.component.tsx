@@ -4,6 +4,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Isotope from 'isotope-layout';
+import { Link } from 'react-router-dom';
 
 const EventsComponent = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -62,6 +63,7 @@ const EventsComponent = () => {
                     <div className="portfolio-links">
                         <a href={e.EventICalURL} className="portfolio-lightbox" title={e.Title}><i className="bx bx-plus"></i></a>
                         <a href={e.EventURL} title="More Details"><i className="bx bx-link"></i></a>
+                        <Link to={`event/${e.EventID}`} state={{ eventType: e }} title="More Details"><i className="bx bx-link"></i></Link>
                     </div>
                 </div>
             </div>
