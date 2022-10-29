@@ -50,24 +50,18 @@ const EventsComponent = () => {
         setFilterKey(key);
     }
 
-    const getPastelColour = () => {
-        return "hsl(" + 360 * Math.random() + ',' +
-            (25 + 70 * Math.random()) + '%,' + 
-            (85 + 10 * Math.random()) + '%)';
-    }
-
     const renderEvent = (e: EventType, catagory: string) => {
         const pastelColour = getPastelColour();
         return (
             <div key={e.EventID + e.EventDetailsID} className={"col-lg-4 col-md-6 portfolio-item filter-" + catagory}>
-                <div className="portfolio-wrap">
-                    <div style={{backgroundColor: pastelColour}} className="fill-every-inch">
-                        <div style={{top: "25%"}} className="portfolio-item-caption border-yoke">{e.Title}</div>
-                        <div style={{top: "65%"}} className="portfolio-item-caption">{e.Location}</div>
-                        <div style={{top: "80%"}} className="portfolio-item-caption">{e.DatetimeFormatted}</div>
+                <div id="hero" className="portfolio-wrap">
+                    <div style={{textAlign: "center"}}>
+                        <div className="portfolio-item-caption border-yoke">{e.Title}</div>
+                        <div className="portfolio-item-caption">{e.Location}</div>
+                        <div className="portfolio-item-caption">{e.DatetimeFormatted}</div>
                     </div>
                     <div className="portfolio-links">
-                        <a href="https://i.kym-cdn.com/entries/icons/facebook/000/001/030/DButt.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title={e.Title}><i className="bx bx-plus"></i></a>
+                        <a href={e.EventICalURL} className="portfolio-lightbox" title={e.Title}><i className="bx bx-plus"></i></a>
                         <a href={e.EventURL} title="More Details"><i className="bx bx-link"></i></a>
                     </div>
                 </div>

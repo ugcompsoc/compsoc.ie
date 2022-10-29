@@ -22,7 +22,7 @@ const HeroComponent = () => {
     }, []);
 
     return (
-        <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
+        <section style={{height: "100vh"}} id="hero" className="d-flex flex-column justify-content-center align-items-center">
             <div className="hero-container" data-aos="fade-in">
                 <h1>University Of Galway's</h1>
                 <p><span style={{ whiteSpace: 'pre' }} ref={el} /> Society</p>
