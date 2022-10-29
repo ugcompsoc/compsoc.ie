@@ -1,4 +1,4 @@
-import { useEffect, useState, createElement, MouseEvent, useRef } from 'react';
+import { useEffect, useState, MouseEvent, useRef } from 'react';
 import { getEvents, AllEventsType, EventType } from '../../services/events';
 import Spinner from 'react-bootstrap/Spinner';
 import AOS from 'aos';
@@ -51,7 +51,6 @@ const EventsComponent = () => {
     }
 
     const renderEvent = (e: EventType, catagory: string) => {
-        const pastelColour = getPastelColour();
         return (
             <div key={e.EventID + e.EventDetailsID} className={"col-lg-4 col-md-6 portfolio-item filter-" + catagory}>
                 <div id="hero" className="portfolio-wrap">
