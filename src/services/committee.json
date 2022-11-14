@@ -14,6 +14,20 @@
                     "photo": ""
                 },
                 {
+                    "name": "Seamus Knightly",
+                    "position": "Vice Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ruaidhrí Madden",
+                    "position": "Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
                     "name": "Seán Kelly",
                     "position": "Chief System Administrator",
                     "bio": "Seán is a 2nd year Engineering student. He used to be a farmer - nobody knows how he wound up as a SysAdmin. If he isn't out for a pint you'll find him complaining about netplan or tinkering with electronics.",
