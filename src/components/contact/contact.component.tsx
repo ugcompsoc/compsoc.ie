@@ -38,7 +38,7 @@ const ContactComponent = () =>{
                             <div className="email">
                                 <i className="icofont-twitter"></i>
                                 <h4>Tweet</h4>
-                                <p><a href="https://twitter.com/NUIGCompsoc">@NUIGCompsoc</a></p>
+                                <p><a href="https://twitter.com/UGCompsoc">@UGCompsoc</a></p>
                             </div>
 
                             <div className="email">
@@ -55,14 +55,14 @@ const ContactComponent = () =>{
                         <div className="info">
                             <div className="twitterContainer">
                                 <i className="icofont-twitter"></i>
-                                <h4>Tweets by NUIGCompsoc</h4>
+                                <h4>Tweets by UGCompsoc</h4>
                                 <section className="twitter-embed" style={{ padding: "12px 0" }}>
                                     <a
                                         className="twitter-timeline"
                                         data-theme="light"
                                         data-tweet-limit="1"
                                         data-chrome="noheader nofooter noborders"
-                                        href="https://twitter.com/NUIGCompSoc"
+                                        href="https://twitter.com/UGCompSoc"
                                     ></a>
                                 </section>
                             </div>
