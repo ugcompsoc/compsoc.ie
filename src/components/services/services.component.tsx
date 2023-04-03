@@ -33,8 +33,8 @@ const ServicesComponent = () =>{
                 or alternatively, can email us at <b>accounts@compsoc.ie</b> with the following information:<br></br><br></br>
 
                 <li>Name</li>
-                <li>NUI Galway Email Address</li>
-                <li>NUI Galway Student ID</li>
+                <li>University of Galway Email Address</li>
+                <li>University of Galway Student ID</li>
                 <li>Preferred username</li>
                 <br></br>
 
