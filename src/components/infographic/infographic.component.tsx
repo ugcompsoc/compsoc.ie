@@ -20,7 +20,7 @@ const InfographicComponent = () => {
                 <div className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div className="count-box">
                         <i className="icofont-document-folder"></i>
-                        <span data-toggle="counter-up">1,100</span>
+                        <span data-toggle="counter-up">1,388</span>
                         <p><strong>members</strong> and growing each year</p>
                     </div>
                 </div>
