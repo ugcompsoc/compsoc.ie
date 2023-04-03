@@ -11,7 +11,7 @@ const AboutComponent = () => {
 
                         <div className="section-title"><h2>Who we are</h2></div>
                         <p>
-                            CompSoc is NUI Galway’s Computer and Networking Society. We host events for everything computing
+                            CompSoc is University of Galway’s Computer and Networking Society. We host events for everything computing
                             related from how to setup your own blog to System Administration and Programming Tutorials. We
                             also host a number of services on our Society run servers for our members. CompSoc is the oldest
                             computer-related society in Ireland, while many Alumni believe it was much earlier, was formally
@@ -22,7 +22,7 @@ const AboutComponent = () => {
                         <div className="section-title"><h2>Our mission</h2></div>
                         <p>
                             CompSoc’s main goal is to try and foster a love and passion for all things technology related in
-                            NUI Galway. We host a wide variety of events to work towards this goal, including workshops
+                            University of Galway. We host a wide variety of events to work towards this goal, including workshops
                             about Linux, hardware and programming.
 
                             As outlined under our Constitution, our aims is to “promote and increase awareness of electronic
