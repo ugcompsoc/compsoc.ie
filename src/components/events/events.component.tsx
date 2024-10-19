@@ -22,9 +22,11 @@ const EventsComponent = () => {
     }, []);
 
     const renderEvent = (e: EventType) => {
+	// Decode HTML special characters (such as ' or &)
         const htmlDecode = ((content: string) => {
-            let e = document.createElement('div');
+            let e = document.createElement('textarea');
             e.innerHTML = content;
+	    e.innerHTML = e.value;
             return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
         })
 
@@ -32,7 +34,7 @@ const EventsComponent = () => {
         // Preparing to use Markdown instead of HTML
         return (
             <div key={e.EventID + e.EventDetailsID}>
-                <h3>{e.Title}</h3>
+                <h3>{htmlDecode(e.Title)}</h3>
                 <p>{e.DatetimeFormatted}</p>
 
                 <br></br>
