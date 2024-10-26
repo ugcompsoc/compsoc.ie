@@ -19,13 +19,13 @@ const ProfileSectionComponent = () => {
                     <i className="bx bxl-twitter"></i>
                 </a>
                 <a
-                    href="https://www.facebook.com/nuigcompsoc/"
+                    href="https://instagram.com/compsocgalway/"
                     className="facebook"
                 >
-                    <i className="bx bxl-facebook"></i>
+                    <i className="bx bxl-instagram"></i>
                 </a>
                 <a
-                    href="https://www.linkedin.com/company/nuig-compsoc?originalSubdomain=ie"
+                    href="https://linkedin.com/company/ugcompsoc?originalSubdomain=ie"
                     className="linkedin"
                 >
                     <i className="bx bxl-linkedin"></i>
@@ -33,7 +33,10 @@ const ProfileSectionComponent = () => {
                 <a href="https://discord.compsoc.ie" className="discord">
                     <i className="bx bxl-discord"></i>
                 </a>
-                <a href="mailto:compsoc@socs.nuigalway.ie" className="linkedin">
+                <a
+                    href="mailto:compsoc@socs.universityofgalway.ie"
+                    className="linkedin"
+                >
                     <i className="bx bx-mail-send"></i>
                 </a>
             </div>
