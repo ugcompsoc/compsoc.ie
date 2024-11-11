@@ -1,4 +1,7 @@
 import React from 'react';
+import SponsorTable from './SponsorTable.component';
+import ScheduleTable from './ScheduleTable.component';
+import './ctf.css';
 
 const CTFComponent = () => {
     return (
@@ -40,7 +43,7 @@ const CTFComponent = () => {
                         Some great starter CTFs to get a feel for what they’re like are:
                         <ul>
                             <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
-                            <li>TryHackMe</li>
+                            <li><a href="https://tryhackme.com/">TryHackMe</a></li>
                             <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
                         </ul>
                     </p>
@@ -93,28 +96,17 @@ const CTFComponent = () => {
             <section id="schedule">
                 <div className="section-title">
                     <h2>Schedule</h2>
-                    <p>
-                        <ul>
-                        <li>10:30	Doors open</li>
-                        <li>11:00	Challenges start</li>
-                        <li>13:30	Lunch</li>
-                        <li>16:00	Challenges close and prize giving</li>
-                        </ul>
-                    </p>
-                    </div>
+                    <ScheduleTable />
+                </div>
             </section>
 
             <section id="schedule">
                 <div className="section-title">
                     <h2>Sponsors</h2>
                     <p>
-                    We are very grateful to our sponsors for enabling this year's event. 
-                        <ul>
-                            <li>Platinum sponsor: Evernorth Health Services</li>
-                            <li>Gold Sponsors: Genesys and Cisco</li>
-                            <li>Silver Sponsors: Siren, LibertyIT and Centripetal</li>
-                        </ul>
+                    We are very grateful to our sponsors for enabling this year's event:
                     </p>
+                    <SponsorTable />
                     </div>
             </section>
 
@@ -142,9 +134,9 @@ const CTFComponent = () => {
                     <h4><strong>Where can I practise before the event?</strong></h4>
                     <p>A few good websites to practise capture the flag challenges are:</p>
                     <ul>
-                        <li>PicoCTF</li>
-                        <li>TryHackMe</li>
-                        <li>HackTheBox</li>
+                        <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
+                        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
+                        <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
                     </ul>
                 </div>
 

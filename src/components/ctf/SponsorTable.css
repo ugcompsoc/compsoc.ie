@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+  }
+  
+  th {
+    padding-right: 50px; /* Adds extra space between the columns */
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  th, td {
+    text-align: left;
+  }
