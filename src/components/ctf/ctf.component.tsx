@@ -6,11 +6,10 @@ import './ctf.css';
 const CTFComponent = () => {
     return (
         <div className="container">
-
             <section id="main-content" className="about">
                 <div className="hero-container">
                     <h1>Intervarsity Capture the Flag 2025</h1>
-                    <p>Put your hacking skills to the test!</p>
+                    <p>Put your white hat hacking skills to the test!</p>
                     <img src="/assets/img/ctf_poster.png" alt="Italian Trulli"></img>
                 </div>
 
