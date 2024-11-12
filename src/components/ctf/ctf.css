@@ -1,9 +1,9 @@
 .hero-container img {
     width: 100%;
-    max-width: 100%; 
-    max-height: 100vh; 
     height: auto;
-    display: block; 
+    max-height: 100vh;
+    display: block;
+    object-fit: contain; 
   }
   .faq-item {
     margin-bottom: 20px;
