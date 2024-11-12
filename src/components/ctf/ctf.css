@@ -1,0 +1,54 @@
+.hero-container img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    display: block;
+    object-fit: contain; 
+  }
+  .faq-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .faq-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .faq-item ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .faq-item ul li {
+    margin-bottom: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title h2 {
+      font-size: 1.5rem;
+    }
+  
+    .faq-item {
+      padding: 10px;
+    }
+  
+    .faq-item h4 {
+      font-size: 1.1rem;
+    }
+  
+    .faq-item p {
+      font-size: 0.95rem;
+    }
+  }

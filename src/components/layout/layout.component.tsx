@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { SidePanelComponent } from '../sidepanel'
-import { FooterComponent } from '../footer'
-import { HomePage } from '../../pages/home'
-import { CommitteePage } from '../../pages/committee'
-import { BackToTopComponent } from '../backtotop'
-import ConstitutionPage from '../../pages/constitution/constitution.page'
+import { SidePanelComponent } from '../sidepanel';
+import { FooterComponent } from "../footer";
+import { HomePage } from '../../pages/home';
+import { CommitteePage } from '../../pages/committee';
+import { CTFPage } from '../../pages/ctf';
+import { BackToTopComponent } from '../backtotop';
+import ConstitutionPage from '../../pages/constitution/constitution.page';
 
 const LayoutComponent = () => {
     return (
@@ -23,7 +24,11 @@ const LayoutComponent = () => {
                             path="/constitution"
                             element={<ConstitutionPage />}
                         ></Route>
-                    </Routes>
+    		            <Route 
+                            path ="/ctf" 
+                            element={<CTFPage />}
+                        ></Route>
+                </Routes>
                 </Router>
 
                 <FooterComponent />

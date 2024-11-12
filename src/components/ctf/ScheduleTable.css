@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures that borders are not doubled */
+}
+
+th {
+    padding-right: 50px; /* Adds extra space between the columns */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6; /* Adds border to table cells */
+}

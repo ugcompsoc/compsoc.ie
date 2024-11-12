@@ -380,6 +380,11 @@ section {
     padding: 0;
 }
 
+.about .content ul.normal_bullet_points {
+    list-style: disc;
+    padding-left: 20px;
+}
+
 .about .content ul li {
     padding-bottom: 10px;
 }
