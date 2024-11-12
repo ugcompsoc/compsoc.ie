@@ -25,7 +25,7 @@ const CTFComponent = () => {
                     <h2>Event Details</h2>
                     <ul>
                         <li><strong>Date:</strong> February 1st, 2025</li>
-                        <li><strong>Location:</strong> Bailey Allen Hall, University of Galway</li>
+                        <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A'>Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
                         <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">Here</a></li>
                     </ul>
@@ -67,7 +67,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>What’s up for grabs?</h2>
                     <p>
-                        This year’s event is sponsored by some of the biggest tech companies in Ireland, so we’re happy to announce this year’s prize pot is €1000. Prizes will be going to the top three teams, with additional spot prizes going on the day!!
+                        This year’s event is sponsored by some of the biggest tech companies in Ireland, so we’re happy to announce a <strong>prize pot of €1000.</strong> Prizes will be going to the top three teams, with additional spot prizes going on the day!!
                         And beyond just the prizes, there is the pride of representing your college and proving that yes, in fact you ARE the best at being a huge nerd.
                     </p>
                 </div>
