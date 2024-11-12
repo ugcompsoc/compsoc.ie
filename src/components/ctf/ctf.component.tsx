@@ -86,7 +86,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>How do I sign up?</h2>
                     <p>
-                    You can buy your tickets at our college's society store. 
+                    You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">society store</a>. 
                     Teams can be up to four members.
                     To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college. Don’t worry though, there will also be a general board for other teams.
                     </p>
