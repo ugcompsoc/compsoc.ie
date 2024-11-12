@@ -8,27 +8,34 @@ import { BackToTopComponent } from '../backtotop';
 import ConstitutionPage from '../../pages/constitution/constitution.page';
 
 const LayoutComponent = () => {
-    return(
+    return (
         <>
-        <SidePanelComponent/>
+            <SidePanelComponent />
 
-        <main id="main">
-
-            <Router> 
-                <Routes> 
-                    <Route path ="/" element={<HomePage />}></Route>
-                    <Route path ="/committee" element={<CommitteePage />}></Route>
-                    <Route path ="/constitution" element={<ConstitutionPage />}></Route>
-		    <Route path ="/ctf" element={<CTFPage />}></Route>
+            <main id="main">
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<HomePage />}></Route>
+                        <Route
+                            path="/committee"
+                            element={<CommitteePage />}
+                        ></Route>
+                        <Route
+                            path="/constitution"
+                            element={<ConstitutionPage />}
+                        ></Route>
+    		            <Route 
+                            path ="/ctf" 
+                            element={<CTFPage />}
+                        ></Route>
                 </Routes>
-            </Router>
+                </Router>
 
-            <FooterComponent />
-            <BackToTopComponent />
-
-        </main>
+                <FooterComponent />
+                <BackToTopComponent />
+            </main>
         </>
-    );
+    )
 }
 
-export default LayoutComponent;
+export default LayoutComponent
