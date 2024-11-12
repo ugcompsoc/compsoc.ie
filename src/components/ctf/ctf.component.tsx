@@ -89,7 +89,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>Sponsors</h2>
                     <p>
-                        We are very grateful to our sponsors for enabling this year's event:
+                        We are very grateful to our following sponsors for enabling this year's event:
                     </p>
                     <SponsorTable />
                 </div>

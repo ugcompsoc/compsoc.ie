@@ -1,4 +1,4 @@
-import './SponsorTable.css';
+import './ScheduleTable.css';
 
 const ScheduleTable = () => {
     return (
