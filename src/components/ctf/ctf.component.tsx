@@ -53,7 +53,7 @@ const CTFComponent = () => {
                     <p>
                         We plan to have a diverse range of challenges so that no matter what your skill set is, there will be something for you to tackle and keep you entertained. Challenges will cover:
                     </p>
-                    <ul>
+                    <ul className='normal_bullet_points'>
                         <li>Cryptography</li>
                         <li>Web-hacking</li>
                         <li>Reverse Engineering</li>
