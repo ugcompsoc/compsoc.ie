@@ -27,7 +27,7 @@ const CTFComponent = () => {
                         <li><strong>Date:</strong> February 1st, 2025</li>
                         <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A'>Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
-                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">Here</a></li>
+                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">Available here</a></li>
                     </ul>
                 </div>
 
@@ -68,16 +68,17 @@ const CTFComponent = () => {
                     <h2>What’s up for grabs?</h2>
                     <p>
                         This year’s event is sponsored by some of the biggest tech companies in Ireland, so we’re happy to announce a <strong>prize pot of €1000.</strong> Prizes will be going to the top three teams, with additional spot prizes going on the day!!
-                        And beyond just the prizes, there is the pride of representing your college and proving that yes, in fact you ARE the best at being a huge nerd.
                     </p>
                 </div>
 
                 <div className="section-title">
                     <h2>How do I sign up?</h2>
                     <p>
-                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">society store</a>. 
-                        Teams can be up to four members.
-                        To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college. Don’t worry though, there will also be a general board for other teams.
+                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">society store</a>.
+                        <br />
+                        Teams can be <em>up to four</em> members.<br />
+                        To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college.
+                        Don’t worry though, there will also be a general board for other teams to compete with one another.
                     </p>
                 </div>
 
@@ -101,7 +102,8 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>What can I do for food?</strong></h4>
-                        <p>We’ll have a hot lunch, with both meat and vegetarian options available. There is a Tesco and a Centra open nearby, alongside lots of other food outlets if something else takes your fancy.</p>
+                        <p>We’ll have a hot lunch (and perhaps some other treats), with both meat and vegetarian options available.<br />
+                            There is a Tesco and a Centra open nearby, alongside lots of other food outlets if something else takes your fancy.</p>
                     </div>
 
                     <div className="faq-item">
@@ -111,7 +113,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I’ve no teammates, where can I find some?</strong></h4>
-                        <p>We have a channel to find others in our Discord here: [Insert Discord link].</p>
+                        <p>We have a channel to find other teammates in the event Discord <a href="discord.ctf.compsoc.ie">here</a>.</p>
                     </div>
 
                     <div className="faq-item">
