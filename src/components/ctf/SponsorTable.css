@@ -1,22 +1,28 @@
 table {
   width: 100%;
-  border-collapse: collapse; /* Ensures that borders are not doubled */
-  border: none; /* No border for the table */
+  border-collapse: collapse;
+  border: none;
 }
 
 th, td {
   padding: 10px;
   text-align: left;
-  border: none; /* No border for table headers and cells */
+  border: none;
 }
 
 .sponsor-level td {
-  border: none; /* Remove any existing borders */
-  border-bottom: 1px solid #dee2e6; /* Add bottom border */
-  font-weight: bold; /* Makes the text bold */
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
 }
 
 .centered {
   text-align: center;
-  border: none; /* No border for centered cells */
+  border: none;
+}
+
+td img {
+  width: calc(100% - 30px);
+  height: auto;
+  margin: 30px;
 }
