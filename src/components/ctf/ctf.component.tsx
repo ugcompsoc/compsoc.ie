@@ -45,9 +45,7 @@ const CTFComponent = () => {
 
                 <div className="section-title">
                     <h2>What kind of challenges will there be?</h2>
-                </div>
-
-                <div className="content">
+                
                     <p>
                         We plan to have a diverse range of challenges so that no matter what your skill set is, there will be something for you to tackle and keep you entertained. Challenges will cover:
                     </p>
