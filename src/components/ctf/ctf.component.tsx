@@ -9,7 +9,6 @@ const CTFComponent = () => {
             <section id="main-content" className="about">
                 <div className="hero-container">
                     <h1>Intervarsity Capture the Flag 2025</h1>
-                    <p>Put your white hat hacking skills to the test!</p>
                     <img src="/assets/img/ctf_poster.png" alt="Italian Trulli"></img>
                 </div>
 
@@ -58,7 +57,7 @@ const CTFComponent = () => {
                         <li>Reverse Engineering</li>
                         <li>System admin</li>
                         <li>Forensics</li>
-                        <li>Word puzzles (like the type you can find at <a href="www.nytimes.com/games/">www.nytimes.com/games/</a>)</li>
+                        <li>Word puzzles (like the type you can find at <a href="https://nytimes.com/games/">www.nytimes.com/games/</a>)</li>
                         <li>... and much much more!!</li>
                     </ul>
                 </div>
@@ -112,7 +111,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I’ve no teammates, where can I find some?</strong></h4>
-                        <p>We have a channel to find other teammates in the event Discord <a href="discord.ctf.compsoc.ie">here</a>.</p>
+                        <p>We have a channel to find other teammates in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>.</p>
                     </div>
 
                     <div className="faq-item">
@@ -148,7 +147,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I have questions that aren’t answered by the above, where can I ask them?</strong></h4>
-                        <p>Ask in the event Discord <a href="discord.ctf.compsoc.ie">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
+                        <p>Ask in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
                     </div>
                 </div>
             </section>
