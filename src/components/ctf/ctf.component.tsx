@@ -8,9 +8,8 @@ const CTFComponent = () => {
         <div className="container">
             <section id="main-content" className="about">
                 <div className="hero-container">
-                    <h1>Intervarsity Capture the Flag 2025</h1>
-                    <p>Put your white hat hacking skills to the test!</p>
-                    <img src="/assets/img/ctf_poster.png" alt="Italian Trulli"></img>
+                    <h1>CompSoc Intervarsity Capture the Flag - 2025</h1>
+                    <img src="/assets/img/ctf/High_Res_CompSoc_CTF_Poster.jpg" alt="Floor Debugging" style={{maxHeight: "80vh"}}></img>
                 </div>
 
                 <div className="section-title">
@@ -20,13 +19,13 @@ const CTFComponent = () => {
                         there's something for everyone!
                     </p>
                 </div>
-                <div className="content">
+                <div className="section-title">
                     <h2>Event Details</h2>
                     <ul>
                         <li><strong>Date:</strong> February 1st, 2025</li>
-                        <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A'>Bailey Allen Hall, University of Galway</a></li>
+                        <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A' target="_blank" rel="noopener noreferrer">Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
-                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">Available here</a></li>
+                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">Available here</a></li>
                     </ul>
                 </div>
 
@@ -36,12 +35,12 @@ const CTFComponent = () => {
                         Capture the flags are events where teams race each other to solve puzzles and find hidden codes or ‘flags’. These puzzles can be technical (deciphering a password from a website, finding the GPS co-ordinates of where a .png photo was taken), but many are solvable without knowing a single thing about computers or programming (like deciphering morse code, solving a crossword, or answering movie trivia!)
                         They’re a fantastic way to test what you already know, learn what you don’t, and meet other people with a passion for tech.
                         Some great starter CTFs to get a feel for what they’re like are:
-                        <ul>
-                            <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
-                            <li><a href="https://tryhackme.com/">TryHackMe</a></li>
-                            <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
-                        </ul>
                     </p>
+                    <ul>
+                        <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
+                        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
+                        <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
+                    </ul>
                 </div>
 
                 <div className="section-title">
@@ -56,7 +55,7 @@ const CTFComponent = () => {
                         <li>Reverse Engineering</li>
                         <li>System admin</li>
                         <li>Forensics</li>
-                        <li>Word puzzles (like the type you can find at <a href="www.nytimes.com/games/">www.nytimes.com/games/</a>)</li>
+                        <li>Word puzzles (like the type you can find at <a href="https://nytimes.com/games/">www.nytimes.com/games/</a>)</li>
                         <li>... and much much more!!</li>
                     </ul>
                 </div>
@@ -110,7 +109,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I’ve no teammates, where can I find some?</strong></h4>
-                        <p>We have a channel to find other teammates in the event Discord <a href="discord.ctf.compsoc.ie">here</a>.</p>
+                        <p>We have a channel to find other teammates in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>.</p>
                     </div>
 
                     <div className="faq-item">
@@ -146,7 +145,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I have questions that aren’t answered by the above, where can I ask them?</strong></h4>
-                        <p>Ask in the event Discord <a href="discord.ctf.compsoc.ie">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
+                        <p>Ask in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
                     </div>
                 </div>
             </section>
