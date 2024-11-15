@@ -35,12 +35,12 @@ const CTFComponent = () => {
                         Capture the flags are events where teams race each other to solve puzzles and find hidden codes or ‘flags’. These puzzles can be technical (deciphering a password from a website, finding the GPS co-ordinates of where a .png photo was taken), but many are solvable without knowing a single thing about computers or programming (like deciphering morse code, solving a crossword, or answering movie trivia!)
                         They’re a fantastic way to test what you already know, learn what you don’t, and meet other people with a passion for tech.
                         Some great starter CTFs to get a feel for what they’re like are:
-                        <ul>
-                            <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
-                            <li><a href="https://tryhackme.com/">TryHackMe</a></li>
-                            <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
-                        </ul>
                     </p>
+                    <ul>
+                        <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
+                        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
+                        <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
+                    </ul>
                 </div>
 
                 <div className="section-title">
