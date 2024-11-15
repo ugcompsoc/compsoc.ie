@@ -8,8 +8,8 @@ const CTFComponent = () => {
         <div className="container">
             <section id="main-content" className="about">
                 <div className="hero-container">
-                    <h1>Intervarsity Capture the Flag 2025</h1>
-                    <img src="/assets/img/ctf_poster.png" alt="Italian Trulli"></img>
+                    <h1>CompSoc Intervarsity Capture the Flag - 2025</h1>
+                    <img src="/assets/img/ctf/High_Res_CompSoc_CTF_Poster.jpg" alt="Floor Debugging"></img>
                 </div>
 
                 <div className="section-title">
@@ -19,13 +19,13 @@ const CTFComponent = () => {
                         there's something for everyone!
                     </p>
                 </div>
-                <div className="content">
+                <div className="section-title">
                     <h2>Event Details</h2>
                     <ul>
                         <li><strong>Date:</strong> February 1st, 2025</li>
-                        <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A'>Bailey Allen Hall, University of Galway</a></li>
+                        <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A' target="_blank" rel="noopener noreferrer">Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
-                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">Available here</a></li>
+                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">Available here</a></li>
                     </ul>
                 </div>
 
