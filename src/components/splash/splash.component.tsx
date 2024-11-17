@@ -7,7 +7,7 @@ const HeroComponent = () => {
 
     React.useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ["Computer", "Developer", "Technology"], // Strings to display
+            strings: ["Computer", "Developer", "Technology", "Artificial Intelligence", "Cybersecurity", "Computer"], // Strings to display
             // Speed settings, try diffrent values untill you get good results
             startDelay: 300,
             typeSpeed: 120,
