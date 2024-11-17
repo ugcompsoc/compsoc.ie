@@ -9,7 +9,7 @@ const CTFComponent = () => {
             <section id="main-content" className="about">
                 <div className="hero-container">
                     <h1>CompSoc Intervarsity Capture the Flag - 2025</h1>
-                    <img src="/assets/img/ctf/High_Res_CompSoc_CTF_Poster.jpg" alt="Floor Debugging" style={{maxHeight: "80vh"}}></img>
+                    <img src="/assets/img/ctf/Medium_Res_CompSoc_CTF_Poster.jpg" alt="Floor Debugging" style={{maxHeight: "80vh"}}></img>
                 </div>
 
                 <div className="section-title">
