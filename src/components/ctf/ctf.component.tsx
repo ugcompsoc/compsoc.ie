@@ -26,6 +26,7 @@ const CTFComponent = () => {
                         <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A' target="_blank" rel="noopener noreferrer">Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
                         <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">Available here</a></li>
+                        <li><strong>Event Discord:</strong> <a href='https://ctf.compsoc.ie/discord' target="_blank" rel="noopener noreferrer">Join here!</a></li>
                     </ul>
                 </div>
 
@@ -37,9 +38,9 @@ const CTFComponent = () => {
                         Some great starter CTFs to get a feel for what they’re like are:
                     </p>
                     <ul>
-                        <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
-                        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
-                        <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
+                        <li><a href="https://picoctf.org/get_started.html" target="_blank" rel="noopener noreferrer">PicoCTF</a></li>
+                        <li><a href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer">TryHackMe</a></li>
+                        <li><a href="https://www.hackthebox.com/hacker" target="_blank" rel="noopener noreferrer">HackTheBox</a></li>
                     </ul>
                 </div>
 
@@ -55,7 +56,7 @@ const CTFComponent = () => {
                         <li>Reverse Engineering</li>
                         <li>System admin</li>
                         <li>Forensics</li>
-                        <li>Word puzzles (like the type you can find at <a href="https://nytimes.com/games/">www.nytimes.com/games/</a>)</li>
+                        <li>Word puzzles (like the type you can find at <a href="https://nytimes.com/games/" target="_blank" rel="noopener noreferrer">www.nytimes.com/games/</a>)</li>
                         <li>... and much much more!!</li>
                     </ul>
                 </div>
@@ -70,7 +71,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>How do I sign up?</h2>
                     <p>
-                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3">society store</a>.
+                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">society store</a>.
                         <br />
                         Teams can be <em>up to four</em> members.<br />
                         To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college.
@@ -109,16 +110,16 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I’ve no teammates, where can I find some?</strong></h4>
-                        <p>We have a channel to find other teammates in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>.</p>
+                        <p>We have a channel to find other teammates in the event Discord <a href="https://ctf.compsoc.ie/discord" target="_blank" rel="noopener noreferrer">here</a>.</p>
                     </div>
 
                     <div className="faq-item">
                         <h4><strong>Where can I practise before the event?</strong></h4>
                         <p>A few good websites to practise capture the flag challenges are:</p>
                         <ul>
-                            <li><a href="https://picoctf.org/get_started.html">PicoCTF</a></li>
-                            <li><a href="https://tryhackme.com/">TryHackMe</a></li>
-                            <li><a href="https://www.hackthebox.com/hacker">HackTheBox</a></li>
+                            <li><a href="https://picoctf.org/get_started.html" target="_blank" rel="noopener noreferrer">PicoCTF</a></li>
+                            <li><a href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer">TryHackMe</a></li>
+                            <li><a href="https://www.hackthebox.com/hacker" target="_blank" rel="noopener noreferrer">HackTheBox</a></li>
                         </ul>
                     </div>
 
@@ -145,7 +146,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I have questions that aren’t answered by the above, where can I ask them?</strong></h4>
-                        <p>Ask in the event Discord <a href="http://discord.ctf.compsoc.ie">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
+                        <p>Ask in the event Discord <a href="https://ctf.compsoc.ie/discord" target="_blank" rel="noopener noreferrer">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
                     </div>
                 </div>
             </section>
