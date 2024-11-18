@@ -26,8 +26,7 @@ const CTFComponent = () => {
                         <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A' target="_blank" rel="noopener noreferrer">Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
                         <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">Available here</a></li>
-                        <li><strong>Event Discord:</strong> <a href='https://ctf.compsoc.ie/discord' target="_blank" rel="noopener noreferrer">Join here!</a>
-                        </li>
+                        <li><strong>Event Discord:</strong> <a href='https://ctf.compsoc.ie/discord' target="_blank" rel="noopener noreferrer">Join here!</a></li>
                     </ul>
                 </div>
 
