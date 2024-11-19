@@ -51,11 +51,13 @@ const CTFComponent = () => {
                         We plan to have a diverse range of challenges so that no matter what your skill set is, there will be something for you to tackle and keep you entertained. Challenges will cover:
                     </p>
                     <ul className='normal_bullet_points'>
-                        <li>Cryptography</li>
-                        <li>Web-hacking</li>
-                        <li>Reverse Engineering</li>
-                        <li>System admin</li>
+                        <li>Web exploiting</li>
+                        <li>Reverse engineering</li>
+                        <li>Binary exploitation</li>
                         <li>Forensics</li>
+                        <li>Cryptography</li>
+                        <li>OSINT</li>
+                        <li>Network engineering & security</li>
                         <li>Word puzzles (like the type you can find at <a href="https://nytimes.com/games/" target="_blank" rel="noopener noreferrer">www.nytimes.com/games/</a>)</li>
                         <li>... and much much more!!</li>
                     </ul>
