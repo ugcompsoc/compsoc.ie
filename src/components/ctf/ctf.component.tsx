@@ -66,7 +66,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>What’s up for grabs?</h2>
                     <p>
-                        This year’s event is sponsored by some of the biggest tech companies in Ireland, so we’re happy to announce a <strong>prize pot of €1000.</strong> Prizes will be going to the top three teams, with additional spot prizes going on the day!!
+                        This year’s event is sponsored by some of the biggest tech companies in Ireland, so we’re happy to announce a <strong>prize pot of over €1000.</strong> Prizes will be going to the top three teams, with additional spot prizes going on the day!!
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@ const CTFComponent = () => {
                         <br />
                         Teams can be <em>up to four</em> members.<br />
                         To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college.
-                        Don’t worry though, there will also be a general board for other teams to compete with one another.
+                        Don’t worry though, there will also be an open category for other teams to compete in against one another, which is open to non-students too!
                     </p>
                 </div>
 
