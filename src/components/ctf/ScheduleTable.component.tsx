@@ -11,15 +11,19 @@ const ScheduleTable = () => {
             </thead>
             <tbody>
                 <tr>
-                    <td>10:30</td>
+                    <td>10:00</td>
                     <td>Doors open</td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td>Registration & sign in</td>
                 </tr>
                 <tr>
                     <td>11:00</td>
                     <td>Challenges start</td>
                 </tr>
                 <tr>
-                    <td>13:30</td>
+                    <td>13:00</td>
                     <td>Lunch</td>
                 </tr>
                 <tr>
