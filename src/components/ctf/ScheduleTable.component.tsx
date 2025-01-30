@@ -15,7 +15,7 @@ const ScheduleTable = () => {
                     <td>Doors open</td>
                 </tr>
                 <tr>
-                    <td>10:00</td>
+                    <td>10:30</td>
                     <td>Registration & sign in</td>
                 </tr>
                 <tr>
