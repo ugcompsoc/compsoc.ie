@@ -18,7 +18,7 @@ export function Footer() {
                             </div>
                             <h3 className="text-lg font-semibold text-foreground">Compoc</h3>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-6 sm:leading-relaxed tracking-wide">
                             The University of Galway Computer Society - connecting computer science
                             enthusiasts through events, workshops, and community.
                         </p>
@@ -124,7 +124,7 @@ export function Footer() {
                                 </a>
                             </Button>
                         </div>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-sm text-muted-foreground">
                             Everyone is welcome to join our community!
                         </p>
                     </div>

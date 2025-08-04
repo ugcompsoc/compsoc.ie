@@ -20,7 +20,7 @@ function NavigationMenu({
             data-slot="navigation-menu"
             data-viewport={viewport}
             className={cn(
-                'group/navigation-menu relative flex max-w-max flex-1 items-center justify-center',
+                'group/navigation-menu relative flex flex-1 items-center justify-center',
                 className,
             )}
             {...props}
@@ -155,42 +155,55 @@ function NavigationMenuIndicator({
 
 // Add this above the PCNavigationMenu function
 const mainMenuItems = [
-    { text: 'Home', link: '/' },
-    { text: 'Events', link: '/events' },
-    { text: 'Account', link: '/account' },
-    { text: 'Committee', link: '/committee' },
+    { text: 'Home', link: '/', icon: Home },
+    { text: 'Events', link: '/events', icon: Calendar },
+    { text: 'Account', link: '/account', icon: Server },
+    { text: 'Committee', link: '/committee', icon: UsersRound },
 ]
 
 // PC Navigation Menu Component
 export function PCNavigationMenu() {
     return (
-        <NavigationMenu className="flex flex-shrink-0 text-sm">
-            <NavigationMenuList className="h-14 gap-2 text-neutral-100">
-                <div className="rounded-md bg-neutral-900/75 backdrop-blur-sm border border-neutral-800/70 shadow-lg flex flex-row h-full text-neutral-100">
+        <NavigationMenu className="flex flex-shrink-0 text-sm h-14 gap-2 px-0 lg:px-8 pt-2">
+            <NavigationMenuList className="h-14 w-full gap-2 text-neutral-100 flex flex-shrink-0 flex-row text-sm bg-neutral-900/75 rounded-md backdrop-blur-sm border border-neutral-800/70 shadow-lg">
+                <div className="flex flex-shrink-0 rounded-xl justify-center items-center h-14 pr-4.5 pl-3.5 gap-2 text-neutral-100">
+                    <img
+                        src="assets/img/compsoc_logo.png"
+                        alt=""
+                        className="h-10 relative object-contain"
+                    />
+                    <div className="flex flex-col justify-center items-center h-full font-[Poppins,sans-serif] mt-[-0.25rem]">
+                        <h1 className="text-[1.25rem] font-medium">CompSoc</h1>
+                        <p className="text-[0.625rem] mt-[-0.375rem] ml-[1px] font-light opacity-75">
+                            University of Galway
+                        </p>
+                    </div>
+                </div>
+
+                <div className=" flex flex-row h-full text-neutral-100">
                     {mainMenuItems.map((item) => (
                         <NavigationMenuItem key={item.link}>
                             <NavigationMenuLink
                                 asChild
                                 className="relative px-8 h-full flex items-center justify-center"
                             >
-                                <Link to={item.link} className="[&.active]:text-accent">
+                                <Link to={item.link} className="[&.active]:text-accent min-w-fit">
                                     {item.text}
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     ))}
                 </div>
-                <NavigationMenuItem className="h-full">
-                    <NavigationMenuLink
-                        asChild
-                        className="px-8 h-full flex items-center justify-center cursor-pointer relative rounded-md bg-accent hover:after:bg-black/5 after:absolute after:w-full after:h-full after:rounded-md text-accent-foreground hover:text-accent-foreground [&.active]:text-accent-foreground"
-                    >
-                        <Link to="/contact" className="[&.active]:text-accent-foreground">
-                            Contact us
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
             </NavigationMenuList>
+
+            <NavigationMenuLink
+                asChild
+                className="px-8 h-14 flex items-center justify-center cursor-pointer relative rounded-md bg-accent text-accent-foreground hover:text-accent-foreground [&.active]:text-accent-foreground"
+            >
+                <Link to="/contact" className="[&.active]:text-accent-foreground min-w-fit">
+                    Contact us
+                </Link>
+            </NavigationMenuLink>
         </NavigationMenu>
     )
 }
@@ -202,37 +215,22 @@ export function MobileNavigationMenu() {
             {/* 
             if you are changing height of mobile menu, change height of components/sections/home/heroComponent.tsx and of div in __root.tsx too.
             */}
-            <Link
-                to="/"
-                className="flex-1 flex flex-col items-center justify-center py-3 text-xs hover:text-accent transition-colors duration-200 [&.active]:text-accent [&.active]:bg-accent/10"
-            >
-                <Home size={20} className="mb-1" />
-                <span className="font-medium">Home</span>
-            </Link>
-            <Link
-                to="/events"
-                className="flex-1 flex flex-col items-center justify-center py-3 text-xs hover:text-accent transition-colors duration-200 [&.active]:text-accent [&.active]:bg-accent/10"
-            >
-                <Calendar size={20} className="mb-1" />
-                <span className="font-medium">Events</span>
-            </Link>
-            <Link
-                to="/account"
-                className="flex-1 flex flex-col items-center justify-center py-3 text-xs hover:text-accent transition-colors duration-200 [&.active]:text-accent [&.active]:bg-accent/10"
-            >
-                <Server size={20} className="mb-1" />
-                <span className="font-medium">Account</span>
-            </Link>
-            <Link
-                to="/committee"
-                className="flex-1 flex flex-col items-center justify-center py-3 text-xs hover:text-accent transition-colors duration-200 [&.active]:text-accent [&.active]:bg-accent/10"
-            >
-                <UsersRound size={20} className="mb-1" />
-                <span className="font-medium">Committee</span>
-            </Link>
+            {mainMenuItems.map((item) => {
+                const IconComponent = item.icon
+                return (
+                    <Link
+                        key={item.link}
+                        to={item.link}
+                        className="flex-1 flex flex-col items-center justify-center py-3 text-sm hover:text-accent transition-colors duration-200 [&.active]:text-accent [&.active]:bg-accent/10"
+                    >
+                        <IconComponent size={20} className="mb-1" />
+                        <span className="font-medium">{item.text}</span>
+                    </Link>
+                )
+            })}
             <Link
                 to="/contact"
-                className="flex-1 flex flex-col items-center justify-center py-3 text-xs bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-200 [&.active]:bg-accent [&.active]:text-accent-foreground"
+                className="flex-1 flex flex-col items-center justify-center py-3 text-sm bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-200 [&.active]:bg-accent [&.active]:text-accent-foreground"
             >
                 <Mail size={20} className="mb-1" />
                 <span className="font-medium">Contact</span>

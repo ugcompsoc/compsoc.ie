@@ -101,12 +101,14 @@ function CommitteeCard({
                     <CardTitle className="text-lg md:text-xl font-bold mb-0.5 tracking-tight w-full truncate">
                         {person.name}
                     </CardTitle>
-                    <CardDescription className="text-xs md:text-sm font-medium mb-1 w-full truncate">
+                    <CardDescription className="text-sm font-medium mb-1 w-full truncate">
                         {person.position}
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col justify-start w-full px-6 py-0">
-                    <p className="text-sm font-light w-full leading-relaxed">{bio}</p>
+                    <p className="text-sm font-normal w-full leading-6 sm:leading-relaxed tracking-wide">
+                        {bio}
+                    </p>
                 </CardContent>
                 <div className="w-full flex-shrink-0 flex flex-col justify-end">
                     {person.social_links && person.social_links.length > 0 && (

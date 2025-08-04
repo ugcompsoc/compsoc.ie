@@ -17,7 +17,7 @@ const AboutComponent = () => {
                             Who we are
                             <span className="block h-0.5 w-12 sm:w-13 mt-2 rounded-full bg-secondary mx-0" />
                         </h2>
-                        <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
+                        <p className="text-base text-muted-foreground font-normal leading-7 sm:leading-relaxed tracking-wide">
                             CompSoc is University of Galway's Computer and Networking Society. We
                             host events for everything computing related from how to setup your own
                             blog to System Administration and Programming Tutorials. We also host a
@@ -32,7 +32,7 @@ const AboutComponent = () => {
                             Our mission
                             <span className="block h-0.5 w-10 sm:w-11 mt-2 rounded-full bg-secondary mx-0" />
                         </h2>
-                        <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
+                        <p className="text-base text-muted-foreground font-normal leading-7 sm:leading-relaxed tracking-wide">
                             CompSoc's main goal is to try and foster a love and passion for all
                             things technology related in University of Galway. We host a wide
                             variety of events to work towards this goal, including workshops about
@@ -48,7 +48,7 @@ const AboutComponent = () => {
                             Our constitution
                             <span className="block h-0.5 w-10 sm:w-11 mt-2 rounded-full bg-secondary mx-0" />
                         </h2>
-                        <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
+                        <p className="text-base text-muted-foreground font-normal leading-7 sm:leading-relaxed tracking-wide">
                             You can find our constitution{' '}
                             <b>
                                 <Link className="text-accent underline" to="/constitution">

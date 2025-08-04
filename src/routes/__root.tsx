@@ -85,37 +85,23 @@ export const Route = createRootRoute({
             <>
                 {/* Desktop top menu (hidden on mobile) */}
                 <motion.div
-                    className="fixed flex-row items-center z-[9999] justify-between w-screen px-8 pt-2 hidden md:flex"
+                    className="fixed flex-row items-center z-[9999] justify-between w-screen hidden md:flex"
                     initial="visible"
                     animate={visible ? 'visible' : 'hidden'}
                     variants={navbarVariants}
                 >
-                    <div
-                        className={cn(
-                            'flex flex-shrink-0 rounded-xl justify-center items-center h-14 pr-4.5 pl-3.5 gap-2',
-                            'bg-neutral-900/75 backdrop-blur-sm border border-neutral-800/70 shadow-lg text-neutral-100',
-                        )}
-                    >
-                        <img
-                            src="assets/img/compsoc_logo.png"
-                            alt=""
-                            className="h-10 relative object-contain"
-                        />
-                        <div className="flex flex-col justify-center items-center h-full font-[Poppins,sans-serif] mt-[-0.25rem]">
-                            <h1 className="text-[1.25rem] font-medium">CompSoc</h1>
-                            <p className="text-[0.625rem] mt-[-0.375rem] ml-[1px] font-light opacity-75">
-                                University of Galway
-                            </p>
-                        </div>
-                    </div>
                     <PCNavigationMenu />
                 </motion.div>
                 {/* 
             in case of mobile menu height change, change height of div element below to h-[calc(100vh-x)] where x is the height of the mobile menu.
             */}
-                <div className="flex flex-col h-[calc(100vh-4.5rem)] md:h-full w-full overflow-x-hidden">
-                    <Outlet />
-                    <Footer />
+                <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+                    <div className="pb-18 md:pb-0">
+                        <Outlet />
+                    </div>
+                    <div className="hidden md:flex">
+                        <Footer />
+                    </div>
                 </div>
                 {/* Mobile bottom nav */}
                 <MobileNavigationMenu />

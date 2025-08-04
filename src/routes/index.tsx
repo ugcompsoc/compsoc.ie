@@ -24,10 +24,9 @@ function Index() {
             >
                 <motion.div
                     style={{ opacity: overlayOpacity, backgroundColor: 'var(--foreground)' }}
-                    className="absolute inset-0"
+                    className="absolute w-screen inset-0"
                 />
             </div>
-            {/* Content above parallax bg */}
             <div className="relative z-10 flex flex-col">
                 <HeroComponent />
                 <div className="flex flex-col items-center w-full pt-8 md:pt-16 gap-8 md:gap-12 min-h-screen bg-background">

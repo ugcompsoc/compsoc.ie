@@ -20,7 +20,7 @@ const InfographicComponent = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-1 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300 ease-out">
                             {new Date().getFullYear() - 1977}
                         </h2>
-                        <p className="text-xs sm:text-sm font-light">
+                        <p className="text-sm font-normal tracking-wide">
                             <strong>years</strong> established
                         </p>
                     </CardContent>
@@ -39,7 +39,7 @@ const InfographicComponent = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-1 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300 ease-out">
                             1,388
                         </h2>
-                        <p className="text-xs sm:text-sm font-light">
+                        <p className="text-sm font-normal tracking-wide">
                             <strong>members</strong> and growing
                         </p>
                     </CardContent>
@@ -58,7 +58,7 @@ const InfographicComponent = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-1 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300 ease-out">
                             {NumberOfCommitteeMembers}
                         </h2>
-                        <p className="text-xs sm:text-sm font-light">
+                        <p className="text-sm font-normal tracking-wide">
                             <strong>committee</strong> members
                         </p>
                     </CardContent>
@@ -77,7 +77,7 @@ const InfographicComponent = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-1 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300 ease-out">
                             5
                         </h2>
-                        <p className="text-xs sm:text-sm font-light">
+                        <p className="text-sm font-normal tracking-wide">
                             <strong>GB</strong> free server space
                         </p>
                     </CardContent>
