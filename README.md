@@ -8,7 +8,13 @@ The new and improved (WordPress free) CompSoc website, built on Tanstack router 
 
 Use `pnpm dev` to start dev server. There are more details available [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
+For Icons used (Lucide React)[https://lucide.dev/guide/packages/lucide-react]
+For social media icons used (Simple Icons)[https://simpleicons.org]
+
 ### Credit
 
 -   ~shanehastings (2020/21 webmaster)
 -   ~conor (2020/22 Chief System Administrator)
+
+
+
