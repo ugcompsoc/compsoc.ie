@@ -164,7 +164,7 @@ const mainMenuItems = [
 // PC Navigation Menu Component
 export function PCNavigationMenu() {
     return (
-        <NavigationMenu className="flex flex-shrink-0 text-sm h-14 gap-2 px-0 lg:px-8 pt-2">
+        <NavigationMenu className="flex flex-shrink-0 text-sm h-14 gap-2 px-0 lg:px-8 pt-4">
             <NavigationMenuList className="h-14 w-full gap-2 text-neutral-100 flex flex-shrink-0 flex-row text-sm bg-neutral-900/75 rounded-md backdrop-blur-sm border border-neutral-800/70 shadow-lg">
                 <div className="flex flex-shrink-0 rounded-xl justify-center items-center h-14 pr-4.5 pl-3.5 gap-2 text-neutral-100">
                     <img

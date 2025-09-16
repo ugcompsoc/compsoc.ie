@@ -7,7 +7,7 @@ import { UsersRound } from 'lucide-react'
 
 export function Footer() {
     return (
-        <footer className="bg-muted backdrop-blur-sm border-t border-border/50 mt-auto">
+        <footer className="bg-muted w-full backdrop-blur-sm border-t border-border/50 mt-auto">
             <div className="max-w-6xl mx-auto px-4 md:px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8">
                     {/* About CompSoc */}
