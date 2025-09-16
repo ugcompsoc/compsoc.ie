@@ -1,7 +1,7 @@
+import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
 
 const HeroComponent = () => {
 	const strarray = [

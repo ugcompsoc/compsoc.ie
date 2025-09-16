@@ -16,7 +16,8 @@
 			"*.tsx",
 			"*.js",
 			"*.jsx",
-			"!src/routeTree.gen.ts"
+			"!src/routeTree.gen.ts",
+			"!**/*.css"
 		]
 	},
 	"formatter": {

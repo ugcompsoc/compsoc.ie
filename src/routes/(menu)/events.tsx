@@ -1,19 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, useRef, useCallback } from "react";
-import { getEvents } from "@/services/events";
-import type { AllEventsType, EventType } from "@/services/events";
+import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
 	Post,
-	PostHeader,
-	PostTitle,
-	PostMeta,
 	PostContent,
 	PostFooter,
+	PostHeader,
+	PostMeta,
+	PostTitle,
 } from "@/components/ui/post";
-import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-// import { cn } from "@/lib/utils";
+import type { AllEventsType, EventType } from "@/services/events";
+import { getEvents } from "@/services/events";
+
+// Skeleton for a post
+const PostSkeleton = () => (
+	<Post className="mb-6 w-full">
+		<PostHeader>
+			<PostTitle>
+				<Skeleton className="h-6 w-2/3 mb-2" />
+			</PostTitle>
+			<PostMeta>
+				<Skeleton className="h-4 w-1/4" />
+			</PostMeta>
+		</PostHeader>
+		<PostContent>
+			<Skeleton className="h-4 w-full mb-2" />
+			<Skeleton className="h-4 w-3/4 mb-2" />
+			<Skeleton className="h-4 w-1/2" />
+		</PostContent>
+		<PostFooter>
+			<Skeleton className="h-8 w-24" />
+		</PostFooter>
+	</Post>
+);
 
 export const Route = createFileRoute("/(menu)/events")({
 	component: RouteComponent,
@@ -53,31 +74,6 @@ function RouteComponent() {
 
 		getData();
 	}, []);
-
-	// Intersection Observer for infinite scroll
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting && !loadingMore && hasLoaded) {
-					loadMore();
-				}
-			},
-			{ threshold: 0.1 },
-		);
-
-		observerRef.current = observer;
-
-		if (loadingRef.current) {
-			observer.observe(loadingRef.current);
-		}
-
-		return () => {
-			if (observerRef.current) {
-				observerRef.current.disconnect();
-			}
-		};
-	}, [loadingMore, hasLoaded]);
-
 	const loadMore = useCallback(async () => {
 		if (loadingMore) return;
 
@@ -113,6 +109,29 @@ function RouteComponent() {
 		upcomingPage,
 		pastPage,
 	]);
+	// Intersection Observer for infinite scroll
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries[0].isIntersecting && !loadingMore && hasLoaded) {
+					loadMore();
+				}
+			},
+			{ threshold: 0.1 },
+		);
+
+		observerRef.current = observer;
+
+		if (loadingRef.current) {
+			observer.observe(loadingRef.current);
+		}
+
+		return () => {
+			if (observerRef.current) {
+				observerRef.current.disconnect();
+			}
+		};
+	}, [loadingMore, hasLoaded, loadMore]);
 
 	const setActiveTabAndReset = (tab: "upcoming" | "past") => {
 		setActiveTab(tab);
@@ -148,9 +167,9 @@ function RouteComponent() {
 					</PostMeta>
 				</PostHeader>
 				<PostContent>
-					{/* biome-ignore lint/security/noDangerouslySetInnerHtml: Rendering trusted CMS HTML */}
 					<div
 						className="prose prose-sm max-w-none"
+						// biome-ignore lint: Event content is trusted
 						dangerouslySetInnerHTML={{ __html: event.DangerousDescriptionHTML }}
 					/>
 				</PostContent>
@@ -170,33 +189,6 @@ function RouteComponent() {
 			</Post>
 		);
 	};
-
-	// Skeleton for a post
-	const PostSkeleton = () => (
-		<Post className="mb-6 w-full">
-			<PostHeader>
-				<PostTitle>
-					<Skeleton className="h-6 w-2/3 mb-2" />
-				</PostTitle>
-				<PostMeta>
-					<div className="flex items-center gap-2">
-						<Skeleton className="h-4 w-24" />
-					</div>
-					<div className="flex items-center gap-2">
-						<Skeleton className="h-4 w-20" />
-					</div>
-				</PostMeta>
-			</PostHeader>
-			<PostContent>
-				<Skeleton className="h-4 w-full mb-2" />
-				<Skeleton className="h-4 w-5/6 mb-2" />
-				<Skeleton className="h-4 w-4/6" />
-			</PostContent>
-			<PostFooter>
-				<Skeleton className="h-8 w-32 rounded-full" />
-			</PostFooter>
-		</Post>
-	);
 
 	const getCurrentEvents = () => {
 		if (activeTab === "upcoming") {
@@ -289,6 +281,7 @@ function RouteComponent() {
 				<div className="mb-8">
 					<div className="flex bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 p-1 gap-1 max-w-md mx-auto">
 						<button
+							type="button"
 							onClick={() => setActiveTabAndReset("upcoming")}
 							className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium transition-all duration-300 ease-out cursor-pointer ${
 								activeTab === "upcoming"
@@ -309,6 +302,7 @@ function RouteComponent() {
 							</span>
 						</button>
 						<button
+							type="button"
 							onClick={() => setActiveTabAndReset("past")}
 							className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium transition-all duration-300 ease-out cursor-pointer ${
 								activeTab === "past"

@@ -177,12 +177,17 @@ const mainMenuItems = [
 
 // PC Navigation Menu Component
 export function PCNavigationMenu() {
-	const [isDesktop, setIsDesktop] = useState(false);
+	const [isDesktop, setIsDesktop] = useState(() => {
+		// Initialize with the correct value immediately to prevent flash
+		if (typeof window !== "undefined") {
+			return window.innerWidth >= 768;
+		}
+		return true; // Default to desktop for SSR
+	});
 	const [isFullscreenMenuOpen, setisFullscreenMenuOpen] = useState(false);
 
 	useEffect(() => {
 		const update = () => setIsDesktop(window.innerWidth >= 768);
-		update();
 		window.addEventListener("resize", update);
 		return () => window.removeEventListener("resize", update);
 	}, []);
