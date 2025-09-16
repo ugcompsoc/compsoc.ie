@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tw-animate-css";
+
+/* Colors were taken from https://tailwindcss.com/docs/colors */
+
+body {
+	@apply m-0;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family:
+		source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+:root {
+	--background: 0 0% 100%; /* white */
+	--foreground: 240 10% 3.9%; /* zinc 800 */
+	--card: 0 0% 100%; /* white */
+	--card-foreground: 240 10% 3.9%; /* zinc 800 */
+	--popover: 0 0% 100%; /* white */
+	--popover-foreground: 240 10% 3.9%; /* zinc 800 */
+	--primary: 199 89% 48%; /* sky 500 */
+	--primary-foreground: 0 0% 98%; /* zinc 50 */
+	--secondary: 199 89% 48%; /* sky 500 */
+	--secondary-foreground: 215 28% 17%; /* slate 700 */
+	--muted: 240 4.8% 95.9%; /* zinc 100 */
+	--muted-foreground: 240 5% 64.9%; /* zinc 500 */
+	--accent: 199 89% 48%; /* sky 500 */
+	--accent-foreground: 0 0% 98%; /* zinc 50 */
+	--destructive: 0 84% 60%; /* rose 500 */
+	--destructive-foreground: 0 0% 98%; /* zinc 50 */
+	--border: 240 5.9% 90%; /* zinc 200 */
+	--input: 240 5.9% 90%; /* zinc 200 */
+	--ring: 240 5% 64.9%; /* zinc 400 */
+	--chart-1: 75 85% 60%; /* lime 300 */
+	--chart-2: 173 58% 39%; /* teal 400 */
+	--chart-3: 213 94% 68%; /* blue 400 */
+	--chart-4: 45 93% 47%; /* amber 400 */
+	--chart-5: 54 91% 70%; /* yellow 400 */
+	--radius: 0.625rem;
+	--menu: 240 10% 3.9%; /* zinc 950 */
+	--menu-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-primary: 199 89% 48%; /* sky 500 */
+	--menu-primary-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-accent: 199 89% 48%; /* sky 500 */
+	--menu-accent-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-border: 240 5.9% 90%; /* zinc 200 */
+	--menu-ring: 240 5% 64.9%; /* zinc 400 */
+}
+
+.dark {
+	--background: 240 10% 3.9%; /* zinc 950 */
+	--foreground: 0 0% 98%; /* zinc 50 */
+	--card: 240 10% 3.9%; /* zinc 950 */
+	--card-foreground: 0 0% 98%; /* zinc 50 */
+	--popover: 240 10% 3.9%; /* zinc 950 */
+	--popover-foreground: 0 0% 98%; /* zinc 50 */
+	--primary: 0 0% 98%; /* zinc 50 */
+	--primary-foreground: 240 5.9% 10%; /* zinc 900 */
+	--secondary: 215 28% 17%; /* slate 700 */
+	--secondary-foreground: 210 40% 98%; /* slate 50 */
+	--muted: 240 3.7% 15.9%; /* zinc 800 */
+	--muted-foreground: 240 5% 64.9%; /* zinc 400 */
+	--accent: 240 3.7% 15.9%; /* zinc 800 */
+	--accent-foreground: 0 0% 98%; /* zinc 50 */
+	--destructive: 0 63% 31%; /* rose 700 */
+	--destructive-foreground: 0 0% 98%; /* zinc 50 */
+	--border: 240 3.7% 15.9%; /* zinc 800 */
+	--input: 240 3.7% 15.9%; /* zinc 800 */
+	--ring: 240 4.9% 83.9%; /* zinc 600 */
+	--chart-1: 263 70% 50%; /* violet 400 */
+	--chart-2: 160 84% 39%; /* emerald 400 */
+	--chart-3: 54 91% 70%; /* yellow 400 */
+	--chart-4: 292 84% 61%; /* fuchsia 400 */
+	--chart-5: 0 84% 60%; /* rose 500 */
+	--menu: 240 5.9% 10%; /* zinc 900 */
+	--menu-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-primary: 263 70% 50%; /* violet 400 */
+	--menu-primary-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-accent: 240 3.7% 15.9%; /* zinc 800 */
+	--menu-accent-foreground: 0 0% 98%; /* zinc 50 */
+	--menu-border: 240 3.7% 15.9%; /* zinc 800 */
+	--menu-ring: 240 4.9% 83.9%; /* zinc 600 */
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-menu: var(--menu);
+	--color-menu-foreground: var(--menu-foreground);
+	--color-menu-primary: var(--menu-primary);
+	--color-menu-primary-foreground: var(--menu-primary-foreground);
+	--color-menu-accent: var(--menu-accent);
+	--color-menu-accent-foreground: var(--menu-accent-foreground);
+	--color-menu-border: var(--menu-border);
+	--color-menu-ring: var(--menu-ring);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+html,
+body {
+	overflow: auto;
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.7;
+}
