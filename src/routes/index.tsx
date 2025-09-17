@@ -19,7 +19,7 @@ function App() {
 		clamp: true,
 	});
 	return (
-		<div ref={scrollRef} className="relative flex flex-col min-h-screen">
+		<div ref={scrollRef} className="relative w-full flex flex-col min-h-screen">
 			{/* Parallax background image */}
 			<div
 				className="pointer-events-none select-none fixed inset-0 z-0 bg-[url(/assets/img/hero-bg.webp)] bg-center bg-cover bg-fixed"

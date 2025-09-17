@@ -215,7 +215,7 @@ function RouteComponent() {
 		if (!hasLoaded && isLoading) {
 			// Show 2 skeleton posts during initial loading
 			return (
-				<div className="flex flex-col gap-4 py-12">
+				<div className="flex flex-col relative gap-4 justify-center items-center h-64 mt-32">
 					<PostSkeleton />
 					<PostSkeleton />
 				</div>
@@ -227,7 +227,7 @@ function RouteComponent() {
 
 		if (allEventsForTab.length === 0) {
 			return (
-				<div className="flex flex-col items-center justify-center py-12">
+				<div className="flex flex-col relative items-center justify-center h-64">
 					{emptyIcon}
 					<p className="text-muted-foreground mt-4 text-center">
 						{emptyMessage}

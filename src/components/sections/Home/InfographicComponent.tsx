@@ -4,10 +4,7 @@ import { NumberOfCommitteeMembers } from "../../../services/committee";
 
 const InfographicComponent = () => {
 	return (
-		<section
-			id="facts"
-			className="flex flex-col w-full items-center pb-8 px-4 md:px-6"
-		>
+		<section className="flex flex-col w-full items-center pb-8 px-4 md:px-6">
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full max-w-4xl">
 				{/* Years established */}
 				<Card className="flex flex-col items-center text-center py-6 md:py-8 px-2 md:px-4 group">

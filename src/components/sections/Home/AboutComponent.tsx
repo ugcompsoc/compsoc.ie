@@ -2,10 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 const AboutComponent = () => {
 	return (
-		<section
-			id="about"
-			className="flex flex-col w-full items-center py-8 md:py-12 relative px-4 md:px-6"
-		>
+		<section className="flex flex-col w-full items-center py-8 md:py-12 relative px-4 md:px-6">
 			<div className="flex flex-col gap-8 md:gap-12 max-w-4xl w-full z-10">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide text-secondary-foreground mb-2 md:mb-4 text-center">
 					About us

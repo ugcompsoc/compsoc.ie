@@ -34,18 +34,15 @@ const HeroComponent = () => {
 							className="inline-flex"
 						>
 							<span className="relative">
-								{text.split("").map((char, index) => (
-									<span key={index} className="relative inline-block">
-										{char === " " ? (
-											<>
-												<span>&nbsp;</span>
-											</>
-										) : (
-											<>{char}</>
-										)}
-										<span className="absolute bottom-[-0.25rem] left-0 w-full h-0.5 bg-accent"></span>
-									</span>
-								))}
+								{text.split("").map((char, index) => {
+									const key = char + index;
+									return (
+										<span key={key} className="relative inline-block">
+											{char === " " ? <span>&nbsp;</span> : <span>{char}</span>}
+											<span className="absolute bottom-[-0.25rem] left-0 w-full h-0.5 bg-accent"></span>
+										</span>
+									);
+								})}
 							</span>
 							<motion.span
 								className="relative h-fit inline-block"

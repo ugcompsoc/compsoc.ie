@@ -33,18 +33,12 @@ const NavbarScrollController = () => {
 				navbar.style.transform = "translateY(0)";
 			}
 
-			// Add transition if not already added
-			if (!navbar.style.transition) {
-				navbar.style.transition = "transform 0.3s ease";
-			}
-
-			// Ensure the navbar is fixed at the top
+			// Ensure the navbar is fixed at the top, if removed navbar would flick on page change
 			if (navbar.style.position !== "fixed") {
 				navbar.style.position = "fixed";
 				navbar.style.top = "0";
 				navbar.style.left = "0";
 				navbar.style.right = "0";
-				navbar.style.zIndex = "1000";
 
 				// Add padding to the body to prevent content jump
 				// when navbar becomes fixed

@@ -140,7 +140,23 @@ code {
 
 html,
 body {
-	overflow: auto;
 	font-family: "Open Sans", sans-serif;
 	line-height: 1.7;
+	scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE / Edge Legacy */
+	width: 100vw;
+	height: 100vh;
+	;
+}
+html {
+	overflow: hidden;
+}
+body {
+	overflow: auto;
+}
+
+
+
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, new Edge */
 }

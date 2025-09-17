@@ -193,7 +193,7 @@ export function PCNavigationMenu() {
 	}, []);
 
 	return (
-		<NavigationMenu className="text-neutral-100 flex flex-shrink-0 text-sm h-14 gap-2 px-0 lg:px-8 pt-4 z-9999">
+		<NavigationMenu className="text-neutral-100 flex flex-shrink-0 text-sm h-14 gap-2 px-0 transition-all duration-300 lg:px-8 pt-4 z-9999">
 			<NavigationMenuList
 				className={cn(
 					"h-14 gap-2 flex flex-shrink-0 flex-row text-sm bg-neutral-900/75 rounded-md backdrop-blur-sm border border-neutral-800/70 shadow-lg",

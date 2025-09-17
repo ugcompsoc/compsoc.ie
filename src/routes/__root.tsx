@@ -1,6 +1,8 @@
 import { TanstackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {
+	ClientOnly,
+	createFileRoute,
 	createRootRouteWithContext,
 	HeadContent,
 	Scripts,
@@ -11,6 +13,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Footer } from "@/components/ui/footer";
 import { SiteNavigationMenu as NavigationMenu } from "@/components/ui/navigation-menu";
+import { Scrollbar } from "@/components/ui/scrollbar";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
 
@@ -91,11 +94,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			},
 			{
 				rel: "icon",
-				type: "image/svg+xml",
-				href: "/vite.svg",
-			},
-			{
-				rel: "icon",
 				href: "/assets/img/favicon.png",
 			},
 			{
@@ -114,13 +112,16 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-	const { scrollY } = useScroll();
+	const scrollParentRef = useRef(null);
+	const { scrollY } = useScroll({
+		container: scrollParentRef,
+	});
 	const prevScrollY = useRef(0);
 	const [visible, setVisible] = useState(true);
 	// const router = useRouter();
 	// const currentPath = router.state.location.pathname;
 
-	const menuBarHeight = 256;
+	const menuBarHeight = 256; // if mouse is closer to the top than this value the menu will slide in view
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
 		if (latest <= 0) {
@@ -145,10 +146,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		return () => window.removeEventListener("mousemove", handleMouseMove);
 	}, []);
 
-	// useEffect(() => {
-	//   window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior })
-	// }, [currentPath])
-
 	const navbarVariants: Variants = {
 		visible: {
 			y: 0,
@@ -171,7 +168,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body>
+			<body ref={scrollParentRef} className="overflow-auto h-screen">
 				<motion.div
 					className="fixed flex-row items-center z-[9999] justify-between w-screen flex"
 					initial="visible"
@@ -200,6 +197,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					]}
 				/>
 				<Scripts />
+				<ClientOnly>
+					<Scrollbar parentRef={scrollParentRef} />
+				</ClientOnly>
 			</body>
 		</html>
 	);
