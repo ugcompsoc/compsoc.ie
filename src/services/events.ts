@@ -21,7 +21,7 @@ export interface AllEventsType {
 }
 
 // Returns all events that have an end time after the current time
-const getPastEvents = async () => {
+export const getPastEvents = async () => {
 	const response = await fetch("https://api.compsoc.ie/v1/events/past/30");
 	const responseJson = await response.json();
 	const events = responseJson["data"] || [];
@@ -34,7 +34,7 @@ const getPastEvents = async () => {
 };
 
 // Returns all events that have an end time before the current time
-const getUpcomingEvents = async () => {
+export const getUpcomingEvents = async () => {
 	const response = await fetch("https://api.compsoc.ie/v1/events/upcoming/30");
 	const responseJson = await response.json();
 	const events = responseJson["data"] || [];

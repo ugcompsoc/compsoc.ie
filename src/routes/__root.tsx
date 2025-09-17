@@ -2,7 +2,6 @@ import { TanstackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {
 	ClientOnly,
-	createFileRoute,
 	createRootRouteWithContext,
 	HeadContent,
 	Scripts,

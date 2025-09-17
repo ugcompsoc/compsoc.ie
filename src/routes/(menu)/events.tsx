@@ -11,8 +11,8 @@ import {
 	PostTitle,
 } from "@/components/ui/post";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { AllEventsType, EventType } from "@/services/events";
-import { getEvents } from "@/services/events";
+import { useEventsCount, useInfiniteEvents } from "@/hooks/queries/useEvents";
+import type { EventType } from "@/services/events";
 
 // Skeleton for a post
 const PostSkeleton = () => (
@@ -41,79 +41,62 @@ export const Route = createFileRoute("/(menu)/events")({
 });
 
 function RouteComponent() {
-	const [isLoading, setIsLoading] = useState(false);
-	const [allEvents, setAllEvents] = useState<AllEventsType>(
-		{} as AllEventsType,
-	);
 	const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
-	const [hasLoaded, setHasLoaded] = useState(false);
 
-	// Pagination state
-	const [upcomingPage, setUpcomingPage] = useState(0);
-	const [pastPage, setPastPage] = useState(0);
-	const [loadingMore, setLoadingMore] = useState(false);
-	const [hasMoreUpcoming, setHasMoreUpcoming] = useState(true);
-	const [hasMorePast, setHasMorePast] = useState(true);
+	// Use TanStack Query for infinite scroll
+	const {
+		data: upcomingData,
+		fetchNextPage: fetchNextUpcoming,
+		hasNextPage: hasNextUpcoming,
+		isFetchingNextPage: isFetchingUpcoming,
+		isLoading: isLoadingUpcoming,
+		error: upcomingError,
+	} = useInfiniteEvents("upcoming");
+
+	const {
+		data: pastData,
+		fetchNextPage: fetchNextPast,
+		hasNextPage: hasNextPast,
+		isFetchingNextPage: isFetchingPast,
+		isLoading: isLoadingPast,
+		error: pastError,
+	} = useInfiniteEvents("past");
+
+	// Get total count of events for badges
+	const { data: eventsCount } = useEventsCount();
 
 	const observerRef = useRef<IntersectionObserver | null>(null);
 	const loadingRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		const getData = async () => {
-			setIsLoading(true);
-			try {
-				const events = await getEvents();
-				setAllEvents(events);
-				setHasLoaded(true);
-			} catch (e) {
-				console.error("Error fetching events:", e);
-			} finally {
-				setIsLoading(false);
-			}
-		};
-
-		getData();
-	}, []);
-	const loadMore = useCallback(async () => {
-		if (loadingMore) return;
-
-		setLoadingMore(true);
-
-		// Simulate loading delay for better UX
-		await new Promise((resolve) => setTimeout(resolve, 500));
+	// Get current data based on active tab
+	const currentData = activeTab === "upcoming" ? upcomingData : pastData;
+	const currentHasNext =
+		activeTab === "upcoming" ? hasNextUpcoming : hasNextPast;
+	const currentIsFetching =
+		activeTab === "upcoming" ? isFetchingUpcoming : isFetchingPast;
+	const currentIsLoading =
+		activeTab === "upcoming" ? isLoadingUpcoming : isLoadingPast;
+	const currentError = activeTab === "upcoming" ? upcomingError : pastError;
+	const loadMore = useCallback(() => {
+		if (currentIsFetching || !currentHasNext) return;
 
 		if (activeTab === "upcoming") {
-			if (hasMoreUpcoming) {
-				setUpcomingPage((prev) => prev + 1);
-				setHasMoreUpcoming(
-					allEvents.upcoming &&
-						(upcomingPage + 1) * 7 < allEvents.upcoming.length,
-				);
-			}
+			fetchNextUpcoming();
 		} else {
-			if (hasMorePast) {
-				setPastPage((prev) => prev + 1);
-				setHasMorePast(
-					allEvents.past && (pastPage + 1) * 7 < allEvents.past.length,
-				);
-			}
+			fetchNextPast();
 		}
-
-		setLoadingMore(false);
 	}, [
-		loadingMore,
+		currentIsFetching,
+		currentHasNext,
 		activeTab,
-		hasMoreUpcoming,
-		hasMorePast,
-		allEvents,
-		upcomingPage,
-		pastPage,
+		fetchNextUpcoming,
+		fetchNextPast,
 	]);
 	// Intersection Observer for infinite scroll
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
-				if (entries[0].isIntersecting && !loadingMore && hasLoaded) {
+				if (entries[0].isIntersecting && !currentIsFetching && currentHasNext) {
 					loadMore();
 				}
 			},
@@ -131,14 +114,11 @@ function RouteComponent() {
 				observerRef.current.disconnect();
 			}
 		};
-	}, [loadingMore, hasLoaded, loadMore]);
+	}, [currentIsFetching, currentHasNext, loadMore]);
 
 	const setActiveTabAndReset = (tab: "upcoming" | "past") => {
 		setActiveTab(tab);
-		setUpcomingPage(0);
-		setPastPage(0);
-		setHasMoreUpcoming(true);
-		setHasMorePast(true);
+		// TanStack Query handles pagination state automatically
 	};
 
 	// Decode HTML special characters
@@ -191,28 +171,17 @@ function RouteComponent() {
 	};
 
 	const getCurrentEvents = () => {
-		if (activeTab === "upcoming") {
-			const allUpcoming = allEvents.upcoming || [];
-			const endIndex = (upcomingPage + 1) * 7;
-			return allUpcoming.slice(0, endIndex);
-		}
-		const allPast = allEvents.past || [];
-		const endIndex = (pastPage + 1) * 7;
-		return allPast.slice(0, endIndex);
-	};
+		if (!currentData?.pages) return [];
 
-	const getAllEventsForTab = () => {
-		if (activeTab === "upcoming") {
-			return allEvents.upcoming || [];
-		}
-		return allEvents.past || [];
+		// Flatten all pages of events
+		return currentData.pages.flatMap((page: EventType[]) => page);
 	};
 
 	const renderEventsList = (
 		emptyMessage: string,
 		emptyIcon: React.ReactNode,
 	) => {
-		if (!hasLoaded && isLoading) {
+		if (currentIsLoading) {
 			// Show 2 skeleton posts during initial loading
 			return (
 				<div className="flex flex-col relative gap-4 justify-center items-center h-64 mt-32">
@@ -222,10 +191,27 @@ function RouteComponent() {
 			);
 		}
 
-		const allEventsForTab = getAllEventsForTab();
+		if (currentError) {
+			return (
+				<div className="flex flex-col relative items-center justify-center h-64">
+					<div className="text-red-500 mb-4">⚠️</div>
+					<p className="text-muted-foreground mt-4 text-center">
+						Failed to load events. Please try again later.
+					</p>
+					<Button
+						onClick={() => window.location.reload()}
+						className="mt-4"
+						variant="outline"
+					>
+						Retry
+					</Button>
+				</div>
+			);
+		}
+
 		const currentEvents = getCurrentEvents();
 
-		if (allEventsForTab.length === 0) {
+		if (currentEvents.length === 0) {
 			return (
 				<div className="flex flex-col relative items-center justify-center h-64">
 					{emptyIcon}
@@ -236,19 +222,17 @@ function RouteComponent() {
 			);
 		}
 
-		const hasMore = activeTab === "upcoming" ? hasMoreUpcoming : hasMorePast;
-
 		return (
 			<div className="space-y-4">
-				{currentEvents.map((event) => renderEvent(event))}
+				{currentEvents.map((event: EventType) => renderEvent(event))}
 
 				{/* Loading more indicator - always at the bottom */}
-				{hasMore && (
+				{currentHasNext && (
 					<div
 						ref={loadingRef}
 						className="flex items-center justify-center py-8 w-full"
 					>
-						{loadingMore ? (
+						{currentIsFetching ? (
 							<PostSkeleton />
 						) : (
 							<div className="h-6" /> // Invisible element for intersection observer
@@ -290,14 +274,10 @@ function RouteComponent() {
 							}`}
 						>
 							<span className="relative inline-flex w-full items-center justify-center">
-								<span className="relative inline-flex items-center mr-4 gap-2">
+								<span className="relative inline-flex items-center gap-2 -ml-4">
 									<Calendar className="w-4 h-4" />
 									<span>Upcoming</span>
-									{allEvents?.upcoming && allEvents.upcoming.length > 0 && (
-										<span className="absolute left-full ml-2 bg-primary-foreground/20 text-primary-foreground text-xs px-2 py-0.5 rounded-full">
-											{allEvents.upcoming.length}
-										</span>
-									)}
+									<EventCountBadge count={eventsCount?.upcoming || 0} />
 								</span>
 							</span>
 						</button>
@@ -311,14 +291,10 @@ function RouteComponent() {
 							}`}
 						>
 							<span className="relative inline-flex w-full items-center justify-center">
-								<span className="relative inline-flex items-center mr-4 gap-2">
+								<span className="relative inline-flex items-center gap-2 -ml-6">
 									<Clock className="w-4 h-4" />
 									<span>Past</span>
-									{allEvents?.past && allEvents.past.length > 0 && (
-										<span className="absolute left-full ml-2 bg-primary-foreground/20 text-primary-foreground text-xs px-2 py-0.5 rounded-full">
-											{allEvents.past.length}
-										</span>
-									)}
+									<EventCountBadge count={eventsCount?.past || 0} />
 								</span>
 							</span>
 						</button>
@@ -341,3 +317,13 @@ function RouteComponent() {
 		</div>
 	);
 }
+// Reusable event count badge component
+const EventCountBadge = ({ count }: { count: number }) => {
+	if (!count || count <= 0) return null;
+
+	return (
+		<span className="absolute left-full ml-2 bg-primary-foreground/20 text-primary-foreground text-xs px-2 py-0.5 rounded-full font-medium">
+			{count}
+		</span>
+	);
+};
