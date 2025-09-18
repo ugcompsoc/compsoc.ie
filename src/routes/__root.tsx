@@ -202,9 +202,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					]}
 				/>
 				<Scripts />
-				<ClientOnly>
-					<Scrollbar parentRef={scrollParentRef} />
-				</ClientOnly>
+				<div className="hidden md:flex">
+					<ClientOnly>
+						<Scrollbar parentRef={scrollParentRef} />
+					</ClientOnly>
+				</div>
 			</body>
 		</html>
 	);

@@ -173,10 +173,22 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 
 	// Memoized motion variants to prevent recreation on every render
 	const scrollbarMotion = useRef({
-		initial: { width: 8, right: -4, opacity: 0.1 },
-		rest: { width: 8, transition: { duration: 0.2 }, right: 2, opacity: 1 },
-		hover: { width: 16, transition: { duration: 0.2 }, right: 2, opacity: 1 },
-		drag: { width: 16, transition: { duration: 0.2 }, right: 2, opacity: 1 },
+		initial: { width: 6, right: -4, opacity: 0.1 },
+		rest: { width: 6, transition: { duration: 0.2 }, right: 2, opacity: 1 },
+		hover: {
+			width: 10,
+			transition: { duration: 0.2 },
+			right: 2,
+			opacity: 1,
+			scale: 1,
+		},
+		drag: {
+			width: 10,
+			transition: { duration: 0.2 },
+			right: 2,
+			opacity: 1,
+			scale: 1.5,
+		},
 	}).current;
 
 	return (
@@ -202,7 +214,7 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 			dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
 			dragElastic={0.01}
 			ref={scrollbarRef}
-			className="absolute w-6 flex cursor-pointer z-9999 select-none"
+			className="absolute w-5 flex cursor-pointer z-9999 select-none"
 		>
 			<motion.div
 				style={{ height: scrollbarHeight }}

@@ -16,8 +16,8 @@
 			"*.tsx",
 			"*.js",
 			"*.jsx",
-			"!src/routeTree.gen.ts",
-			"!**/*.css"
+			"*.css",
+			"!src/routeTree.gen.ts"
 		]
 	},
 	"formatter": {
@@ -34,6 +34,12 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab"
 		}
 	}
 }
