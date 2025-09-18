@@ -146,15 +146,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 	}, []);
 
 	const navbarVariants: Variants = {
+		initial: {
+			y: -50,
+			opacity: 0.1,
+		},
 		visible: {
 			y: 0,
+			opacity: 1,
 			transition: {
-				duration: 0.5,
-				ease: [0.16, 1, 0.3, 1],
+				duration: 0.8,
+				ease: [0.16, 1, 0.2, 1],
 			},
 		},
 		hidden: {
 			y: -150,
+			opacity: 1,
 			transition: {
 				duration: 0.5,
 				ease: [0.47, 0, 0.75, 0.72],
@@ -170,7 +176,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<body ref={scrollParentRef} className="overflow-auto h-screen">
 				<motion.div
 					className="fixed flex-row items-center z-[9999] justify-between w-screen flex"
-					initial="visible"
+					initial="initial"
 					animate={visible ? "visible" : "hidden"}
 					variants={navbarVariants}
 				>
