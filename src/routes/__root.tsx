@@ -5,13 +5,14 @@ import {
 	createRootRouteWithContext,
 	HeadContent,
 	Scripts,
+	useLocation,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { Variants } from "motion/react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Footer } from "@/components/ui/footer";
-import { SiteNavigationMenu as NavigationMenu } from "@/components/ui/navigation-menu";
+import { NavigationMenuComponent } from "@/components/ui/navigation-menu";
 import { Scrollbar } from "@/components/ui/scrollbar";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
@@ -117,11 +118,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 	});
 	const prevScrollY = useRef(0);
 	const [visible, setVisible] = useState(true);
-	// const router = useRouter();
-	// const currentPath = router.state.location.pathname;
+	const [isDesktop, setIsDesktop] = useState(() => {
+		// Initialize with the correct value immediately to prevent flash
+		if (typeof window !== "undefined") {
+			return window.innerWidth >= 768;
+		}
+		return true; // Default to desktop for SSR
+	});
+	const currentPage = useLocation().pathname.slice(1);
 
 	const menuBarHeight = 256; // if mouse is closer to the top than this value the menu will slide in view
 
+	// detecting scroll direction
 	useMotionValueEvent(scrollY, "change", (latest) => {
 		if (latest <= 0) {
 			setVisible(true);
@@ -134,7 +142,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		setVisible(!isScrollingDown);
 		prevScrollY.current = latest;
 	});
-
+	// detect if user pointer close to the top of the page
 	useEffect(() => {
 		const handleMouseMove = (e: MouseEvent) => {
 			if (e.clientY <= menuBarHeight) {
@@ -143,6 +151,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		};
 		window.addEventListener("mousemove", handleMouseMove);
 		return () => window.removeEventListener("mousemove", handleMouseMove);
+	}, []);
+
+	// Desktop detection
+	useEffect(() => {
+		const update = () => setIsDesktop(window.innerWidth >= 768);
+		window.addEventListener("resize", update);
+		return () => window.removeEventListener("resize", update);
 	}, []);
 
 	const navbarVariants: Variants = {
@@ -173,16 +188,19 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body ref={scrollParentRef} className="overflow-auto h-screen">
+			<body ref={scrollParentRef} className="overflow-auto h-screen w-screen">
 				<motion.div
 					className="fixed flex-row items-center z-[9999] justify-between w-screen flex"
 					initial="initial"
 					animate={visible ? "visible" : "hidden"}
 					variants={navbarVariants}
 				>
-					<NavigationMenu />
+					<NavigationMenuComponent
+						isDesktop={isDesktop}
+						currentPage={currentPage}
+					/>
 				</motion.div>
-				<div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+				<div className="flex flex-col min-h-screen w-screen overflow-x-hidden">
 					{children}
 					<div className="flex">
 						<Footer />

@@ -171,31 +171,31 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 		}
 	}, [isDragging, handleMouseMove, handleMouseUp]);
 
-	// Memoized motion variants to prevent recreation on every render
-	const scrollbarMotion = useRef({
-		initial: { width: 6, right: -4, opacity: 0.1 },
-		rest: { width: 6, transition: { duration: 0.2 }, right: 2, opacity: 1 },
+	// Motion variants for scrollbar states
+	const scrollbarMotion = {
+		initial: { width: 6, y: 4, opacity: 0.1 },
+		rest: { width: 6, transition: { duration: 0.2 }, y: -2, opacity: 1 },
 		hover: {
 			width: 10,
 			transition: { duration: 0.2 },
-			right: 2,
+			y: -2,
 			opacity: 1,
 			scale: 1,
 		},
 		drag: {
 			width: 10,
 			transition: { duration: 0.2 },
-			right: 2,
+			y: -2,
 			opacity: 1,
 			scale: 1.5,
 		},
-	}).current;
+	};
 
 	return (
 		<motion.div
 			style={{
 				top: scrollbarY,
-				right: 0,
+				y: 0,
 				height: scrollbarHeight,
 			}}
 			initial="initial"
