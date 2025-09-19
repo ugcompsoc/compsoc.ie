@@ -100,8 +100,6 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 
 	// Drag functionality
 	const [isDragging, setIsDragging] = useState(false);
-	const [isDragEnding, setIsDragEnding] = useState(false);
-	const [isHovered, setIsHovered] = useState(false);
 	const [dragStartY, setDragStartY] = useState(0);
 	const [initialScrollbarY, setInitialScrollbarY] = useState(0);
 
@@ -142,23 +140,8 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 
 	const handleMouseUp = useCallback(() => {
 		setIsDragging(false);
-		setIsDragEnding(true);
-		// Reset drag ending state after a short delay to allow rest state to show
-		setTimeout(() => {
-			setIsDragEnding(false);
-		}, 100);
 	}, []);
 
-	// Manual hover handlers
-	const handleMouseEnter = useCallback(() => {
-		if (!isDragging && !isDragEnding) {
-			setIsHovered(true);
-		}
-	}, [isDragging, isDragEnding]);
-
-	const handleMouseLeave = useCallback(() => {
-		setIsHovered(false);
-	}, []);
 	// Drag event listeners
 	useEffect(() => {
 		if (isDragging) {
@@ -171,55 +154,35 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 		}
 	}, [isDragging, handleMouseMove, handleMouseUp]);
 
-	// Motion variants for scrollbar states
-	const scrollbarMotion = {
-		initial: { width: 6, y: 4, opacity: 0.1 },
-		rest: { width: 6, transition: { duration: 0.2 }, y: -2, opacity: 1 },
-		hover: {
-			width: 10,
-			transition: { duration: 0.2 },
-			y: -2,
-			opacity: 1,
-			scale: 1,
-		},
-		drag: {
-			width: 10,
-			transition: { duration: 0.2 },
-			y: -2,
-			opacity: 1,
-			scale: 1.5,
-		},
-	};
+	// Memoized motion variants to prevent recreation on every render
+	const scrollbarMotion = useRef({
+		initial: { width: 8, transition: { duration: 0.2 }, right: -2 },
+		rest: { width: 8, transition: { duration: 0.2 }, right: 2 },
+		hover: { width: 16, transition: { duration: 0.2 }, right: 2 },
+		drag: { width: 20, transition: { duration: 0.2 }, right: 4 },
+	}).current;
+
+	// Memoized transition config
+	const transition = useRef({ duration: 0.5 }).current;
 
 	return (
 		<motion.div
 			style={{
 				top: scrollbarY,
-				y: 0,
+				right: 0,
 				height: scrollbarHeight,
 			}}
 			initial="initial"
-			animate={isDragging ? "drag" : isHovered ? "hover" : "rest"}
-			transition={{
-				duration: 1,
-				ease: [0.16, 1, 0.2, 1],
-				delay: 0.4,
-			}}
+			animate={isDragging ? "drag" : "rest"}
+			whileHover="hover"
 			onMouseDown={handleMouseDown}
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
-			// under, Im using motion drag only for visual bouncy effect
-			drag
-			dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-			dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-			dragElastic={0.01}
 			ref={scrollbarRef}
-			className="absolute w-5 flex cursor-pointer z-9999 select-none"
+			className="absolute w-6 flex cursor-pointer z-9999 select-none"
 		>
 			<motion.div
 				style={{ height: scrollbarHeight }}
 				variants={scrollbarMotion}
-				transition={{ duration: 0.5 }}
+				transition={transition}
 				className={cn(
 					"bg-zinc-500/30 backdrop-blur-xs border-1 border-neutral-400/50 shadow-md fixed rounded-md origin-right",
 					className,
