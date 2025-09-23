@@ -1,23 +1,24 @@
-import { createFileRoute } from "@tanstack/react-router"
-import { motion, useScroll, useTransform } from "motion/react"
-import { useRef } from "react"
-import AboutComponent from "@/components/sections/Home/AboutComponent"
-import HeroComponent from "@/components/sections/Home/HeroComponent"
-import InfographicComponent from "@/components/sections/Home/InfographicComponent"
+import { createFileRoute } from "@tanstack/react-router";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import AboutComponent from "@/components/sections/Home/AboutComponent";
+import HeroComponent from "@/components/sections/Home/HeroComponent";
+import InfographicComponent from "@/components/sections/Home/InfographicComponent";
+import SponsorsComponent from "@/components/sections/Home/SponsorsComponent";
 
 export const Route = createFileRoute("/")({
 	component: App,
-})
+});
 
 function App() {
-	const scrollRef = useRef(null)
-	const { scrollY } = useScroll()
+	const scrollRef = useRef(null);
+	const { scrollY } = useScroll();
 	// 70% of window height
 	const triggerPoint =
-		typeof window !== "undefined" ? window.innerHeight * 0.8 : 1
+		typeof window !== "undefined" ? window.innerHeight * 0.8 : 1;
 	const overlayOpacity = useTransform(scrollY, [0, triggerPoint], [0.1, 1], {
 		clamp: true,
-	})
+	});
 	return (
 		<div ref={scrollRef} className="relative w-full flex flex-col min-h-screen">
 			{/* Parallax background image */}
@@ -36,14 +37,11 @@ function App() {
 			<div className="relative z-10 flex flex-col">
 				<HeroComponent />
 				<div className="flex flex-col items-center w-full pt-8 md:pt-16 gap-8 md:gap-12 min-h-screen bg-background">
-					<div className="flex-1 w-full flex flex-col items-center">
-						<AboutComponent />
-					</div>
-					<div className="flex-1 w-full flex flex-col items-center">
-						<InfographicComponent />
-					</div>
+					<AboutComponent />
+					<InfographicComponent />
+					<SponsorsComponent />
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
