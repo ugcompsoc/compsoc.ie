@@ -206,19 +206,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 						<Footer />
 					</div>
 				</div>
+				{import.meta.env.DEV && (
+					<TanstackDevtools
+						config={{
+							position: "bottom-left",
+						}}
+						plugins={[
+							{
+								name: "Tanstack Router",
+								render: <TanStackRouterDevtoolsPanel />,
+							},
+							TanStackQueryDevtools,
+						]}
+					/>
+				)}
 
-				<TanstackDevtools
-					config={{
-						position: "bottom-left",
-					}}
-					plugins={[
-						{
-							name: "Tanstack Router",
-							render: <TanStackRouterDevtoolsPanel />,
-						},
-						TanStackQueryDevtools,
-					]}
-				/>
 				<Scripts />
 				<div className="hidden md:flex">
 					<ClientOnly>
