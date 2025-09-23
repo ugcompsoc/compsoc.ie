@@ -220,7 +220,6 @@ html {
 body {
 	overflow: auto;
 	position: relative;
-
 }
 
 @media screen and (width >=768px) {

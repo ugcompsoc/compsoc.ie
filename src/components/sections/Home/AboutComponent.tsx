@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router"
 
 const AboutComponent = () => {
 	return (
@@ -62,7 +62,7 @@ const AboutComponent = () => {
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default AboutComponent;
+export default AboutComponent

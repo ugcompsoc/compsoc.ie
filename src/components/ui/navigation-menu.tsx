@@ -1,6 +1,6 @@
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { Link, useLocation } from "@tanstack/react-router";
-import { cva } from "class-variance-authority";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
+import { Link, useLocation } from "@tanstack/react-router"
+import { cva } from "class-variance-authority"
 import {
 	Calendar,
 	ChevronDownIcon,
@@ -8,13 +8,13 @@ import {
 	Mail,
 	Server,
 	UsersRound,
-} from "lucide-react";
-import { motion } from "motion/react";
-import type * as React from "react";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+} from "lucide-react"
+import { motion } from "motion/react"
+import type * as React from "react"
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Custom hamburger menu icon with three SVG lines
 function HamburgerMenuIcon({ isOpen }: { isOpen: boolean }) {
@@ -64,7 +64,7 @@ function HamburgerMenuIcon({ isOpen }: { isOpen: boolean }) {
 				style={{ transformOrigin: "16px 24px" }}
 			/>
 		</svg>
-	);
+	)
 }
 
 function NavigationMenu({
@@ -73,7 +73,7 @@ function NavigationMenu({
 	viewport = true,
 	...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
-	viewport?: boolean;
+	viewport?: boolean
 }) {
 	return (
 		<NavigationMenuPrimitive.Root
@@ -88,7 +88,7 @@ function NavigationMenu({
 			{children}
 			{viewport && <NavigationMenuViewport />}
 		</NavigationMenuPrimitive.Root>
-	);
+	)
 }
 
 function NavigationMenuList({
@@ -104,7 +104,7 @@ function NavigationMenuList({
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function NavigationMenuItem({
@@ -117,12 +117,12 @@ function NavigationMenuItem({
 			className={cn("relative", className)}
 			{...props}
 		/>
-	);
+	)
 }
 
 const navigationMenuTriggerStyle = cva(
 	"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50 transition-[color,box-shadow] focus-visible:ring-4 focus-visible:outline-1",
-);
+)
 
 function NavigationMenuTrigger({
 	className,
@@ -141,7 +141,7 @@ function NavigationMenuTrigger({
 				aria-hidden="true"
 			/>
 		</NavigationMenuPrimitive.Trigger>
-	);
+	)
 }
 
 function NavigationMenuContent({
@@ -158,7 +158,7 @@ function NavigationMenuContent({
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function NavigationMenuViewport({
@@ -180,7 +180,7 @@ function NavigationMenuViewport({
 				{...props}
 			/>
 		</div>
-	);
+	)
 }
 
 function NavigationMenuLink({
@@ -196,7 +196,7 @@ function NavigationMenuLink({
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function NavigationMenuIndicator({
@@ -214,7 +214,7 @@ function NavigationMenuIndicator({
 		>
 			<div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
 		</NavigationMenuPrimitive.Indicator>
-	);
+	)
 }
 
 const mainMenuItems = [
@@ -223,17 +223,17 @@ const mainMenuItems = [
 	{ text: "Account", link: "/account", icon: Server },
 	{ text: "Committee", link: "/committee", icon: UsersRound },
 	{ text: "Contact us", link: "/contact", icon: Mail },
-];
+]
 
 // Navigation Menu Component
 export function NavigationMenuComponent({
 	isDesktop,
 	currentPage,
 }: {
-	isDesktop: boolean;
-	currentPage: string;
+	isDesktop: boolean
+	currentPage: string
 }) {
-	const [isFullscreenMenuOpen, setisFullscreenMenuOpen] = useState(false);
+	const [isFullscreenMenuOpen, setisFullscreenMenuOpen] = useState(false)
 	const mobileMenuMotion = {
 		closed: {
 			height: 64, // 64px = h-16
@@ -249,7 +249,7 @@ export function NavigationMenuComponent({
 				ease: [0.16, 1, 0.3, 1] as const, // ease-out-back cubic-bezier for bouncy effect
 			},
 		},
-	};
+	}
 	const mobileMenuLinksMotion = {
 		closed: {
 			top: -192,
@@ -269,7 +269,7 @@ export function NavigationMenuComponent({
 				ease: [0.16, 1, 0.3, 1] as const, // ease-out-back cubic-bezier for bouncy effect
 			},
 		},
-	};
+	}
 	const desktopMenuPillMotion = {
 		home: {
 			x: 0,
@@ -288,7 +288,7 @@ export function NavigationMenuComponent({
 			scale: 0,
 			opacity: 0,
 		},
-	};
+	}
 
 	return (
 		<NavigationMenu className="text-neutral-100 flex flex-row flex-shrink-0 text-lg gap-2 px-0 transition-all duration-300 lg:px-8 pt-2 z-9999">
@@ -406,7 +406,7 @@ export function NavigationMenuComponent({
 				</motion.div>
 			)}
 		</NavigationMenu>
-	);
+	)
 }
 
 export {
@@ -419,4 +419,4 @@ export {
 	NavigationMenuIndicator,
 	NavigationMenuViewport,
 	navigationMenuTriggerStyle,
-};
+}

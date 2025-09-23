@@ -1,14 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { createFileRoute } from "@tanstack/react-router"
+import { useEffect } from "react"
 
 export const Route = createFileRoute("/(other)/constitution")({
 	component: RouteComponent,
-});
+})
 
 function RouteComponent() {
 	useEffect(() => {
-		window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-	}, []);
+		window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+	}, [])
 	return (
 		<div className="relative min-h-screen w-full pt-12 md:pt-24 pb-12 flex flex-col items-center bg-gradient-to-br from-background to-muted">
 			<div className="max-w-4xl w-full px-4 md:px-6 flex flex-col flex-1 z-10">
@@ -707,5 +707,5 @@ function RouteComponent() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

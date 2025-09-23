@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Database, Mail, Server, Terminal } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { createFileRoute } from "@tanstack/react-router"
+import { Database, Mail, Server, Terminal } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const Route = createFileRoute("/(menu)/account")({
 	component: RouteComponent,
-});
+})
 
 function RouteComponent() {
 	return (
@@ -75,7 +75,7 @@ function RouteComponent() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 
 function FeatureCard({
@@ -83,9 +83,9 @@ function FeatureCard({
 	title,
 	description,
 }: {
-	icon: React.ReactNode;
-	title: string;
-	description: string;
+	icon: React.ReactNode
+	title: string
+	description: string
 }) {
 	return (
 		<Card className="flex flex-col items-center text-center h-[280px] max-w-xs w-full mx-auto overflow-hidden">
@@ -106,5 +106,5 @@ function FeatureCard({
 				</p>
 			</CardContent>
 		</Card>
-	);
+	)
 }

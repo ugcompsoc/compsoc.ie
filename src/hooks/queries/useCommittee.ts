@@ -1,10 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query"
 import {
 	CommitteeYears,
 	DefaultBio,
 	DefaultPhoto,
 	NumberOfCommitteeMembers,
-} from "@/services/committee";
+} from "@/services/committee"
 
 export const committeeQueryKeys = {
 	all: ["committee"] as const,
@@ -12,7 +12,7 @@ export const committeeQueryKeys = {
 	defaults: () => [...committeeQueryKeys.all, "defaults"] as const,
 	members: (year: string) =>
 		[...committeeQueryKeys.all, "members", year] as const,
-};
+}
 
 export function useCommitteeYears() {
 	return useQuery({
@@ -20,7 +20,7 @@ export function useCommitteeYears() {
 		queryFn: () => CommitteeYears,
 		staleTime: 10 * 60 * 1000, // 10 minutes - committee data rarely changes
 		gcTime: 30 * 60 * 1000, // 30 minutes
-	});
+	})
 }
 
 export function useCommitteeDefaults() {
@@ -33,19 +33,19 @@ export function useCommitteeDefaults() {
 		}),
 		staleTime: 10 * 60 * 1000,
 		gcTime: 30 * 60 * 1000,
-	});
+	})
 }
 
 export function useCommitteeMembers(year: string) {
 	return useQuery({
 		queryKey: committeeQueryKeys.members(year),
 		queryFn: () => {
-			const yearData = CommitteeYears.find((y) => y.year === year);
-			return yearData?.committee || [];
+			const yearData = CommitteeYears.find((y) => y.year === year)
+			return yearData?.committee || []
 		},
 		staleTime: 10 * 60 * 1000,
 		gcTime: 30 * 60 * 1000,
-	});
+	})
 }
 
 export function useCommitteeData() {
@@ -53,12 +53,12 @@ export function useCommitteeData() {
 		data: years,
 		isLoading: yearsLoading,
 		isError: yearsError,
-	} = useCommitteeYears();
+	} = useCommitteeYears()
 	const {
 		data: defaults,
 		isLoading: defaultsLoading,
 		isError: defaultsError,
-	} = useCommitteeDefaults();
+	} = useCommitteeDefaults()
 
 	return {
 		years: years || [],
@@ -66,5 +66,5 @@ export function useCommitteeData() {
 		isLoading: yearsLoading || defaultsLoading,
 		isError: yearsError || defaultsError,
 		error: yearsError || defaultsError,
-	};
+	}
 }

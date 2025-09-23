@@ -1,2 +1,2 @@
-export * from "./useCommittee";
-export * from "./useEvents";
+export * from "./useCommittee"
+export * from "./useEvents"

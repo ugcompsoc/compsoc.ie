@@ -1,24 +1,24 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink, Mail, MapPin, MessageCircle } from "lucide-react";
-import { useEffect } from "react";
-import { InstagramIcon } from "@/components/icons/InstagramIcon";
-import { XIcon } from "@/components/icons/XIcon";
-import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router"
+import { ExternalLink, Mail, MapPin, MessageCircle } from "lucide-react"
+import { useEffect } from "react"
+import { InstagramIcon } from "@/components/icons/InstagramIcon"
+import { XIcon } from "@/components/icons/XIcon"
+import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/(menu)/contact")({
 	component: ContactPage,
-});
+})
 
 function ContactPage() {
 	useEffect(() => {
-		const script = document.createElement("script");
-		script.src = "https://platform.twitter.com/widgets.js";
-		script.async = true;
-		const twitterEmbed = document.querySelector(".twitter-embed");
+		const script = document.createElement("script")
+		script.src = "https://platform.twitter.com/widgets.js"
+		script.async = true
+		const twitterEmbed = document.querySelector(".twitter-embed")
 		if (twitterEmbed) {
-			twitterEmbed.appendChild(script);
+			twitterEmbed.appendChild(script)
 		}
-	}, []);
+	}, [])
 
 	return (
 		<div className="relative min-h-screen w-full pt-24 md:pt-48 pb-24 flex flex-col items-center bg-gradient-to-br from-background via-background to-muted/20">
@@ -177,5 +177,5 @@ function ContactPage() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

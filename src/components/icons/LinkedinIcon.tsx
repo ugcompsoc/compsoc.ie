@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
 interface LinkedinIconProps extends React.SVGProps<SVGSVGElement> {
-	size?: number | string;
-	className?: string;
+	size?: number | string
+	className?: string
 }
 
 export const LinkedinIcon = React.forwardRef<SVGSVGElement, LinkedinIconProps>(
@@ -36,6 +36,6 @@ export const LinkedinIcon = React.forwardRef<SVGSVGElement, LinkedinIconProps>(
 			</g>
 		</svg>
 	),
-);
+)
 
-LinkedinIcon.displayName = "LinkedinIcon";
+LinkedinIcon.displayName = "LinkedinIcon"

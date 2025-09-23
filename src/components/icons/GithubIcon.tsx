@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
 interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
-	size?: number | string;
-	className?: string;
+	size?: number | string
+	className?: string
 }
 
 export const GithubIcon = React.forwardRef<SVGSVGElement, GithubIconProps>(
@@ -25,6 +25,6 @@ export const GithubIcon = React.forwardRef<SVGSVGElement, GithubIconProps>(
 			/>
 		</svg>
 	),
-);
+)
 
-GithubIcon.displayName = "GithubIcon";
+GithubIcon.displayName = "GithubIcon"

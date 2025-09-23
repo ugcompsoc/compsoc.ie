@@ -1,6 +1,6 @@
-import type * as React from "react";
+import type * as React from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
 	return (
@@ -14,7 +14,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -28,7 +28,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
@@ -42,7 +42,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
@@ -56,7 +56,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardAction({ className, ...props }: React.ComponentProps<"div">) {
@@ -70,7 +70,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardContent({ className, ...props }: React.ComponentProps<"div">) {
@@ -84,7 +84,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
@@ -99,7 +99,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 // New modern card variants
@@ -132,7 +132,7 @@ function CardWithImage({
 			)}
 			<div className="relative z-10 px-6 pb-6">{props.children}</div>
 		</div>
-	);
+	)
 }
 
 function CardWithGradient({
@@ -140,14 +140,14 @@ function CardWithGradient({
 	gradient = "blue",
 	...props
 }: React.ComponentProps<"div"> & {
-	gradient?: "blue" | "purple" | "green" | "orange";
+	gradient?: "blue" | "purple" | "green" | "orange"
 }) {
 	const gradients = {
 		blue: "from-blue-500/20 via-cyan-500/10 to-blue-600/20",
 		purple: "from-purple-500/20 via-pink-500/10 to-purple-600/20",
 		green: "from-emerald-500/20 via-teal-500/10 to-emerald-600/20",
 		orange: "from-orange-500/20 via-amber-500/10 to-orange-600/20",
-	};
+	}
 
 	return (
 		<div
@@ -160,7 +160,7 @@ function CardWithGradient({
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 export {
@@ -173,4 +173,4 @@ export {
 	CardContent,
 	CardWithImage,
 	CardWithGradient,
-};
+}

@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Globe, Link as LucideLink, UsersRound } from "lucide-react";
-import { GithubIcon } from "@/components/icons/GithubIcon";
-import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
-import { XIcon } from "@/components/icons/XIcon";
-import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router"
+import { Globe, Link as LucideLink, UsersRound } from "lucide-react"
+import { GithubIcon } from "@/components/icons/GithubIcon"
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon"
+import { XIcon } from "@/components/icons/XIcon"
+import { Button } from "@/components/ui/button"
 import {
 	Card,
 	CardContent,
@@ -11,17 +11,17 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card"
 import {
 	CommitteeYears,
 	DefaultBio,
 	DefaultPhoto,
 	type Person,
-} from "@/services/committee";
+} from "@/services/committee"
 
 export const Route = createFileRoute("/(menu)/committee")({
 	component: CommitteePage,
-});
+})
 
 function CommitteePage() {
 	return (
@@ -51,7 +51,7 @@ function CommitteePage() {
 							</h3>
 							<div className="w-full [column-count:1] sm:[column-count:2] md:[column-count:3] gap-8 space-y-8">
 								{year.committee?.map((person, idx) => {
-									const key = person.name + idx;
+									const key = person.name + idx
 									return (
 										<div key={key} className="break-inside-avoid">
 											<CommitteeCard
@@ -60,7 +60,7 @@ function CommitteePage() {
 												defaultPhoto={year.default_photo || DefaultPhoto}
 											/>
 										</div>
-									);
+									)
 								})}
 							</div>
 						</div>
@@ -68,18 +68,18 @@ function CommitteePage() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 
 function getIcon(icon: string) {
-	const normalized = icon.toLowerCase().replace(/^bx bxl?-/, "");
-	if (normalized.includes("github")) return GithubIcon;
-	if (normalized.includes("twitter") || normalized === "x") return XIcon;
-	if (normalized.includes("linkedin")) return LinkedinIcon;
+	const normalized = icon.toLowerCase().replace(/^bx bxl?-/, "")
+	if (normalized.includes("github")) return GithubIcon
+	if (normalized.includes("twitter") || normalized === "x") return XIcon
+	if (normalized.includes("linkedin")) return LinkedinIcon
 	if (normalized.includes("link") || normalized.includes("website"))
-		return LucideLink;
-	if (normalized.includes("globe")) return Globe;
-	return LucideLink;
+		return LucideLink
+	if (normalized.includes("globe")) return Globe
+	return LucideLink
 }
 
 function CommitteeCard({
@@ -87,12 +87,12 @@ function CommitteeCard({
 	defaultBio,
 	defaultPhoto,
 }: {
-	person: Person;
-	defaultBio: string;
-	defaultPhoto: string;
+	person: Person
+	defaultBio: string
+	defaultPhoto: string
 }) {
-	const photo = person.photo?.trim() ? person.photo : defaultPhoto;
-	const bio = person.bio?.trim() ? person.bio : defaultBio;
+	const photo = person.photo?.trim() ? person.photo : defaultPhoto
+	const bio = person.bio?.trim() ? person.bio : defaultBio
 	return (
 		<div className="relative group">
 			<Card className="relative flex flex-col items-center text-center w-full mx-auto">
@@ -122,10 +122,10 @@ function CommitteeCard({
 					{person.social_links && person.social_links.length > 0 && (
 						<CardFooter className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-[90%] flex flex-wrap gap-1 justify-center px-0 pb-0 z-20 bg-transparent">
 							{person.social_links.map((link, idx) => {
-								const icon = Object.keys(link)[0];
-								const url = link[icon];
-								const IconComponent = getIcon(icon);
-								const key = icon + url + idx;
+								const icon = Object.keys(link)[0]
+								const url = link[icon]
+								const IconComponent = getIcon(icon)
+								const key = icon + url + idx
 								return (
 									<Button
 										key={key}
@@ -143,12 +143,12 @@ function CommitteeCard({
 											<IconComponent className="w-4 h-4" />
 										</a>
 									</Button>
-								);
+								)
 							})}
 						</CardFooter>
 					)}
 				</div>
 			</Card>
 		</div>
-	);
+	)
 }

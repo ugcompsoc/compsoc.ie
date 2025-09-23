@@ -13,6 +13,7 @@ export const createRouter = () => {
 		routeTree,
 		context: { ...rqContext },
 		defaultPreload: "intent",
+		scrollToTopSelectors: ["body"],
 		scrollRestoration: false,
 		Wrap: (props: { children: React.ReactNode }) => {
 			return (

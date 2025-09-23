@@ -1,5 +1,5 @@
-import type * as React from "react";
-import { cn } from "@/lib/utils";
+import type * as React from "react"
+import { cn } from "@/lib/utils"
 
 function Post({ className, ...props }: React.ComponentProps<"article">) {
 	return (
@@ -11,7 +11,7 @@ function Post({ className, ...props }: React.ComponentProps<"article">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function PostHeader({ className, ...props }: React.ComponentProps<"header">) {
@@ -21,7 +21,7 @@ function PostHeader({ className, ...props }: React.ComponentProps<"header">) {
 			className={cn("mb-4", className)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function PostTitle({ className, ...props }: React.ComponentProps<"h3">) {
@@ -34,7 +34,7 @@ function PostTitle({ className, ...props }: React.ComponentProps<"h3">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function PostMeta({ className, ...props }: React.ComponentProps<"div">) {
@@ -47,7 +47,7 @@ function PostMeta({ className, ...props }: React.ComponentProps<"div">) {
 			)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function PostContent({ className, ...props }: React.ComponentProps<"div">) {
@@ -57,7 +57,7 @@ function PostContent({ className, ...props }: React.ComponentProps<"div">) {
 			className={cn("text-foreground/80 leading-relaxed mb-4", className)}
 			{...props}
 		/>
-	);
+	)
 }
 
 function PostFooter({ className, ...props }: React.ComponentProps<"footer">) {
@@ -67,7 +67,7 @@ function PostFooter({ className, ...props }: React.ComponentProps<"footer">) {
 			className={cn("flex justify-start", className)}
 			{...props}
 		/>
-	);
+	)
 }
 
-export { Post, PostHeader, PostTitle, PostMeta, PostContent, PostFooter };
+export { Post, PostHeader, PostTitle, PostMeta, PostContent, PostFooter }

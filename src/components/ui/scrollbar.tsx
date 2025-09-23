@@ -154,21 +154,18 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 		}
 	}, [isDragging, handleMouseMove, handleMouseUp]);
 
-	// Memoized motion variants to prevent recreation on every render
-	const scrollbarMotion = useRef({
-		initial: { width: 8, transition: { duration: 0.2 }, right: -2 },
-		rest: { width: 8, transition: { duration: 0.2 }, right: 2 },
-		hover: { width: 16, transition: { duration: 0.2 }, right: 2 },
-		drag: { width: 20, transition: { duration: 0.2 }, right: 4 },
-	}).current;
-
-	// Memoized transition config
-	const transition = useRef({ duration: 0.5 }).current;
+	const scrollbarMotion = {
+		initial: { width: 8, transition: { duration: 0.2 }, left: 2 },
+		rest: { width: 8, transition: { duration: 0.2 }, left: -2 },
+		hover: { width: 12, transition: { duration: 0.2 }, left: -4 },
+		drag: { width: 16, transition: { duration: 0.2 }, left: -8 },
+	};
 
 	return (
 		<motion.div
 			style={{
-				top: scrollbarY,
+				y: scrollbarY,
+				top: 0,
 				right: 0,
 				height: scrollbarHeight,
 			}}
@@ -177,14 +174,13 @@ function Scrollbar({ className, parentRef }: ScrollbarProps) {
 			whileHover="hover"
 			onMouseDown={handleMouseDown}
 			ref={scrollbarRef}
-			className="absolute w-6 flex cursor-pointer z-9999 select-none"
+			className="fixed w-6 flex justify-end cursor-pointer z-9999 origin-right"
 		>
 			<motion.div
 				style={{ height: scrollbarHeight }}
 				variants={scrollbarMotion}
-				transition={transition}
 				className={cn(
-					"bg-zinc-500/30 backdrop-blur-xs border-1 border-neutral-400/50 shadow-md fixed rounded-md origin-right",
+					"bg-zinc-500/30 backdrop-blur-xs border-1 relative border-neutral-400/50 shadow-md rounded-md origin-right",
 					className,
 				)}
 			/>

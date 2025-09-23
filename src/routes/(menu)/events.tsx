@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router"
+import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react"
+import { useCallback, useEffect, useRef, useState } from "react"
+import { Button } from "@/components/ui/button"
 import {
 	Post,
 	PostContent,
@@ -9,10 +9,10 @@ import {
 	PostHeader,
 	PostMeta,
 	PostTitle,
-} from "@/components/ui/post";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useEventsCount, useInfiniteEvents } from "@/hooks/queries/useEvents";
-import type { EventType } from "@/services/events";
+} from "@/components/ui/post"
+import { Skeleton } from "@/components/ui/skeleton"
+import { useEventsCount, useInfiniteEvents } from "@/hooks/queries/useEvents"
+import type { EventType } from "@/services/events"
 
 // Skeleton for a post
 const PostSkeleton = () => (
@@ -34,14 +34,14 @@ const PostSkeleton = () => (
 			<Skeleton className="h-8 w-24" />
 		</PostFooter>
 	</Post>
-);
+)
 
 export const Route = createFileRoute("/(menu)/events")({
 	component: RouteComponent,
-});
+})
 
 function RouteComponent() {
-	const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
+	const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming")
 
 	// Use TanStack Query for infinite scroll
 	const {
@@ -51,7 +51,7 @@ function RouteComponent() {
 		isFetchingNextPage: isFetchingUpcoming,
 		isLoading: isLoadingUpcoming,
 		error: upcomingError,
-	} = useInfiniteEvents("upcoming");
+	} = useInfiniteEvents("upcoming")
 
 	const {
 		data: pastData,
@@ -60,30 +60,30 @@ function RouteComponent() {
 		isFetchingNextPage: isFetchingPast,
 		isLoading: isLoadingPast,
 		error: pastError,
-	} = useInfiniteEvents("past");
+	} = useInfiniteEvents("past")
 
 	// Get total count of events for badges
-	const { data: eventsCount } = useEventsCount();
+	const { data: eventsCount } = useEventsCount()
 
-	const observerRef = useRef<IntersectionObserver | null>(null);
-	const loadingRef = useRef<HTMLDivElement>(null);
+	const observerRef = useRef<IntersectionObserver | null>(null)
+	const loadingRef = useRef<HTMLDivElement>(null)
 
 	// Get current data based on active tab
-	const currentData = activeTab === "upcoming" ? upcomingData : pastData;
+	const currentData = activeTab === "upcoming" ? upcomingData : pastData
 	const currentHasNext =
-		activeTab === "upcoming" ? hasNextUpcoming : hasNextPast;
+		activeTab === "upcoming" ? hasNextUpcoming : hasNextPast
 	const currentIsFetching =
-		activeTab === "upcoming" ? isFetchingUpcoming : isFetchingPast;
+		activeTab === "upcoming" ? isFetchingUpcoming : isFetchingPast
 	const currentIsLoading =
-		activeTab === "upcoming" ? isLoadingUpcoming : isLoadingPast;
-	const currentError = activeTab === "upcoming" ? upcomingError : pastError;
+		activeTab === "upcoming" ? isLoadingUpcoming : isLoadingPast
+	const currentError = activeTab === "upcoming" ? upcomingError : pastError
 	const loadMore = useCallback(() => {
-		if (currentIsFetching || !currentHasNext) return;
+		if (currentIsFetching || !currentHasNext) return
 
 		if (activeTab === "upcoming") {
-			fetchNextUpcoming();
+			fetchNextUpcoming()
 		} else {
-			fetchNextPast();
+			fetchNextPast()
 		}
 	}, [
 		currentIsFetching,
@@ -91,42 +91,42 @@ function RouteComponent() {
 		activeTab,
 		fetchNextUpcoming,
 		fetchNextPast,
-	]);
+	])
 	// Intersection Observer for infinite scroll
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (entries[0].isIntersecting && !currentIsFetching && currentHasNext) {
-					loadMore();
+					loadMore()
 				}
 			},
 			{ threshold: 0.1 },
-		);
+		)
 
-		observerRef.current = observer;
+		observerRef.current = observer
 
 		if (loadingRef.current) {
-			observer.observe(loadingRef.current);
+			observer.observe(loadingRef.current)
 		}
 
 		return () => {
 			if (observerRef.current) {
-				observerRef.current.disconnect();
+				observerRef.current.disconnect()
 			}
-		};
-	}, [currentIsFetching, currentHasNext, loadMore]);
+		}
+	}, [currentIsFetching, currentHasNext, loadMore])
 
 	const setActiveTabAndReset = (tab: "upcoming" | "past") => {
-		setActiveTab(tab);
+		setActiveTab(tab)
 		// TanStack Query handles pagination state automatically
-	};
+	}
 
 	// Decode HTML special characters
 	const htmlDecode = (content: string) => {
-		const textarea = document.createElement("textarea");
-		textarea.innerHTML = content;
-		return textarea.value;
-	};
+		const textarea = document.createElement("textarea")
+		textarea.innerHTML = content
+		return textarea.value
+	}
 
 	const renderEvent = (event: EventType) => {
 		return (
@@ -167,15 +167,15 @@ function RouteComponent() {
 					</Button>
 				</PostFooter>
 			</Post>
-		);
-	};
+		)
+	}
 
 	const getCurrentEvents = () => {
-		if (!currentData?.pages) return [];
+		if (!currentData?.pages) return []
 
 		// Flatten all pages of events
-		return currentData.pages.flatMap((page: EventType[]) => page);
-	};
+		return currentData.pages.flatMap((page: EventType[]) => page)
+	}
 
 	const renderEventsList = (
 		emptyMessage: string,
@@ -188,7 +188,7 @@ function RouteComponent() {
 					<PostSkeleton />
 					<PostSkeleton />
 				</div>
-			);
+			)
 		}
 
 		if (currentError) {
@@ -206,10 +206,10 @@ function RouteComponent() {
 						Retry
 					</Button>
 				</div>
-			);
+			)
 		}
 
-		const currentEvents = getCurrentEvents();
+		const currentEvents = getCurrentEvents()
 
 		if (currentEvents.length === 0) {
 			return (
@@ -219,7 +219,7 @@ function RouteComponent() {
 						{emptyMessage}
 					</p>
 				</div>
-			);
+			)
 		}
 
 		return (
@@ -240,8 +240,8 @@ function RouteComponent() {
 					</div>
 				)}
 			</div>
-		);
-	};
+		)
+	}
 
 	return (
 		<div className="relative min-h-screen w-full pt-24 md:pt-48 pb-24 flex flex-col items-center bg-gradient-to-br from-background to-muted">
@@ -315,15 +315,15 @@ function RouteComponent() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 // Reusable event count badge component
 const EventCountBadge = ({ count }: { count: number }) => {
-	if (!count || count <= 0) return null;
+	if (!count || count <= 0) return null
 
 	return (
 		<span className="absolute left-full ml-2 bg-primary-foreground/20 text-primary-foreground text-xs px-2 py-0.5 rounded-full font-medium">
 			{count}
 		</span>
-	);
-};
+	)
+}

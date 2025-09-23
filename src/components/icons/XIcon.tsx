@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
 interface XIconProps extends React.SVGProps<SVGSVGElement> {
-	size?: number | string;
-	className?: string;
+	size?: number | string
+	className?: string
 }
 
 export const XIcon = React.forwardRef<SVGSVGElement, XIconProps>(
@@ -25,6 +25,6 @@ export const XIcon = React.forwardRef<SVGSVGElement, XIconProps>(
 			/>
 		</svg>
 	),
-);
+)
 
-XIcon.displayName = "XIcon";
+XIcon.displayName = "XIcon"

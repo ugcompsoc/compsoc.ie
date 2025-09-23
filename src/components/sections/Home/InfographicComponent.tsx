@@ -1,6 +1,6 @@
-import { CalendarDays, Database, UserRoundCog, UsersRound } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { NumberOfCommitteeMembers } from "../../../services/committee";
+import { CalendarDays, Database, UserRoundCog, UsersRound } from "lucide-react"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { NumberOfCommitteeMembers } from "../../../services/committee"
 
 const InfographicComponent = () => {
 	return (
@@ -90,7 +90,7 @@ const InfographicComponent = () => {
 				</Card>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default InfographicComponent;
+export default InfographicComponent
