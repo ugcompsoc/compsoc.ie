@@ -1,7 +1,7 @@
-import { Mail, MapPin, UsersRound } from "lucide-react"
-import { InstagramIcon } from "@/components/icons/InstagramIcon"
-import { XIcon } from "@/components/icons/XIcon"
-import { Button } from "@/components/ui/button"
+import { Mail, MapPin, UsersRound } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
+import { XIcon } from "@/components/icons/XIcon";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
 	return (
@@ -122,5 +122,5 @@ export function Footer() {
 				</div>
 			</div>
 		</footer>
-	)
+	);
 }
