@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/* Colors were taken from https://tailwindcss.com/docs/colors */
+
+body {
+	@apply m-0;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family:
+		source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+:root {
+	--background: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--foreground: oklch(27.4% 0.006 286.033);
+	/* zinc 800 */
+	--card: oklch(1 0 0);
+	/* white */
+	--card-foreground: oklch(27.4% 0.006 286.033);
+	/* zinc 800 */
+	--popover: oklch(1 0 0);
+	/* white */
+	--popover-foreground: oklch(27.4% 0.006 286.033);
+	/* zinc 800 */
+	--primary: oklch(68.5% 0.169 237.323);
+	/* sky 500 */
+	--primary-foreground: oklch(0.985 0 0);
+	/* zinc 50 */
+	--secondary: oklch(68.5% 0.169 237.323);
+	/* sky 500 */
+	--secondary-foreground: oklch(37.2% 0.044 257.287);
+	/* slate 700 */
+	--muted: oklch(95.5% 0.004 286.32);
+	/* zinc 100 */
+	--muted-foreground: oklch(55.6% 0.006 286.033);
+	/* zinc 500 */
+	--accent: oklch(68.5% 0.169 237.323);
+	/* sky 500 */
+	--accent-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--destructive: oklch(57.7% 0.245 27.325);
+	/* rose 500 */
+	--destructive-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--border: oklch(92% 0.004 286.32);
+	/* zinc 200 */
+	--input: oklch(92% 0.004 286.32);
+	/* zinc 200 */
+	--ring: oklch(70.8% 0.004 286.32);
+	/* zinc 400 */
+	--chart-1: oklch(82.8% 0.189 84.429);
+	/* lime 300 */
+	--chart-2: oklch(60% 0.118 184.704);
+	/* teal 400 */
+	--chart-3: oklch(39.8% 0.07 227.392);
+	/* blue 700 */
+	--chart-4: oklch(64.6% 0.222 41.116);
+	/* amber 400 */
+	--chart-5: oklch(76.9% 0.188 70.08);
+	/* yellow 400 */
+	--radius: 0.625rem;
+	--menu: oklch(14.1% 0.005 285.823);
+	/* zinc 950 */
+	--menu-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-primary: oklch(68.5% 0.169 237.323);
+	/* sky 500 */
+	--menu-primary-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-accent: oklch(68.5% 0.169 237.323);
+	/* sky 500 */
+	--menu-accent-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-border: oklch(87.1% 0.006 286.286);
+	/* zinc 300 */
+	--menu-ring: oklch(70.8% 0.004 286.32);
+	/* zinc 400 */
+}
+
+.dark {
+	--background: oklch(14.5% 0 0);
+	/* zinc 950 */
+	--foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--card: oklch(14.5% 0 0);
+	/* zinc 950 */
+	--card-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--popover: oklch(14.5% 0 0);
+	/* zinc 950 */
+	--popover-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--primary: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--primary-foreground: oklch(20.5% 0 0);
+	/* zinc 900 */
+	--secondary: oklch(37.2% 0.169 237.323);
+	/* sky 700 */
+	--secondary-foreground: oklch(97.1% 0.045 237.323);
+	/* sky 100 */
+	--muted: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--muted-foreground: oklch(70.8% 0.004 286.32);
+	/* zinc 400 */
+	--accent: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--accent-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--destructive: oklch(39.6% 0.141 25.723);
+	/* rose 700 */
+	--destructive-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--border: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--input: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--ring: oklch(43.9% 0 0);
+	/* zinc 600 */
+	--chart-1: oklch(48.8% 0.243 264.376);
+	/* violet 400 */
+	--chart-2: oklch(69.6% 0.17 162.48);
+	/* emerald 400 */
+	--chart-3: oklch(76.9% 0.188 70.08);
+	/* yellow 400 */
+	--chart-4: oklch(62.7% 0.265 303.9);
+	/* fuchsia 400 */
+	--chart-5: oklch(64.5% 0.246 16.439);
+	/* rose 500 */
+	--menu: oklch(20.5% 0 0);
+	/* zinc 900 */
+	--menu-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-primary: oklch(48.8% 0.243 264.376);
+	/* violet 400 */
+	--menu-primary-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-accent: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--menu-accent-foreground: oklch(98.5% 0 0);
+	/* zinc 50 */
+	--menu-border: oklch(26.9% 0 0);
+	/* zinc 800 */
+	--menu-ring: oklch(43.9% 0 0);
+	/* zinc 600 */
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-menu: var(--menu);
+	--color-menu-foreground: var(--menu-foreground);
+	--color-menu-primary: var(--menu-primary);
+	--color-menu-primary-foreground: var(--menu-primary-foreground);
+	--color-menu-accent: var(--menu-accent);
+	--color-menu-accent-foreground: var(--menu-accent-foreground);
+	--color-menu-border: var(--menu-border);
+	--color-menu-ring: var(--menu-ring);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+html,
+body {
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.7;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow: hidden;
+}
+
+body {
+	overflow: auto;
+	position: relative;
+}
+
+@media screen and (width >=768px) {
+	body {
+		scrollbar-width: none;
+		/* Firefox */
+		-ms-overflow-style: none;
+		/* IE / Edge Legacy */
+	}
+
+	body::-webkit-scrollbar {
+		display: none;
+		/* Chrome, Safari, new Edge */
+	}
+}
