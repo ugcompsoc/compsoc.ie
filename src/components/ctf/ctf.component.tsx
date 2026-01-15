@@ -102,7 +102,7 @@ const CTFComponent = () => {
                     {/*<div className="faq-item">*/}
                     {/*    <h4><strong>What can I do for food?</strong></h4>*/}
                     {/*    <p>We’ll have a hot lunch from Gourmet Food Parlour (and some other treats!), with both meat, vegetarian and gluten free options available.<br />*/}
-                    {/*    <strong>Note: if you purchase your ticket after midnight, Wednesday the 29th, while we endeavour to have food, we cannot guarentee there is a sufficient surplus in the catering order for your ticket.</strong><br />*/}
+                    {/*    <strong>Note: if you purchase your ticket after midnight, Wednesday the 29th, while we endeavour to have food, we cannot guarantee there is a sufficient surplus in the catering order for your ticket.</strong><br />*/}
                     {/*    There is a Tesco and a Centra open nearby, alongside lots of other food outlets if something else takes your fancy.</p>*/}
                     {/*</div>*/}
 
