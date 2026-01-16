@@ -7,11 +7,6 @@ const SponsorTable = () => {
       <tbody>
         <tr className="sponsor-level"><td>Platinum Sponsor</td></tr>
         <tr>
-           </tr>
-        <tr className="sponsor-level">
-          <td>Platinum Sponsors</td>
-        </tr>
-        <tr>
           <td className="centered"><br /><img src="/assets/img/ctf/evernorth/evn_logo_hs_r_cmyk_tempermint.png" alt="Evernorth Logo" style={{ maxWidth: '460px' }}></img></td>
         </tr>
         <tr className="sponsor-level">
