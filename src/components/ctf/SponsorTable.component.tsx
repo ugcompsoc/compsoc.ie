@@ -9,13 +9,13 @@ const SponsorTable = () => {
         <tr>
            </tr>
         <tr className="sponsor-level">
-          <td>Gold Sponsors</td>
+          <td>Platinum Sponsors</td>
         </tr>
         <tr>
           <td className="centered"><br /><img src="/assets/img/ctf/evernorth/evn_logo_hs_r_cmyk_tempermint.png" alt="Evernorth Logo" style={{ maxWidth: '460px' }}></img></td>
         </tr>
         <tr className="sponsor-level">
-          <td>Silver Sponsors</td>
+          <td>Gold Sponsors</td>
         </tr>
         <tr>
             <td className="centered">
