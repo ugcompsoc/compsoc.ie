@@ -8,8 +8,8 @@ const CTFComponent = () => {
         <div className="container">
             <section id="main-content" className="about">
                 <div className="hero-container">
-                    <h1>CompSoc Intervarsity Capture the Flag - 2025</h1>
-                    <img src="/assets/img/ctf/Medium_Res_CompSoc_CTF_Poster.jpg" alt="Floor Debugging" style={{maxHeight: "80vh"}}></img>
+                    <h1>CompSoc Intervarsity Capture the Flag - 2026</h1>
+                    <img src="/assets/img/ctf/Medium_Res_CompSoc_CTF_Poster.png" alt="Floor Debugging" style={{maxHeight: "80vh"}}></img>
                 </div>
 
                 <div className="section-title">
@@ -22,11 +22,11 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>Event Details</h2>
                     <ul>
-                        <li><strong>Date:</strong> February 1st, 2025</li>
+                        <li><strong>Date:</strong> February 7th, 2026</li>
                         <li><strong>Location:</strong> <a href='https://maps.app.goo.gl/E5cNa39RbYFtHbZ7A' target="_blank" rel="noopener noreferrer">Bailey Allen Hall, University of Galway</a></li>
                         <li><strong>Teams:</strong> Up to 4 members per team</li>
-                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">Available here</a></li>
-                        <li><strong>Event Discord:</strong> <a href='https://ctf.compsoc.ie/discord' target="_blank" rel="noopener noreferrer">Join here!</a></li>
+                        <li><strong>Tickets:</strong> <a href="https://socs.universityofgalway.ie/shop/?id=MTQyNg==" target="_blank" rel="noopener noreferrer">Available here</a></li>
+                        <li><strong>Event Discord:</strong> <a href='https://discord.gg/jmfSMXCEmY' target="_blank" rel="noopener noreferrer">Join here!</a></li>
                     </ul>
                 </div>
 
@@ -73,7 +73,7 @@ const CTFComponent = () => {
                 <div className="section-title">
                     <h2>How do I sign up?</h2>
                     <p>
-                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=NzM3" target="_blank" rel="noopener noreferrer">society store</a>.
+                        You can buy your tickets at our college's <a href="https://socs.universityofgalway.ie/shop/?id=MTQyNg==" target="_blank" rel="noopener noreferrer">society store</a>.
                         <br />
                         Teams can be <em>up to four</em> members.<br />
                         To qualify for the inter-varsity leaderboard and prizes your team must all be from the same college.
@@ -102,7 +102,7 @@ const CTFComponent = () => {
                     <div className="faq-item">
                         <h4><strong>What can I do for food?</strong></h4>
                         <p>We’ll have a hot lunch from Gourmet Food Parlour (and some other treats!), with both meat, vegetarian and gluten free options available.<br />
-                        <strong>Note: if you purchase your ticket after midnight, Wednesday the 29th, while we endeavour to have food, we cannot guarentee there is a sufficient surplus in the catering order for your ticket.</strong><br />
+                        <strong>Note: if you purchase your ticket 48 hours prior, while we endeavour to have food, we cannot guarantee there is a sufficient surplus in the catering order for your ticket.</strong><br />
                         There is a Tesco and a Centra open nearby, alongside lots of other food outlets if something else takes your fancy.</p>
                     </div>
 
@@ -149,7 +149,7 @@ const CTFComponent = () => {
 
                     <div className="faq-item">
                         <h4><strong>I have questions that aren’t answered by the above, where can I ask them?</strong></h4>
-                        <p>Ask in the event Discord <a href="https://ctf.compsoc.ie/discord" target="_blank" rel="noopener noreferrer">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
+                        <p>Ask in the event Discord <a href="https://discord.gg/jmfSMXCEmY" target="_blank" rel="noopener noreferrer">here</a>, or email us at <a href="mailto:compsoc@socs.universityofgalway.ie">compsoc@socs.universityofgalway.ie</a> with your queries!</p>
                     </div>
                 </div>
             </section>
