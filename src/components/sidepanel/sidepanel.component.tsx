@@ -16,11 +16,6 @@ const SidePanelComponent = () => {
             <div className="d-flex flex-column">
                 <ProfileSectionComponent/>
                 <NavigationMenuComponent ref={navMenuRef}/>
-                <div style={{textAlign: 'center'}}>
-                    <a href="https://www.datacamp.com/donates">
-                        <img style={{maxWidth: '50%', paddingTop: '2vh'}} src="/assets/img/datacamp_donates.png" alt="DataCamp Donates"/>
-                    </a>
-                </div>
             </div>
         </header>
         </>
