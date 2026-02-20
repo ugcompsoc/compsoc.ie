@@ -182,9 +182,11 @@ h6 {
     padding: 0;
     list-style: none;
 }
+
 .nav-menu ul {
-    overflow-y: scroll;
+    overflow-y: auto; /* Scrollbar appears only when needed */
 }
+
 .nav-menu > ul > li {
     position: relative;
     white-space: nowrap;
