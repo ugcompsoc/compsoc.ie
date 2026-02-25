@@ -4,6 +4,24 @@
     "default_photo": "/assets/img/committee/default.jpg",
     "committee_years": [
         {
+            "year": "25-26",
+            "committee": [
+
+            ]
+        },
+        {
+            "year": "24-25",
+            "committee": [
+
+            ]
+        },
+        {
+            "year": "23-24",
+            "committee": [
+
+            ]
+        },
+        {   
             "year": "22-23",
             "committee": [
                 {
