@@ -137,7 +137,146 @@
         {
             "year": "24-25",
             "committee": [
-
+                {
+                    "name": "Adam McPadden",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sean Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Séamus Knightly",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Vice-Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Cathal Lawlor",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Andrew Hayes",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Lilian Kennedy",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Joanna Maj",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "John Denny",
+                    "position": "First Year Rep",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Abdulhaq Elkhbuli",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Rian Choules",
+                    "position": "Vice-Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Jason Carvalho",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Stepan Zagray",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Vishrut Srinivasa",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Martin Klacer",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Mykhailo Zavorotnii",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Semyon Fox",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ashlesha Bhagat",
+                    "position": "Vice-PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sade Gray",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
             ]
         },
         {
