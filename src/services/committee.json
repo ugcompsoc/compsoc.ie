@@ -282,7 +282,118 @@
         {
             "year": "23-24",
             "committee": [
-
+                {
+                    "name": "Adam McPadden",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sean Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "Public Relations Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ruaidhri Madden",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Cathal Lawlor",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Darragh Lawlor",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Parth Singh",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Séamus Knightly",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "First Year Rep",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Chloe Kavanagh Martin",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Andrew Hayes",
+                    "position": "Vice-Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ayodeji Ali",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Albin Binu",
+                    "position": "Vice Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sade Gray",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Conor McCarthy",
+                    "position": "Social Media Admin",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
             ]
         },
         {   
