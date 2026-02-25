@@ -6,7 +6,132 @@
         {
             "year": "25-26",
             "committee": [
-
+                {
+                    "name": "Semyon Fox",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Keela Cunningham",
+                    "position": "Vice Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Vishrut Srinivasa",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Joanna Maj",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Owen McNamara",
+                    "position": "Vice PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sean Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Martin Klacer",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Mykhailo Zavorotnii",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Shan Nanayakkara",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Stepan Zagray",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Aine Coghlan",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Lilian Kennedy",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Niamh Glennon",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Abdulhaq Elkhbuli",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Caoilfhionn Fitzpatrick",
+                    "position": "Junior System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "David Swords",
+                    "position": "OCM",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
             ]
         },
         {
