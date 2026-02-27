@@ -4,6 +4,399 @@
     "default_photo": "/assets/img/committee/default.jpg",
     "committee_years": [
         {
+            "year": "25-26",
+            "committee": [
+                {
+                    "name": "Semyon Fox",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Keela Cunningham",
+                    "position": "Vice Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Vishrut Srinivasa",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Joanna Maj",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Owen McNamara",
+                    "position": "Vice PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Seán Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/seankelly.jpg"
+                },
+                {
+                    "name": "Martin Klačer",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Mykhailo Zavorotnii",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Shan Nanayakkara",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Stepan Zagray",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Áine Coghlan",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Lilian Kennedy",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Niamh Glennon",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Abdulhaq Elkhbuli",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Caoilfhionn Fitzpatrick",
+                    "position": "Junior System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "David Swords",
+                    "position": "OCM",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
+            ]
+        },
+        {
+            "year": "24-25",
+            "committee": [
+                {
+                    "name": "Adam McPadden",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/adammcpadden.jpg"
+                },
+                {
+                    "name": "Seán Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/seankelly.jpg"
+                },
+                {
+                    "name": "Séamus Knightly",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Vice-Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Cathal Lawlor",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Andrew Hayes",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Lilian Kennedy",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Joanna Maj",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "John Denny",
+                    "position": "First Year Rep",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Abdulhaq Elkhbuli",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Rían Choules",
+                    "position": "Vice-Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Jason Carvalho",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Stepan Zagray",
+                    "position": "Developer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Vishrut Srinivasa",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Martin Klačer",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Mykhailo Zavorotnii",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Semyon Fox",
+                    "position": "PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ashlesha Bhagat",
+                    "position": "Vice-PRO",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sadé Gray",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
+            ]
+        },
+        {
+            "year": "23-24",
+            "committee": [
+                {
+                    "name": "Adam McPadden",
+                    "position": "Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/adammcpadden.jpg"
+                },
+                {
+                    "name": "Seán Kelly",
+                    "position": "Chief System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/seankelly.jpg"
+                },
+                {
+                    "name": "Keith Rabbitte",
+                    "position": "Public Relations Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/keithrabbitte.jpg"
+                },
+                {
+                    "name": "Rúaidhrí Madden",
+                    "position": "Health and Safety Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": "/assets/img/committee/2021-22/ruaidhrimadden.jpg"
+                },
+                {
+                    "name": "Cathal Lawlor",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Darragh Lawlor",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Parth Singh",
+                    "position": "System Administrator",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Séamus Knightly",
+                    "position": "Treasurer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ethan Aguocha-Njoroge",
+                    "position": "First Year Rep",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Chloe Kavanagh-Martin",
+                    "position": "Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Micaela Geoghegan",
+                    "position": "Data Protection Officer",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Andrew Hayes",
+                    "position": "Vice-Auditor",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Ayodeji Ali",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Albin Binu",
+                    "position": "Vice Secretary",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Sadé Gray",
+                    "position": "Ordinary Committee Member",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                },
+                {
+                    "name": "Conor McCarthy",
+                    "position": "Social Media Admin",
+                    "bio": "",
+                    "social_links": [],
+                    "photo": ""
+                }
+            ]
+        },
+        {   
             "year": "22-23",
             "committee": [
                 {
@@ -25,7 +418,7 @@
                     "position": "Safety Officer",
                     "bio": "",
                     "social_links": [],
-                    "photo": ""
+                    "photo": "/assets/img/committee/2021-22/ruaidhrimadden.jpg"
                 },
                 {
                     "name": "Seán Kelly",
@@ -39,7 +432,7 @@
                     "position": "Public Relations Officer",
                     "bio": "",
                     "social_links": [],
-                    "photo": ""
+                    "photo": "/assets/img/committee/2021-22/keithrabbitte.jpg"
                 },
                 {
                     "name": "Reuben Reynolds",
