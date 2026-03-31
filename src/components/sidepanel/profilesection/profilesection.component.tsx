@@ -3,7 +3,7 @@ const ProfileSectionComponent = () => {
         <div className="profile">
             <div className="title">
                 <img
-                    src="/assets/img/apple-touch-icon.png"
+                    src="./assets/img/apple-touch-icon.png"
                     alt=""
                     className="img-fluid"
                 ></img>

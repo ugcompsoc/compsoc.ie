@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { SidePanelComponent } from '../sidepanel';
 import { FooterComponent } from "../footer";
 import { HomePage } from '../../pages/home';
