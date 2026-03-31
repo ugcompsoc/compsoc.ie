@@ -8,7 +8,7 @@ const ProfileSectionComponent = () => {
                     className="img-fluid"
                 ></img>
 
-                <a className="text-light" href="/">
+                <a className="text-light" href="./">
                     <h1>CompSoc</h1>
                     <span>University of Galway</span>
                 </a>

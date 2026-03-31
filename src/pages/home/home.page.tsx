@@ -9,7 +9,6 @@ const HomeComponent = () => {
     return (
         <>
         <HeroComponent />
-        <EventsComponent />
         <AboutComponent />
         <InfographicComponent />
         <ServicesComponent />
