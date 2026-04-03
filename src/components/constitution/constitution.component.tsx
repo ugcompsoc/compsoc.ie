@@ -78,7 +78,7 @@ const ConstitutionComponent = () =>{
             <p>5.8 Committee Meetings</p>
             <p>5.8.1 Meetings of the Committee shall be held at least 4 times or fortnightly during each academic term. All members of the Committee shall be entitled to attend and vote at such meetings.</p>
             <p>5.8.2 The quorum for a meeting of the Committee shall be 50% + 1Committee members.</p>
-            <p>5.8.3 Meetings of the Committee shall be convened (called) by the Auditor or by the Secretary; at least {insert minimum amount of days here [no less than three days]} days’ notice of a Committee meeting shall be given by the Auditor or Secretary to the members of the Committee.</p>
+            <p>5.8.3 Meetings of the Committee shall be convened (called) by the Auditor or by the Secretary; at least (insert minimum amount of days here [no less than three days]) days’ notice of a Committee meeting shall be given by the Auditor or Secretary to the members of the Committee.</p>
             <p>5.8.4 Meetings may also be convened at the request of 3 or 50% of the Committee, whichever is the larger number, with at least the minimum notice period as per</p>
             <p>5.8.4.1. Failure of the Auditor or Secretary to issue this notice within 5 days of receipt of the request by these members in writing shall entitle these members to issue said notice to the Committee.</p>
             <p>5.8.5 All Committee members must be notified by their chosen email and or by other means as agreed.</p>
@@ -93,7 +93,7 @@ const ConstitutionComponent = () =>{
         <div className="level3">
             <p>6.1 Meetings of the Committee shall be held at least 4 times or fortnightly during each academic term. All members of the Committee shall be entitled to attend and vote at such meetings.</p>
             <p>6.2 The quorum for a meeting of the Committee shall be 50% + 1Committee members.</p>
-            <p>6.3 Meetings of the Committee shall be convened (called) by the Auditor or by the Secretary; at least {insert minimum amount of days here [no less than three days]} days’ notice of a Committee meeting shall be given by the Auditor or Secretary to the members of the Committee.</p>
+            <p>6.3 Meetings of the Committee shall be convened (called) by the Auditor or by the Secretary; at least (insert minimum amount of days here [no less than three days]) days’ notice of a Committee meeting shall be given by the Auditor or Secretary to the members of the Committee.</p>
             <p>6.4 Meetings may also be convened at the request of 3 or 50% of the Committee, whichever is the larger number, with at least the minimum notice period as per </p>
             <p>6.4.1. Failure of the Auditor or Secretary to issue this notice within 5 days of receipt of the request by these members in writing shall entitle these members to issue said notice to the Committee.</p>
             <p>6.5 All Committee members must be notified by their chosen email and by other means as agreed.</p>
