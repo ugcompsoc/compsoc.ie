@@ -8,7 +8,7 @@ const renderCommittee = () => {
                 <div className="d-flex justify-content-between align-items-center">
                     <h2>Meet the Committee </h2>
                     <ol>
-                        2022/23
+                        2025/26
                     </ol>
                 </div>
             </div>
