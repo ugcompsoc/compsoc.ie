@@ -5,7 +5,7 @@ const FooterComponent = () => {
         <div className="copyright">
           <a href="https://universityofgalway.ie/">
             <img
-              src="assets/img/universityofgalway.jpg"
+              src="/assets/img/universityofgalway.jpg"
               alt="University of Galway"
             ></img>
           </a>
