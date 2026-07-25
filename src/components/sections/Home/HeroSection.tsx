@@ -155,7 +155,7 @@ const HeroSection = ({
 						<InstagramIcon className="size-4" />
 					</a>
 					<a
-						href="https://discord.com/invite/2y5ruBw"
+						href="https://discord.compsoc.ie/"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Discord"
