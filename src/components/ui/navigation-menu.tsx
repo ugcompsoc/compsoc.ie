@@ -220,7 +220,13 @@ function NavigationMenuComponent({
 					: undefined,
 			}}
 		>
-			<CompSocLogo className="ml-3" />
+			<Link
+				to="/"
+				aria-label="Home"
+				className="flex h-full items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+			>
+				<CompSocLogo />
+			</Link>
 
 			{/* Desktop Navigation Menu — visible from md up via CSS only (no flicker on load) */}
 			<div className="hidden md:flex">
