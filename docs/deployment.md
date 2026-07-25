@@ -9,6 +9,7 @@ bun run build
 ```
 
 Output: **`dist/client`** (and `dist/server`; only `dist/client` is deployed).
+The build first refreshes `public/events.json` from the University Societies portal. If the portal response is unavailable or invalid, the build stops and the existing deployment remains live.
 
 ## Cloudflare Pages (Git integration)
 

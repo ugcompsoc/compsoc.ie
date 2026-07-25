@@ -14,6 +14,9 @@ bun run dev
 # Build (output: dist/client)
 bun run build
 
+# Refresh the University Societies events snapshot
+bun run sync:events
+
 # Build and deploy to Cloudflare Pages
 bun run deploy
 

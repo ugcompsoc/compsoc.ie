@@ -5,8 +5,6 @@ export interface EventType {
 	SocietyID: number
 	SocietyName: string
 	Location: string
-	DangerousDescriptionHTML: string
-	DescriptionMarkdown: string
 	Description: string
 	StartDatetime: string
 	EndDatetime: string
@@ -15,58 +13,107 @@ export interface EventType {
 	EventICalURL: string
 }
 
-export interface AllEventsType {
-	past: Array<EventType>
-	upcoming: Array<EventType>
+interface EventsSnapshot {
+	schemaVersion: number
+	updatedAt: string
+	source: string
+	events: Array<EventType>
 }
 
-// Returns all events that have an end time after the current time
-export const getPastEvents = async () => {
-	const response = await fetch(
-		"https://api.compsoc.ie/v1/events/past/30",
-	)
-	const responseJson = await response.json()
-	const events = responseJson.data || []
+const EVENTS_SNAPSHOT_URL = "/events.json"
 
-	// Sort past events by end date (most recent first)
-	return events.sort(
-		(a: EventType, b: EventType) =>
-			new Date(b.EndDatetime).getTime() -
-			new Date(a.EndDatetime).getTime(),
+export const getEvents = async (): Promise<
+	Array<EventType>
+> => {
+	const response = await fetch(EVENTS_SNAPSHOT_URL, {
+		cache: "no-cache",
+	})
+
+	if (!response.ok) {
+		throw new Error(
+			`Unable to load events (${response.status})`,
+		)
+	}
+
+	const snapshot = parseEventsSnapshot(
+		await response.json(),
 	)
+	return snapshot.events
 }
 
-// Returns all events that have an end time before the current time
-export const getUpcomingEvents = async () => {
-	const response = await fetch(
-		"https://api.compsoc.ie/v1/events/upcoming/30",
-	)
-	const responseJson = await response.json()
-	const events = responseJson.data || []
-
-	// Sort upcoming events by start date (earliest first)
-	return events.sort(
-		(a: EventType, b: EventType) =>
-			new Date(a.StartDatetime).getTime() -
-			new Date(b.StartDatetime).getTime(),
-	)
-}
-
-// Returns all events seperated into two arrays, past and upcoming
-export const getEvents = async () => {
-	var events = {} as AllEventsType
-	events.past = await getPastEvents()
-	events.upcoming = await getUpcomingEvents()
-	return events
-}
-
-// Client-side pagination helper
-export const paginateEvents = (
-	events: EventType[],
-	page: number,
-	limit: number = 7,
+export const splitEvents = (
+	events: Array<EventType>,
+	now = Date.now(),
 ) => {
-	const startIndex = page * limit
-	const endIndex = startIndex + limit
-	return events.slice(startIndex, endIndex)
+	const past: Array<EventType> = []
+	const upcoming: Array<EventType> = []
+
+	for (const event of events) {
+		if (Date.parse(event.EndDatetime) < now) {
+			past.push(event)
+		} else {
+			upcoming.push(event)
+		}
+	}
+
+	past.sort(
+		(a, b) =>
+			Date.parse(b.EndDatetime) - Date.parse(a.EndDatetime),
+	)
+	upcoming.sort(
+		(a, b) =>
+			Date.parse(a.StartDatetime) -
+			Date.parse(b.StartDatetime),
+	)
+
+	return { past, upcoming }
+}
+
+function parseEventsSnapshot(
+	value: unknown,
+): EventsSnapshot {
+	if (
+		!isObject(value) ||
+		value.schemaVersion !== 1 ||
+		typeof value.updatedAt !== "string" ||
+		typeof value.source !== "string" ||
+		!Array.isArray(value.events) ||
+		!value.events.every(isEvent)
+	) {
+		throw new Error("Events snapshot has an invalid format")
+	}
+
+	return value as unknown as EventsSnapshot
+}
+
+function isEvent(value: unknown): value is EventType {
+	if (!isObject(value)) return false
+
+	return (
+		Number.isInteger(value.EventDetailsID) &&
+		Number.isInteger(value.EventID) &&
+		typeof value.Title === "string" &&
+		value.SocietyID === 30 &&
+		typeof value.SocietyName === "string" &&
+		typeof value.Location === "string" &&
+		typeof value.Description === "string" &&
+		isIsoDate(value.StartDatetime) &&
+		isIsoDate(value.EndDatetime) &&
+		typeof value.DatetimeFormatted === "string" &&
+		typeof value.EventURL === "string" &&
+		typeof value.EventICalURL === "string"
+	)
+}
+
+function isIsoDate(value: unknown): value is string {
+	return (
+		typeof value === "string" &&
+		Number.isFinite(Date.parse(value))
+	)
+}
+
+function isObject(
+	value: unknown,
+): value is Record<string, unknown> {
+	return typeof value === "object" && value !== null
 }

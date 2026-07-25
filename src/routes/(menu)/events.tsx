@@ -16,8 +16,8 @@ import { PageLayout } from "#/layouts"
 import { cn } from "#/lib/utils"
 import {
 	type EventType,
-	getPastEvents,
-	getUpcomingEvents,
+	getEvents,
+	splitEvents,
 } from "#/services/events"
 
 export const Route = createFileRoute("/(menu)/events")({
@@ -44,17 +44,18 @@ function RouteComponent() {
 	const pastSearchQuery = q ?? ""
 
 	const {
-		data: upcoming = [],
-		isLoading: loadingUpcoming,
+		data: allEvents = [],
+		isLoading,
+		isError,
 	} = useQuery({
-		queryKey: ["events", "upcoming"],
-		queryFn: getUpcomingEvents,
+		queryKey: ["events"],
+		queryFn: getEvents,
+		staleTime: Number.POSITIVE_INFINITY,
 	})
-	const { data: past = [], isLoading: loadingPast } =
-		useQuery({
-			queryKey: ["events", "past"],
-			queryFn: getPastEvents,
-		})
+	const { past, upcoming } = useMemo(
+		() => splitEvents(allEvents),
+		[allEvents],
+	)
 
 	const filteredPast = useMemo(() => {
 		if (!pastSearchQuery.trim()) return past
@@ -68,7 +69,7 @@ function RouteComponent() {
 			years.length >= 2 ? Math.max(...years) : years[0]
 
 		return past.filter((event: EventType) => {
-			const title = decodeHtml(event.Title).toLowerCase()
+			const title = event.Title.toLowerCase()
 			const location = (event.Location ?? "").toLowerCase()
 			const datetimeFormatted = (
 				event.DatetimeFormatted ?? ""
@@ -109,8 +110,6 @@ function RouteComponent() {
 
 	const events =
 		activeTab === "upcoming" ? upcoming : filteredPast
-	const loading =
-		activeTab === "upcoming" ? loadingUpcoming : loadingPast
 
 	return (
 		<PageLayout>
@@ -191,7 +190,22 @@ function RouteComponent() {
 
 			{/* Events list */}
 			<div className="space-y-4">
-				{loading ? (
+				{isError ? (
+					<Panel className="p-8 text-center">
+						<p className="text-muted-foreground text-sm">
+							Events are temporarily unavailable.
+						</p>
+						<a
+							href="https://socs.universityofgalway.ie/calendar.php?ownerID=MzA="
+							target="_blank"
+							rel="noopener noreferrer"
+							className="mt-3 inline-flex items-center gap-1.5 text-accent text-sm underline underline-offset-4"
+						>
+							View the University Societies calendar
+							<ExternalLink className="size-4" />
+						</a>
+					</Panel>
+				) : isLoading ? (
 					<Panel className="p-8">
 						<p className="text-center text-muted-foreground text-sm">
 							Loading events…
@@ -221,12 +235,11 @@ function RouteComponent() {
 }
 
 function EventCard({ event }: { event: EventType }) {
-	const title = decodeHtml(event.Title)
 	return (
 		<Card>
 			<CardContent className="border-border border-b-2 p-6">
 				<h3 className="font-bold text-foreground">
-					{title}
+					{event.Title}
 				</h3>
 				<div className="mt-2 flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
 					<span className="inline-flex items-center gap-1.5">
@@ -241,13 +254,11 @@ function EventCard({ event }: { event: EventType }) {
 					)}
 				</div>
 			</CardContent>
-			<div
-				className="prose prose-sm dark:prose-invert max-w-none p-6 text-muted-foreground [&_a]:text-accent"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: event content from API
-				dangerouslySetInnerHTML={{
-					__html: event.DangerousDescriptionHTML,
-				}}
-			/>
+			{event.Description && (
+				<p className="whitespace-pre-line p-6 text-muted-foreground text-sm leading-relaxed">
+					{event.Description}
+				</p>
+			)}
 			<div className="border-border border-t-2 p-6">
 				<a
 					href={event.EventURL}
@@ -267,10 +278,4 @@ function EventCard({ event }: { event: EventType }) {
 			</div>
 		</Card>
 	)
-}
-
-function decodeHtml(html: string) {
-	const textarea = document.createElement("textarea")
-	textarea.innerHTML = html
-	return textarea.value
 }
