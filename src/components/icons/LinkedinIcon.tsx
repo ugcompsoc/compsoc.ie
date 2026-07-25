@@ -12,6 +12,7 @@ export const LinkedinIcon = React.forwardRef<
 >(({ size = 24, className, ...props }, ref) => (
 	<svg
 		ref={ref}
+		role="img"
 		fill="currentColor"
 		viewBox="-271 283.9 256 235.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +21,7 @@ export const LinkedinIcon = React.forwardRef<
 		className={className}
 		{...props}
 	>
+		<title>LinkedIn</title>
 		<g>
 			<rect
 				x="-264.4"

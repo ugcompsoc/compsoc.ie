@@ -51,13 +51,13 @@ const HeroSection = ({
 			onTouchEnd={() => setTapOverride("hero")}
 		>
 			{/* Background photo clipped in a rounded window */}
-			<div className="-translate-x-1/2 -translate-y-1/2 absolute top-[calc(50%)] left-1/2 z-0 h-[calc(100%-2rem)] w-[calc(100%-2rem)]">
+			<div className="absolute top-[calc(50%)] left-1/2 z-0 h-[calc(100%-2rem)] w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2">
 				<div className="relative h-full w-full overflow-hidden rounded-md">
 					<img
 						src={heroImg}
 						alt=""
 						aria-hidden
-						className="-translate-x-1/2 -translate-y-1/2 pointer-events-none absolute top-1/2 left-1/2 min-h-full w-3xl min-w-full select-none object-cover opacity-40"
+						className="pointer-events-none absolute top-1/2 left-1/2 min-h-full w-3xl min-w-full -translate-x-1/2 -translate-y-1/2 select-none object-cover opacity-40"
 					/>
 				</div>
 			</div>
@@ -172,7 +172,7 @@ const HeroSection = ({
 				</div>
 			</div>
 			{/* Terminal window */}
-			<div className="-translate-y-1/2 -translate-x-1/2 absolute top-[calc(50%)] left-1/2 z-10 h-[calc(100%-2rem)]">
+			<div className="absolute top-[calc(50%)] left-1/2 z-10 h-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2">
 				<div
 					className="absolute inset-0 z-0 rounded-md backdrop-blur-xs"
 					aria-hidden

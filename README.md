@@ -14,7 +14,7 @@ bun run dev
 # Build (output: dist/client)
 bun run build
 
-# Deploy (build only; Pages uploads dist/client)
+# Build and deploy to Cloudflare Pages
 bun run deploy
 
 # Lint & format
@@ -39,10 +39,10 @@ Detailed documentation lives in **[/docs](docs/)** (not part of the build):
 
 ## Stack
 
-- **React 19** + **Vite 7** + **TanStack Start** (static build via Netlify plugin)
+- **React 19** + **Vite 8** + **TanStack Start** (built-in static prerendering)
 - **TanStack Router** (file-based routes), **TanStack Query**
 - **Tailwind CSS v4**, **Motion**, **Base UI** + CVA
-- **Cloudflare Pages** (static; no Workers/Wrangler)
+- **Cloudflare Pages** (static; Wrangler uploads `dist/client`)
 
 ## Adding UI components
 

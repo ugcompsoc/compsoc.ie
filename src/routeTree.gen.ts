@@ -10,30 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as otherConstitutionRouteImport } from './routes/(other)/constitution'
-import { Route as menuEventsRouteImport } from './routes/(menu)/events'
-import { Route as menuContactRouteImport } from './routes/(menu)/contact'
-import { Route as menuCommitteeRouteImport } from './routes/(menu)/committee'
 import { Route as menuAccountRouteImport } from './routes/(menu)/account'
+import { Route as menuCommitteeRouteImport } from './routes/(menu)/committee'
+import { Route as menuContactRouteImport } from './routes/(menu)/contact'
+import { Route as menuEventsRouteImport } from './routes/(menu)/events'
+import { Route as otherConstitutionRouteImport } from './routes/(other)/constitution'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const otherConstitutionRoute = otherConstitutionRouteImport.update({
-  id: '/(other)/constitution',
-  path: '/constitution',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const menuEventsRoute = menuEventsRouteImport.update({
-  id: '/(menu)/events',
-  path: '/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const menuContactRoute = menuContactRouteImport.update({
-  id: '/(menu)/contact',
-  path: '/contact',
+const menuAccountRoute = menuAccountRouteImport.update({
+  id: '/(menu)/account',
+  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const menuCommitteeRoute = menuCommitteeRouteImport.update({
@@ -41,9 +31,19 @@ const menuCommitteeRoute = menuCommitteeRouteImport.update({
   path: '/committee',
   getParentRoute: () => rootRouteImport,
 } as any)
-const menuAccountRoute = menuAccountRouteImport.update({
-  id: '/(menu)/account',
-  path: '/account',
+const menuContactRoute = menuContactRouteImport.update({
+  id: '/(menu)/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const menuEventsRoute = menuEventsRouteImport.update({
+  id: '/(menu)/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const otherConstitutionRoute = otherConstitutionRouteImport.update({
+  id: '/(other)/constitution',
+  path: '/constitution',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -111,25 +111,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(other)/constitution': {
-      id: '/(other)/constitution'
-      path: '/constitution'
-      fullPath: '/constitution'
-      preLoaderRoute: typeof otherConstitutionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(menu)/events': {
-      id: '/(menu)/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof menuEventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(menu)/contact': {
-      id: '/(menu)/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof menuContactRouteImport
+    '/(menu)/account': {
+      id: '/(menu)/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof menuAccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(menu)/committee': {
@@ -139,11 +125,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof menuCommitteeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(menu)/account': {
-      id: '/(menu)/account'
-      path: '/account'
-      fullPath: '/account'
-      preLoaderRoute: typeof menuAccountRouteImport
+    '/(menu)/contact': {
+      id: '/(menu)/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof menuContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(menu)/events': {
+      id: '/(menu)/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof menuEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(other)/constitution': {
+      id: '/(other)/constitution'
+      path: '/constitution'
+      fullPath: '/constitution'
+      preLoaderRoute: typeof otherConstitutionRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

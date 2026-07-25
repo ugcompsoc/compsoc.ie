@@ -10,7 +10,12 @@ import {
 	useState,
 } from "react"
 
-export type SectionId = "hero" | "about" | "stats" | "footer" | "menu"
+export type SectionId =
+	| "hero"
+	| "about"
+	| "stats"
+	| "footer"
+	| "menu"
 
 const TAP_ACTIVE_MS = 500
 
@@ -48,7 +53,9 @@ export function ActiveSectionProvider({
 		useState<SectionId | null>(null)
 	const [footerHovered, setFooterHovered] = useState(false)
 	const [menuHovered, setMenuHovered] = useState(false)
-	const [ratios, setRatios] = useState<Record<SectionId, number>>({
+	const [ratios, setRatios] = useState<
+		Record<SectionId, number>
+	>({
 		hero: 0,
 		about: 0,
 		stats: 0,
@@ -152,7 +159,11 @@ export function ActiveSectionProvider({
 			return
 		}
 		// Scroll-based: hero, about, stats; footer is active only on hover
-		const scrollSectionIds = ["hero", "about", "stats"] as const
+		const scrollSectionIds = [
+			"hero",
+			"about",
+			"stats",
+		] as const
 		const entries = Array.from(registeredIds)
 			.filter(
 				(id): id is (typeof scrollSectionIds)[number] =>
@@ -164,7 +175,10 @@ export function ActiveSectionProvider({
 				const raw = ratios[id] ?? 0
 				// Hero must be ≥75% visible to stay active
 				if (id === "hero") {
-					return [id, raw < 0.75 ? 0 : raw] as [SectionId, number]
+					return [id, raw < 0.75 ? 0 : raw] as [
+						SectionId,
+						number,
+					]
 				}
 				return [id, raw] as [SectionId, number]
 			})
@@ -176,7 +190,14 @@ export function ActiveSectionProvider({
 			a[1] >= b[1] ? a : b,
 		)
 		setActiveSectionId(best[1] > 0 ? best[0] : null)
-	}, [isMobile, tapOverrideId, menuHovered, footerHovered, ratios, registeredIds])
+	}, [
+		isMobile,
+		tapOverrideId,
+		menuHovered,
+		footerHovered,
+		ratios,
+		registeredIds,
+	])
 
 	const value = useMemo<ActiveSectionContextValue>(
 		() => ({

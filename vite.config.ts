@@ -1,17 +1,20 @@
+import babel from "@rolldown/plugin-babel"
 import tailwindcss from "@tailwindcss/vite"
 import { devtools } from "@tanstack/devtools-vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
-import netlify from "@netlify/vite-plugin-tanstack-start"
-import viteReact from "@vitejs/plugin-react"
+import viteReact, {
+	reactCompilerPreset,
+} from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { imagetools } from "vite-imagetools"
-import tsconfigPaths from "vite-tsconfig-paths"
 
-// Full SSG for Cloudflare Pages: static output in dist/client (no Workers/Wrangler).
+// Full SSG for Cloudflare Pages: static output in dist/client.
 const config = defineConfig({
+	resolve: {
+		tsconfigPaths: true,
+	},
 	plugins: [
 		devtools(),
-		tsconfigPaths({ projects: ["./tsconfig.json"] }),
 		imagetools(),
 		tailwindcss(),
 		tanstackStart({
@@ -21,11 +24,9 @@ const config = defineConfig({
 				crawlLinks: true,
 			},
 		}),
-		netlify(),
-		viteReact({
-			babel: {
-				plugins: ["babel-plugin-react-compiler"],
-			},
+		viteReact(),
+		babel({
+			presets: [reactCompilerPreset()],
 		}),
 	],
 })

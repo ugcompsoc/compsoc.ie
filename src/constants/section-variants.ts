@@ -24,5 +24,5 @@ export const sectionVariants = {
 }
 
 /** Active border color for nav bottom border when menu is active. */
-export const sectionActiveBorderColor =
-	sectionVariants.active.borderColor as string
+export const sectionActiveBorderColor = sectionVariants
+	.active.borderColor as string

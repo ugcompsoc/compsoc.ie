@@ -8,13 +8,12 @@ import {
 } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { useEffect, useState } from "react"
+import appleTouchIconUrl from "#/assets/img/compsoc/apple-touch-icon.png?format=webp&w=200"
+import faviconUrl from "#/assets/img/compsoc/favicon.png?format=webp&w=200"
 import { NotFound } from "#/components/NotFound"
 import { Footer } from "#/components/ui/footer"
 import { NavigationMenuComponent } from "#/components/ui/navigation-menu"
 import { ActiveSectionProvider } from "#/contexts/active-section"
-
-import faviconUrl from "#/assets/img/compsoc/favicon.png?format=webp&w=200"
-import appleTouchIconUrl from "#/assets/img/compsoc/apple-touch-icon.png?format=webp&w=200"
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools"
 import TanStackQueryProvider from "../integrations/tanstack-query/root-provider"
 import appCss from "../styles.css?url"
@@ -123,7 +122,8 @@ function RootDocument({
 }: {
 	children: React.ReactNode
 }) {
-	const currentPath = useLocation().pathname.replace(/\/$/, "") || "/"
+	const currentPath =
+		useLocation().pathname.replace(/\/$/, "") || "/"
 	const DESKTOP_BREAKPOINT = 768
 	const [isDesktop, setIsDesktop] = useState(() => {
 		if (typeof window !== "undefined") {

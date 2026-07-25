@@ -308,14 +308,14 @@ function NavigationMenuComponent({
 }
 
 export {
-	NavigationMenuComponent,
 	NavigationMenu,
+	NavigationMenuComponent,
 	NavigationMenuContent,
 	NavigationMenuIndicator,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
+	NavigationMenuPositioner,
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
-	NavigationMenuPositioner,
 }

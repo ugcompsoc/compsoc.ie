@@ -167,7 +167,7 @@ function RouteComponent() {
 			{activeTab === "past" && (
 				<div>
 					<div className="relative">
-						<Search className="-translate-y-1/2 pointer-events-none absolute top-1/2 left-3 size-4 text-muted-foreground peer-focus/search:text-foreground" />
+						<Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground peer-focus/search:text-foreground" />
 						<Input
 							type="search"
 							placeholder=" Search by title, location, time, date, and year ranges like 2023–2024"

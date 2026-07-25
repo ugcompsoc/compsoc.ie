@@ -8,7 +8,7 @@ The app is built as a **static site (SSG)**. Build output is **`dist/client`** �
 bun run build
 ```
 
-Output: **`dist/client`** (and `dist/server` / `.netlify` from the build pipeline; only `dist/client` is used for deploy).
+Output: **`dist/client`** (and `dist/server`; only `dist/client` is deployed).
 
 ## Cloudflare Pages (Git integration)
 
@@ -30,5 +30,5 @@ If the build environment doesn’t have Bun, use **Build command:** `npm run bui
 
 ## Config
 
-- **Vite:** `vite.config.ts` — TanStack Start, **@netlify/vite-plugin-tanstack-start** (static build), prerender with `crawlLinks`.
+- **Vite:** `vite.config.ts` — TanStack Start's built-in static prerenderer with `crawlLinks`.
 - **wrangler.jsonc** — Cloudflare Pages: `name` (`compsoc-ie`), `pages_build_output_dir` = `./dist/client`. Used by `wrangler pages deploy` and by the dashboard when using the config file.

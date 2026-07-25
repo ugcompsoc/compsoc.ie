@@ -49,7 +49,9 @@ function CommitteePage() {
 						selectedYear === null ? "default" : "outline"
 					}
 					size="sm"
-					data-active={selectedYear === null ? true : undefined}
+					data-active={
+						selectedYear === null ? true : undefined
+					}
 					onClick={() => setSelectedYear(ALL_YEARS)}
 					className="px-3"
 				>
@@ -83,9 +85,9 @@ function CommitteePage() {
 							className="columns-1 sm:columns-2 md:columns-3"
 							style={{ columnGap: "1rem" }}
 						>
-							{year.committee?.map((person, idx) => (
+							{year.committee?.map((person) => (
 								<CommitteeCard
-									key={`${person.name}-${idx}`}
+									key={person.name}
 									person={person}
 									defaultBio={
 										year.default_bio || DefaultBio
