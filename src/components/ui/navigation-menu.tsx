@@ -210,7 +210,7 @@ function NavigationMenuComponent({
 	return (
 		// biome-ignore lint/a11y/noStaticElementInteractions: hover only for active-section state
 		<div
-			className="fixed top-0 left-0 z-1000 flex h-16 w-screen items-center justify-between border-border border-b-2 bg-background transition-[border-color] duration-300"
+			className="fixed top-0 left-0 z-1000 flex h-16 w-screen items-center justify-between border-border border-b-2 bg-background px-4 transition-[border-color] duration-300"
 			onMouseEnter={() => setMenuHovered(true)}
 			onMouseLeave={() => setMenuHovered(false)}
 			onTouchEnd={() => setTapOverride("menu")}
