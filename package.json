@@ -2,8 +2,19 @@
   "name": "compsoc.ie",
   "private": true,
   "type": "module",
+  "packageManager": "bun@1.3.14",
+  "engines": {
+    "node": "24.x"
+  },
   "imports": {
     "#/*": "./src/*"
+  },
+  "overrides": {
+    "launch-editor": "2.14.1",
+    "picomatch": "4.0.5",
+    "solid-js": "1.9.14",
+    "ws": "8.21.1",
+    "yaml": "2.9.0"
   },
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -24,12 +35,10 @@
     "@tanstack/react-query-devtools": "5.101.4",
     "@tanstack/react-router": "1.170.18",
     "@tanstack/react-router-devtools": "1.167.0",
-    "@tanstack/react-router-ssr-query": "1.167.1",
     "@tanstack/react-start": "1.168.32",
-    "@tanstack/router-plugin": "1.168.23",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
-    "lucide-react": "1.26.0",
+    "lucide-react": "1.27.0",
     "motion": "12.42.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -38,19 +47,12 @@
     "tw-animate-css": "1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "8.0.1",
     "@biomejs/biome": "2.5.5",
-    "@rolldown/plugin-babel": "0.2.3",
     "@tanstack/devtools-vite": "0.8.3",
-    "@testing-library/dom": "10.4.1",
-    "@testing-library/react": "16.3.2",
-    "@types/babel__core": "7.20.5",
-    "@types/node": "26.1.1",
+    "@types/node": "24.13.3",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.4",
-    "babel-plugin-react-compiler": "1.0.0",
-    "jsdom": "29.1.1",
     "typescript": "7.0.2",
     "vite": "8.1.5",
     "vite-imagetools": "10.0.1",
