@@ -3,7 +3,11 @@ import { useEffect, useRef } from "react"
 import { sectionVariants } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
 
-export function Footer({ currentPath = "/" }: { currentPath?: string }) {
+export function Footer({
+	currentPath = "/",
+}: {
+	currentPath?: string
+}) {
 	const footerRef = useRef<HTMLElement>(null)
 	const {
 		activeSectionId,
@@ -44,7 +48,8 @@ export function Footer({ currentPath = "/" }: { currentPath?: string }) {
 						className="h-10 w-auto object-contain"
 					/>
 					<p className="text-muted-foreground text-sm">
-						© Copyright University Galway Computer Society
+						© Copyright University of Galway Computer
+						Society
 					</p>
 				</div>
 			</motion.div>
