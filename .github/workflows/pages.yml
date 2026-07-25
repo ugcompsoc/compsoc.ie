@@ -23,6 +23,13 @@ jobs:
       
       - name: Build
         run: npm run build
+
+      - name: Create route entrypoints
+        run: |
+          for route in ctf committee constitution; do
+            mkdir -p "build/$route"
+            cp build/index.html "build/$route/index.html"
+          done
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

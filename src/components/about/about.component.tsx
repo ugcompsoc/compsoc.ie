@@ -5,7 +5,7 @@ const AboutComponent = () => {
                 <div className="container">
                     <img
                         alt=""
-                        src="assets/img/compsoc_banner_blue_black.png"
+                        src="/assets/img/compsoc_banner_blue_black.png"
                         width="30%"
                     ></img>
                     <br></br>
