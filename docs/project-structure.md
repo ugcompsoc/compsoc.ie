@@ -10,7 +10,7 @@ compsoc.ie2/
 ├── public/                  # Static assets (copied as-is)
 │   └── assets/
 ├── src/
-│   ├── assets/              # Images imported by the app (e.g. university photos)
+│   ├── assets/              # Images processed by the build (university photos, committee headshots)
 │   ├── components/          # React components
 │   │   ├── icons/           # Icon components + index.ts barrel
 │   │   ├── sections/        # Feature sections (e.g. Home/HeroSection, AboutSection)
@@ -65,6 +65,14 @@ compsoc.ie2/
 ## Image imports and `vite-env.d.ts`
 
 Images are imported with Vite query strings for format conversion and resizing (e.g. `?format=webp&w=400`). TypeScript's `declare module` only supports a single `*` wildcard per pattern, so each width variant needs its own declaration in `src/vite-env.d.ts`. If you add an image import with a new `&w=` value, you must add a matching `declare module "*?format=webp&w=<width>"` entry or TypeScript will report a false-positive "Cannot find module" error — the import works fine at runtime via Vite.
+
+### Committee headshots
+
+`src/assets/img/committee/**` is pulled in with an eager `import.meta.glob` in
+`src/services/committee.ts` carrying a `?format=webp&w=256` query, so the photos
+go through the same imagetools pipeline as statically imported images. That is
+why they live under `src/assets/` rather than `public/`: files in `public/` are
+copied verbatim, with no format conversion, resizing or content hashing.
 
 ## Generated / ignored
 

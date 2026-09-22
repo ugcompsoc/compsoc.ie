@@ -57,6 +57,8 @@ const HeroSection = ({
 						src={heroImg}
 						alt=""
 						aria-hidden
+						fetchPriority="high"
+						decoding="async"
 						className="pointer-events-none absolute top-1/2 left-1/2 min-h-full w-3xl min-w-full -translate-x-1/2 -translate-y-1/2 select-none object-cover opacity-40"
 					/>
 				</div>

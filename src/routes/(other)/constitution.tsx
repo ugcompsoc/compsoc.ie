@@ -1,10 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useEffect } from "react"
+import { seo } from "#/lib/seo"
 
 export const Route = createFileRoute(
 	"/(other)/constitution",
 )({
 	component: RouteComponent,
+	head: () =>
+		seo({
+			title: "Constitution | CompSoc",
+			description:
+				"The constitution of CompSoc, the Computer Society of University of Galway, as ratified by the University Societies Coordination Group.",
+			path: "/constitution",
+		}),
 })
 
 function RouteComponent() {

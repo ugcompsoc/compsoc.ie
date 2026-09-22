@@ -10,16 +10,25 @@ import {
 import { Card, CardContent } from "#/components/ui/card"
 import { PageTitle } from "#/components/ui/page-title"
 import { PageLayout } from "#/layouts"
+import { seo } from "#/lib/seo"
 import { cn } from "#/lib/utils"
 import {
 	CommitteeYears,
 	DefaultBio,
 	DefaultPhoto,
 	type Person,
+	resolvePhoto,
 } from "#/services/committee"
 
 export const Route = createFileRoute("/(menu)/committee")({
 	component: CommitteePage,
+	head: () =>
+		seo({
+			title: "Committee | CompSoc",
+			description:
+				"Meet the students who run CompSoc, the University of Galway Computer Society, across the current and recent committee years.",
+			path: "/committee",
+		}),
 })
 
 const ALL_YEARS = null as string | null
@@ -27,7 +36,7 @@ const ALL_YEARS = null as string | null
 function CommitteePage() {
 	const [selectedYear, setSelectedYear] = useState<
 		string | null
-	>(ALL_YEARS)
+	>(CommitteeYears[0]?.year ?? ALL_YEARS)
 
 	const years = CommitteeYears.map((year) => year.year)
 	const visibleYears =
@@ -129,9 +138,9 @@ function CommitteeCard({
 	defaultBio: string
 	defaultPhoto: string
 }) {
-	const photo = person.photo?.trim()
-		? person.photo
-		: defaultPhoto
+	const photo = resolvePhoto(
+		person.photo?.trim() ? person.photo : defaultPhoto,
+	)
 	const bio = person.bio?.trim() ? person.bio : defaultBio
 	return (
 		<Card className="mb-4 flex break-inside-avoid flex-col items-center text-center">
@@ -139,8 +148,11 @@ function CommitteeCard({
 				<img
 					src={photo}
 					alt={person.name}
+					width={112}
+					height={112}
 					className="mb-3 size-24 rounded-full border-2 border-border object-cover transition-colors duration-300 group-hover/card:border-foreground/30 md:size-28"
 					loading="lazy"
+					decoding="async"
 				/>
 				<h3 className="font-bold text-foreground">
 					{person.name}

@@ -13,10 +13,18 @@ import { buttonVariants } from "#/components/ui/button"
 import { PageTitle } from "#/components/ui/page-title"
 import { Panel } from "#/components/ui/panel"
 import { PageLayout } from "#/layouts"
+import { seo } from "#/lib/seo"
 import { cn } from "#/lib/utils"
 
 export const Route = createFileRoute("/(menu)/contact")({
 	component: ContactPage,
+	head: () =>
+		seo({
+			title: "Contact | CompSoc",
+			description:
+				"Get in touch with CompSoc, the University of Galway Computer Society, by email, Discord or Instagram, or find us on campus.",
+			path: "/contact",
+		}),
 })
 
 /** Matches Card hover on events/committee; md+ only so touch devices stay calm. */

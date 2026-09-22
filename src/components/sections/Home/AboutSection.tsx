@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router"
 import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
-import uog2 from "#/assets/img/university/UoG2.jpg?format=webp&w=1400"
-import uog3 from "#/assets/img/university/UoG3.jpg?format=webp&w=1000"
-import uog4 from "#/assets/img/university/UoG4.jpg?format=webp&w=1000"
+import uog2 from "#/assets/img/university/UoG2.jpg?format=webp&w=640;1024;1400&as=img"
+import uog3 from "#/assets/img/university/UoG3.jpg?format=webp&w=480;768;1000&as=img"
+import uog4 from "#/assets/img/university/UoG4.jpg?format=webp&w=480;768;1000&as=img"
 import { useActiveSection } from "#/contexts/active-section"
 
 type SectionMotionProps = {
@@ -67,8 +67,14 @@ const AboutSection = ({
 					<div className="relative border-border border-b-2 bg-background md:col-span-2">
 						<div className="aspect-4/3 md:absolute md:inset-0 md:aspect-auto">
 							<img
-								src={uog2}
+								src={uog2.src}
+								srcSet={uog2.srcset}
+								sizes="(min-width: 1024px) 66vw, 100vw"
+								width={uog2.w}
+								height={uog2.h}
 								alt="University of Galway campus"
+								loading="lazy"
+								decoding="async"
 								className="h-full w-full object-cover"
 							/>
 						</div>
@@ -81,8 +87,14 @@ const AboutSection = ({
 					<div className="relative hidden border-border border-b-2 bg-background md:flex md:border-r-2">
 						<div className="aspect-4/3 md:absolute md:inset-0 md:aspect-auto">
 							<img
-								src={uog3}
+								src={uog3.src}
+								srcSet={uog3.srcset}
+								sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+								width={uog3.w}
+								height={uog3.h}
 								alt="University of Galway"
+								loading="lazy"
+								decoding="async"
 								className="h-full w-full object-cover"
 							/>
 						</div>
@@ -111,8 +123,14 @@ const AboutSection = ({
 					<div className="relative border-border border-b-2 bg-background">
 						<div className="aspect-4/3 md:absolute md:inset-0 md:aspect-auto">
 							<img
-								src={uog4}
+								src={uog4.src}
+								srcSet={uog4.srcset}
+								sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+								width={uog4.w}
+								height={uog4.h}
 								alt="University of Galway"
+								loading="lazy"
+								decoding="async"
 								className="h-full w-full object-cover"
 							/>
 						</div>
@@ -124,8 +142,14 @@ const AboutSection = ({
 					<div className="relative border-border border-b-2 bg-background md:col-span-2">
 						<div className="aspect-4/3 md:absolute md:inset-0 md:aspect-auto">
 							<img
-								src={uog2}
+								src={uog2.src}
+								srcSet={uog2.srcset}
+								sizes="(min-width: 1024px) 66vw, 100vw"
+								width={uog2.w}
+								height={uog2.h}
 								alt="University of Galway campus"
+								loading="lazy"
+								decoding="async"
 								className="h-full w-full object-cover"
 							/>
 						</div>
@@ -139,12 +163,12 @@ const AboutSection = ({
 							Our constitution
 						</h2>
 						<p className="text-muted-foreground text-sm leading-7">
-							You can find our constitution{" "}
+							You can{" "}
 							<Link
 								className="font-semibold text-accent underline underline-offset-2 transition-colors hover:text-accent/80"
 								to="/constitution"
 							>
-								here
+								read the CompSoc constitution
 							</Link>
 							, as ratified by the USCG (
 							<span className="italic">

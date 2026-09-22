@@ -14,6 +14,14 @@ import { NotFound } from "#/components/NotFound"
 import { Footer } from "#/components/ui/footer"
 import { NavigationMenuComponent } from "#/components/ui/navigation-menu"
 import { ActiveSectionProvider } from "#/contexts/active-section"
+import {
+	DEFAULT_DESCRIPTION,
+	DEFAULT_TITLE,
+	SITE_NAME,
+	SITE_URL,
+	SOCIAL_IMAGE,
+	SOCIAL_IMAGE_ALT,
+} from "#/lib/seo"
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools"
 import TanStackQueryProvider from "../integrations/tanstack-query/root-provider"
 import appCss from "../styles.css?url"
@@ -38,38 +46,50 @@ export const Route =
 					name: "theme-color",
 					content: "#000000",
 				},
+				// Site-wide defaults. Individual routes override title/description/
+				// canonical via seo() in their own head(); router merges leaf-first.
+				{
+					title: DEFAULT_TITLE,
+				},
 				{
 					name: "title",
-					content:
-						"CompSoc - University of Galway's Computer Society",
+					content: DEFAULT_TITLE,
 				},
 				{
 					name: "description",
-					content:
-						"CompSoc is the longest running Computer Society in Ireland, and a social outlet for University of Galway students interested in technology.",
+					content: DEFAULT_DESCRIPTION,
 				},
 				{
 					property: "og:type",
 					content: "website",
 				},
 				{
+					property: "og:site_name",
+					content: SITE_NAME,
+				},
+				{
+					property: "og:locale",
+					content: "en_IE",
+				},
+				{
 					property: "og:url",
-					content: "https://compsoc.ie",
+					content: SITE_URL,
 				},
 				{
 					property: "og:title",
-					content:
-						"CompSoc - University of Galway's Computer Society",
+					content: DEFAULT_TITLE,
 				},
 				{
 					property: "og:description",
-					content:
-						"CompSoc is the longest running Computer Society in Ireland, and a social outlet for University of Galway students interested in technology.",
+					content: DEFAULT_DESCRIPTION,
 				},
 				{
 					property: "og:image",
-					content:
-						"/assets/img/compsoc/compsoc-meta-social-banner.png",
+					content: SOCIAL_IMAGE,
+				},
+				{
+					property: "og:image:alt",
+					content: SOCIAL_IMAGE_ALT,
 				},
 				{
 					property: "twitter:card",
@@ -77,22 +97,23 @@ export const Route =
 				},
 				{
 					property: "twitter:url",
-					content: "https://compsoc.ie",
+					content: SITE_URL,
 				},
 				{
 					property: "twitter:title",
-					content:
-						"CompSoc - University of Galway's Computer Society",
+					content: DEFAULT_TITLE,
 				},
 				{
 					property: "twitter:description",
-					content:
-						"CompSoc is the longest running Computer Society in Ireland, and a social outlet for University of Galway students interested in technology.",
+					content: DEFAULT_DESCRIPTION,
 				},
 				{
 					property: "twitter:image",
-					content:
-						"/assets/img/compsoc/compsoc-meta-social-banner.png",
+					content: SOCIAL_IMAGE,
+				},
+				{
+					property: "twitter:image:alt",
+					content: SOCIAL_IMAGE_ALT,
 				},
 			],
 			links: [
@@ -107,10 +128,6 @@ export const Route =
 				{
 					rel: "apple-touch-icon",
 					href: appleTouchIconUrl,
-				},
-				{
-					rel: "stylesheet",
-					href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap",
 				},
 			],
 		}),

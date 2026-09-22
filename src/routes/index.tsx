@@ -3,9 +3,15 @@ import AboutSection from "#/components/sections/Home/AboutSection"
 import HeroSection from "#/components/sections/Home/HeroSection"
 import InfographicSection from "#/components/sections/Home/InfographicSection"
 import { sectionVariants } from "#/constants/section-variants"
+import { DEFAULT_TITLE, seo } from "#/lib/seo"
 
 export const Route = createFileRoute("/")({
 	component: HomePage,
+	head: () =>
+		seo({
+			title: DEFAULT_TITLE,
+			path: "/",
+		}),
 })
 
 function HomePage() {

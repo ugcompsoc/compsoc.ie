@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
+import universityLogoUrl from "#/assets/img/university/universityofgalway.jpg?format=webp&w=100"
 import { sectionVariants } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
 
@@ -43,8 +44,12 @@ export function Footer({
 			>
 				<div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
 					<img
-						src="/assets/img/university/universityofgalway.jpg"
+						src={universityLogoUrl}
 						alt="University of Galway"
+						width={100}
+						height={100}
+						loading="lazy"
+						decoding="async"
 						className="h-10 w-auto object-contain"
 					/>
 					<p className="text-muted-foreground text-sm">

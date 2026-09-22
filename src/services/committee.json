@@ -551,7 +551,7 @@
 					"position": "Auditor",
 					"bio": "Ciarán is the Auditor for CompSoc and studying Electronic & Computer Engineering. He spends his free time reading and playing video games.",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/ciaranmccarthy.png"
+					"photo": "/assets/img/committee/2020-21/ciaranmccarthy.webp"
 				},
 				{
 					"name": "Conor Mc Govern",
@@ -569,7 +569,7 @@
 					"position": "Secretary",
 					"bio": "Ciara is in 3rd year studying Computer Science. Spends any and all spare time idolising Harry Styles < 3 and lying terribly in Among Us ",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/ciaragalvin.png"
+					"photo": "/assets/img/committee/2020-21/ciaragalvin.webp"
 				},
 				{
 					"name": "Ella Anderson",
@@ -596,21 +596,21 @@
 					"social_links": [
 						{ "bx bxl-linkedin": "https://www.linkedin.com/in/mark-drinan/" }
 					],
-					"photo": "/assets/img/committee/2020-21/markdrinan.png"
+					"photo": "/assets/img/committee/2020-21/markdrinan.webp"
 				},
 				{
 					"name": "Kilian McGovern",
 					"position": "Vice Treasurer",
 					"bio": "",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/killianmcgovern.png"
+					"photo": "/assets/img/committee/2020-21/killianmcgovern.webp"
 				},
 				{
 					"name": "Cian Dillane",
 					"position": "System Administrator",
 					"bio": "- Last living proof of a long-forgotten argument\n- Has nostrils for eyes\n- Enjoys air when submerged in water\n- Interoperable with most things 5 % of the time on the 29th of February\n- Will run his hand through your imagination before you know it",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/cian-dillane.png"
+					"photo": "/assets/img/committee/2020-21/cian-dillane.webp"
 				},
 				{
 					"name": "David Noone",
@@ -631,35 +631,35 @@
 					"position": "System Administrator",
 					"bio": "Computer nerd with interests in CPUs, GPUs, 3D printing and music. Also into Wearables.",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/davidkong.png"
+					"photo": "/assets/img/committee/2020-21/davidkong.webp"
 				},
 				{
 					"name": "Keith Rabbitte",
 					"position": "System Administrator",
 					"bio": "Keith is in first year Computer Science. He likes to spend his free time drawing and listening to Limp Bizkit.",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/keithrabbitte.png"
+					"photo": "/assets/img/committee/2020-21/keithrabbitte.webp"
 				},
 				{
 					"name": "Matthew Finn",
 					"position": "Video Game Administrator",
 					"bio": "I'm Matthew, a Drama and Philosophy student in NUIG. I know a lot less about the technical side of computers then the rest of the committee, but still love computers none the less! Videogames and digital art are two of my favourite things to do, and if you need someone who's in CompSoc for the chill vibes and good company, I'm your man.",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/matthewfinn.png"
+					"photo": "/assets/img/committee/2020-21/matthewfinn.webp"
 				},
 				{
 					"name": "Dylan Oxley",
 					"position": "Helpdesk",
 					"bio": "I'm a Third year student in NUIG studying computer science and information technology. When im not doing assignments im busy playing video games mainly among us at the moment also enjoy going for the odd pint. ",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/dylanoxley.png"
+					"photo": "/assets/img/committee/2020-21/dylanoxley.webp"
 				},
 				{
 					"name": "Tadhg Codyre",
 					"position": "OCM",
 					"bio": "Third year computer scientist. Hobbies are video games, cycling and drinking beer",
 					"social_links": [],
-					"photo": "/assets/img/committee/2020-21/tadhg.png"
+					"photo": "/assets/img/committee/2020-21/tadhg.webp"
 				}
 			]
 		}

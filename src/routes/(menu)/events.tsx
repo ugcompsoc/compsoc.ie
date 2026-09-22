@@ -13,6 +13,7 @@ import { Input } from "#/components/ui/input"
 import { PageTitle } from "#/components/ui/page-title"
 import { Panel } from "#/components/ui/panel"
 import { PageLayout } from "#/layouts"
+import { seo } from "#/lib/seo"
 import { cn } from "#/lib/utils"
 import {
 	type EventType,
@@ -22,6 +23,13 @@ import {
 
 export const Route = createFileRoute("/(menu)/events")({
 	component: RouteComponent,
+	head: () =>
+		seo({
+			title: "Events | CompSoc",
+			description:
+				"Upcoming and past CompSoc events: workshops, talks, hackathons and socials for University of Galway students interested in technology.",
+			path: "/events",
+		}),
 	validateSearch: (search: {
 		tab?: "upcoming" | "past"
 		q?: string

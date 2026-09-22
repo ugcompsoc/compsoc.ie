@@ -50,14 +50,24 @@ The page automatically picks up the new year — no route or component changes n
 | `name`         | Yes      | Full name as displayed. |
 | `position`     | Yes      | Role title (e.g. "Auditor", "System Administrator"). |
 | `bio`          | No       | Leave `""` to fall back to `default_bio`. |
-| `photo`        | No       | Path relative to `public/` (e.g. `/assets/img/committee/2024-25/janedoe.jpg`). Leave `""` for the default photo. |
+| `photo`        | No       | Public-style path (e.g. `/assets/img/committee/2024-25/janedoe.jpg`), resolved to the built asset — see [Photos](#photos). Leave `""` for the default photo. |
 | `social_links` | No       | Array of `{ "icon_key": "url" }` objects. Can be empty `[]`. |
 
 ## Photos
 
-- Place photos in `public/assets/img/committee/<year>/` (e.g. `public/assets/img/committee/2024-25/`).
+- Place photos in `src/assets/img/committee/<year>/` (e.g. `src/assets/img/committee/2024-25/`).
 - Use lowercase, no spaces in filenames (e.g. `janedoe.jpg`).
 - Photos are displayed at 96px/112px circles — square images with a face centred work best.
+- Drop in whatever you have (`.jpg`, `.jpeg`, `.png` or `.webp`) at whatever
+  size. The build converts every photo to WebP, caps it at 256px and gives it a
+  content-hashed filename so browsers can cache it forever. Do not hand-optimise
+  them first.
+- In `committee.json`, keep writing the path as if the file still lived in
+  `public/` — `/assets/img/committee/2024-25/janedoe.jpg`, including the original
+  extension. `resolvePhoto()` in `src/services/committee.ts` maps that string to
+  the processed asset URL at build time.
+- A photo path with no matching file is passed through unchanged, so a typo
+  shows up as a broken image rather than a build failure.
 
 ## Social link icons
 

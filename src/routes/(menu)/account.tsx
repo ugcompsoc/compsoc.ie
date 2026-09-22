@@ -4,9 +4,17 @@ import { Card, CardContent } from "#/components/ui/card"
 import { PageTitle } from "#/components/ui/page-title"
 import { Panel } from "#/components/ui/panel"
 import { PageLayout } from "#/layouts"
+import { seo } from "#/lib/seo"
 
 export const Route = createFileRoute("/(menu)/account")({
 	component: RouteComponent,
+	head: () =>
+		seo({
+			title: "Member Accounts | CompSoc",
+			description:
+				"Every CompSoc member gets a free account on our servers, with 5GB of storage, SSH access and email.",
+			path: "/account",
+		}),
 })
 
 function RouteComponent() {
