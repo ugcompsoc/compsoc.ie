@@ -35,3 +35,6 @@ declare module "*&as=img" {
 	}
 	export default img
 }
+
+/** Injected by `define` in vite.config.ts from committee.json. */
+declare const __COMMITTEE_SIZE__: string

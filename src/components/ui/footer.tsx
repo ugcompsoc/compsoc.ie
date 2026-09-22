@@ -1,7 +1,6 @@
-import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
 import universityLogoUrl from "#/assets/img/university/universityofgalway.jpg?format=webp&w=100"
-import { sectionVariants } from "#/constants/section-variants"
+import { sectionStyle } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
 
 export function Footer({
@@ -33,14 +32,9 @@ export function Footer({
 			onMouseLeave={() => setFooterHovered(false)}
 			onTouchEnd={() => setTapOverride("footer")}
 		>
-			<motion.div
+			<div
 				className="mx-auto overflow-hidden rounded-md border-2 border-border bg-background/80 px-4 py-5 shadow-2xl md:px-6 md:py-5"
-				animate={
-					active
-						? sectionVariants.active
-						: sectionVariants.inactive
-				}
-				transition={sectionVariants.transition}
+				style={sectionStyle(active)}
 			>
 				<div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
 					<img
@@ -57,7 +51,7 @@ export function Footer({
 						Society
 					</p>
 				</div>
-			</motion.div>
+			</div>
 		</footer>
 	)
 }

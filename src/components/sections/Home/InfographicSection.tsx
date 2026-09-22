@@ -4,10 +4,10 @@ import {
 	UserRoundCog,
 	UsersRound,
 } from "lucide-react"
-import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
+import { sectionStyle } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
-import { NumberOfCommitteeMembers } from "#/services/committee"
+import { NumberOfCommitteeMembers } from "#/services/committee-size"
 
 type SectionMotionProps = {
 	activeVariant: { borderColor: string; opacity: number }
@@ -66,10 +66,14 @@ const InfographicSection = ({
 			onTouchEnd={() => setTapOverride("stats")}
 		>
 			{/* Single terminal window containing all metrics */}
-			<motion.div
+			<div
 				className="flex w-full flex-col overflow-hidden rounded-md border-2 bg-background/80 px-4 py-4 shadow-lg md:py-5"
-				animate={active ? activeVariant : inactiveVariant}
-				transition={transition}
+				style={sectionStyle(
+					active,
+					activeVariant,
+					inactiveVariant,
+					transition,
+				)}
 			>
 				<p className="relative text-sm md:text-base">
 					<span className="text-accent">~ ❯</span> compsoc
@@ -105,7 +109,7 @@ const InfographicSection = ({
 						))}
 					</div>
 				</div>
-			</motion.div>
+			</div>
 		</section>
 	)
 }

@@ -1,9 +1,9 @@
-import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
 import heroImg from "#/assets/img/university/UoG.jpg?format=webp&w=400"
 import { DiscordIcon } from "#/components/icons/DiscordIcon"
 import { InstagramIcon } from "#/components/icons/InstagramIcon"
 import { buttonVariants } from "#/components/ui/button"
+import { sectionStyle } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
 import { useTypewriter } from "#/hooks/useTypewriter"
 import { cn } from "#/lib/utils"
@@ -183,11 +183,15 @@ const HeroSection = ({
 				<p className="absolute top-4 left-4 z-20 text-sm md:top-5 md:left-5 md:text-base">
 					<span className="text-accent">~ ❯</span> compsoc
 				</p>
-				<motion.div
+				<div
 					className="relative z-10 h-full w-[calc(100vw-2rem)] overflow-hidden rounded-md border-2 bg-background/70 px-3.5 py-3 shadow-2xl md:px-5 md:py-4"
-					animate={active ? activeVariant : inactiveVariant}
-					transition={transition}
-				></motion.div>
+					style={sectionStyle(
+						active,
+						activeVariant,
+						inactiveVariant,
+						transition,
+					)}
+				></div>
 			</div>
 		</section>
 	)

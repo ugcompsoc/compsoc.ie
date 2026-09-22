@@ -17,8 +17,8 @@ import {
 	DefaultBio,
 	DefaultPhoto,
 	type Person,
-	resolvePhoto,
 } from "#/services/committee"
+import { resolvePhoto } from "#/services/committee-photos"
 
 export const Route = createFileRoute("/(menu)/committee")({
 	component: CommitteePage,

@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router"
-import { motion } from "motion/react"
 import { useEffect, useRef } from "react"
 import uog2 from "#/assets/img/university/UoG2.jpg?format=webp&w=640;1024;1400&as=img"
 import uog3 from "#/assets/img/university/UoG3.jpg?format=webp&w=480;768;1000&as=img"
 import uog4 from "#/assets/img/university/UoG4.jpg?format=webp&w=480;768;1000&as=img"
+import { sectionStyle } from "#/constants/section-variants"
 import { useActiveSection } from "#/contexts/active-section"
 
 type SectionMotionProps = {
@@ -39,10 +39,14 @@ const AboutSection = ({
 			className="relative z-10 mb-4 w-full px-4"
 			onTouchEnd={() => setTapOverride("about")}
 		>
-			<motion.div
+			<div
 				className="overflow-hidden rounded-md border-2 border-border"
-				animate={active ? activeVariant : inactiveVariant}
-				transition={transition}
+				style={sectionStyle(
+					active,
+					activeVariant,
+					inactiveVariant,
+					transition,
+				)}
 			>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 					<div className="flex flex-col justify-center border-border border-b-2 bg-background p-5 md:border-r-2 md:p-8">
@@ -178,7 +182,7 @@ const AboutSection = ({
 						</p>
 					</div>
 				</div>
-			</motion.div>
+			</div>
 		</section>
 	)
 }

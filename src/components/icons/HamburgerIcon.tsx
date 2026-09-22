@@ -1,5 +1,8 @@
-// Custom hamburger menu icon with three SVG lines
-import { motion } from "motion/react"
+// Custom hamburger menu icon with three SVG lines.
+// The open/close morph is a plain CSS transform transition: transform-origin is
+// given in viewBox user units, matching the coordinates each line is drawn at.
+const LINE_TRANSITION =
+	"transform 300ms cubic-bezier(0.4, 0, 0.2, 1)"
 
 export function HamburgerMenuIcon({
 	isOpen,
@@ -17,48 +20,42 @@ export function HamburgerMenuIcon({
 			aria-label={isOpen ? "Close menu" : "Open menu"}
 		>
 			<title>{isOpen ? "Close menu" : "Open menu"}</title>
-			<motion.path
+			<path
 				d="M4 8 L28 8"
 				stroke="currentColor"
 				strokeWidth="2"
 				strokeLinecap="round"
-				animate={{
-					rotate: isOpen ? -45 : 0,
-					y: isOpen ? 8 : 0,
+				style={{
+					transformOrigin: "16px 8px",
+					transform: isOpen
+						? "translateY(8px) rotate(-45deg)"
+						: "none",
+					transition: LINE_TRANSITION,
 				}}
-				transition={{
-					duration: 0.3,
-					ease: [0.4, 0, 0.2, 1],
-				}}
-				style={{ transformOrigin: "16px 8px" }}
 			/>
-			<motion.path
+			<path
 				d="M4 16 L28 16"
 				stroke="currentColor"
 				strokeWidth="2"
 				strokeLinecap="round"
-				animate={{
-					scaleX: isOpen ? 0 : 1,
-				}}
-				transition={{
-					duration: 0.3,
-					ease: [0.4, 0, 0.2, 1],
+				style={{
+					transformOrigin: "16px 16px",
+					transform: isOpen ? "scaleX(0)" : "none",
+					transition: LINE_TRANSITION,
 				}}
 			/>
-			<motion.path
+			<path
 				d="M4 24 L28 24"
 				stroke="currentColor"
 				strokeWidth="2"
 				strokeLinecap="round"
-				animate={{
-					rotate: isOpen ? 45 : 0,
-					y: isOpen ? -8 : 0,
+				style={{
+					transformOrigin: "16px 24px",
+					transform: isOpen
+						? "translateY(-8px) rotate(45deg)"
+						: "none",
+					transition: LINE_TRANSITION,
 				}}
-				transition={{
-					duration: 0.3,
-					ease: [0.4, 0, 0.2, 1],
-				}}
-				style={{ transformOrigin: "16px 24px" }}
 			/>
 		</svg>
 	)
