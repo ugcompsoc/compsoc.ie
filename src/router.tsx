@@ -8,6 +8,12 @@ export function getRouter() {
 
 		context: getContext(),
 
+		// Pages are prerendered as <route>/index.html, which static hosts
+		// (Cloudflare Pages, GitHub Pages) serve at <route>/ and 308/301-redirect
+		// to from <route>. Linking to the slash form avoids that redirect on every
+		// hard load and keeps links consistent with the canonical URLs.
+		trailingSlash: "always",
+
 		scrollRestoration: true,
 		defaultPreload: "intent",
 		defaultPreloadStaleTime: 0,

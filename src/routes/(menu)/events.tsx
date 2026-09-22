@@ -6,20 +6,25 @@ import {
 	MapPin,
 	Search,
 } from "lucide-react"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { buttonVariants } from "#/components/ui/button"
 import { Card, CardContent } from "#/components/ui/card"
 import { Input } from "#/components/ui/input"
+import { LoadMore } from "#/components/ui/load-more"
 import { PageTitle } from "#/components/ui/page-title"
 import { Panel } from "#/components/ui/panel"
 import { PageLayout } from "#/layouts"
 import { seo } from "#/lib/seo"
 import { cn } from "#/lib/utils"
 import {
+	type EventsScope,
 	type EventType,
 	getEvents,
 	splitEvents,
 } from "#/services/events"
+
+/** Event cards rendered per scroll step; Past holds a decade of events. */
+const EVENTS_PAGE_SIZE = 20
 
 export const Route = createFileRoute("/(menu)/events")({
 	component: RouteComponent,
@@ -50,14 +55,18 @@ function RouteComponent() {
 
 	const activeTab: "upcoming" | "past" = tab
 	const pastSearchQuery = q ?? ""
+	// Upcoming needs only the small upcoming snapshot; the full history is
+	// fetched the first time someone opens Past.
+	const scope: EventsScope =
+		activeTab === "past" ? "all" : "upcoming"
 
 	const {
 		data: allEvents = [],
 		isLoading,
 		isError,
 	} = useQuery({
-		queryKey: ["events"],
-		queryFn: getEvents,
+		queryKey: ["events", scope],
+		queryFn: () => getEvents(scope),
 		staleTime: Number.POSITIVE_INFINITY,
 	})
 	const { past, upcoming } = useMemo(
@@ -118,6 +127,17 @@ function RouteComponent() {
 
 	const events =
 		activeTab === "upcoming" ? upcoming : filteredPast
+
+	// Render the list a page at a time as the reader scrolls. The count resets
+	// whenever the tab or search changes (the key no longer matches).
+	const listKey = `${activeTab}:${pastSearchQuery}`
+	const [page, setPage] = useState({
+		key: listKey,
+		count: EVENTS_PAGE_SIZE,
+	})
+	const visibleCount =
+		page.key === listKey ? page.count : EVENTS_PAGE_SIZE
+	const visibleEvents = events.slice(0, visibleCount)
 
 	return (
 		<PageLayout>
@@ -230,7 +250,7 @@ function RouteComponent() {
 						</p>
 					</Panel>
 				) : (
-					events.map((event: EventType) => (
+					visibleEvents.map((event: EventType) => (
 						<EventCard
 							key={`${event.EventID}-${event.EventDetailsID}`}
 							event={event}
@@ -238,6 +258,20 @@ function RouteComponent() {
 					))
 				)}
 			</div>
+			{!isLoading &&
+				!isError &&
+				events.length > visibleCount && (
+					<LoadMore
+						key={`${listKey}:${visibleCount}`}
+						label={`Show more events (${events.length - visibleCount} left)`}
+						onLoad={() =>
+							setPage({
+								key: listKey,
+								count: visibleCount + EVENTS_PAGE_SIZE,
+							})
+						}
+					/>
+				)}
 		</PageLayout>
 	)
 }

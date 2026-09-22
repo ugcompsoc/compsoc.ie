@@ -15,7 +15,7 @@ compsoc.ie2/
 │   │   ├── icons/           # Icon components + index.ts barrel
 │   │   ├── sections/        # Feature sections (e.g. Home/HeroSection, AboutSection)
 │   │   │   └── Home/
-│   │   ├── ui/              # Shared UI primitives (button, card, footer, navigation-menu)
+│   │   ├── ui/              # Shared UI primitives (button, card, footer, load-more, navigation-menu)
 │   │   ├── PageLayout.tsx
 │   │   └── NotFound.tsx
 │   ├── constants/           # Shared constants (e.g. section-variants)

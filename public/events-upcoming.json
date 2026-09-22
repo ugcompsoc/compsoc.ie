@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"updatedAt": "2026-09-22T18:39:05.892Z",
+	"source": "https://socs.universityofgalway.ie/calendar.php?ownerID=MzA=",
+	"events": [
+		{
+			"EventDetailsID": 69919,
+			"EventID": 31294,
+			"Title": "EGM",
+			"SocietyID": 30,
+			"SocietyName": "Compsoc",
+			"Location": "CSB 1008",
+			"Description": "We have a few committee positions open and we're holding an EGM to fill them.\nIf you've been thinking about getting more involved with CompSoc, this is the easiest way in. You don't need any experience, just an interest in helping run things. Positions open: Junior SysAdmin, SysAdmin, OCMs, H&S, First Year Rep, Postgrad Rep\nCome along even if you're not running. It's a good chance to hear what we have planned for the year and put your ideas forward.",
+			"StartDatetime": "2026-09-28T16:00:00.000Z",
+			"EndDatetime": "2026-09-28T17:00:00.000Z",
+			"DatetimeFormatted": "Monday 28 September 2026, 17:00–18:00",
+			"EventURL": "https://socs.universityofgalway.ie/events/view/69919",
+			"EventICalURL": "https://socs.universityofgalway.ie/events/ical/69919"
+		}
+	]
+}

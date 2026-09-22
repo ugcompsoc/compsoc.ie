@@ -20,12 +20,20 @@ interface EventsSnapshot {
 	events: Array<EventType>
 }
 
-const EVENTS_SNAPSHOT_URL = "/events.json"
+const SNAPSHOT_URLS = {
+	// Full history since 2015, only needed by the Past tab.
+	all: "/events.json",
+	// Events that had not ended at build time: all the Upcoming tab needs,
+	// at a fraction of the size. Written by scripts/sync-events.mjs.
+	upcoming: "/events-upcoming.json",
+} as const
 
-export const getEvents = async (): Promise<
-	Array<EventType>
-> => {
-	const response = await fetch(EVENTS_SNAPSHOT_URL, {
+export type EventsScope = keyof typeof SNAPSHOT_URLS
+
+export const getEvents = async (
+	scope: EventsScope = "all",
+): Promise<Array<EventType>> => {
+	const response = await fetch(SNAPSHOT_URLS[scope], {
 		cache: "no-cache",
 	})
 

@@ -15,10 +15,10 @@ import { Footer } from "#/components/ui/footer"
 import { NavigationMenuComponent } from "#/components/ui/navigation-menu"
 import { ActiveSectionProvider } from "#/contexts/active-section"
 import {
+	canonicalUrl,
 	DEFAULT_DESCRIPTION,
 	DEFAULT_TITLE,
 	SITE_NAME,
-	SITE_URL,
 	SOCIAL_IMAGE,
 	SOCIAL_IMAGE_ALT,
 } from "#/lib/seo"
@@ -73,7 +73,7 @@ export const Route =
 				},
 				{
 					property: "og:url",
-					content: SITE_URL,
+					content: canonicalUrl("/"),
 				},
 				{
 					property: "og:title",
@@ -97,7 +97,7 @@ export const Route =
 				},
 				{
 					property: "twitter:url",
-					content: SITE_URL,
+					content: canonicalUrl("/"),
 				},
 				{
 					property: "twitter:title",
@@ -120,6 +120,15 @@ export const Route =
 				{
 					rel: "stylesheet",
 					href: appCss,
+				},
+				// All body text is JetBrains Mono. Without a preload the browser only
+				// discovers the file after parsing the stylesheet.
+				{
+					rel: "preload",
+					href: "/fonts/jetbrains-mono/jetbrains-mono-v24-latin-variable.woff2",
+					as: "font",
+					type: "font/woff2",
+					crossOrigin: "anonymous",
 				},
 				{
 					rel: "icon",

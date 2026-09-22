@@ -8,6 +8,7 @@ import {
 	buttonVariants,
 } from "#/components/ui/button"
 import { Card, CardContent } from "#/components/ui/card"
+import { LoadMore } from "#/components/ui/load-more"
 import { PageTitle } from "#/components/ui/page-title"
 import { PageLayout } from "#/layouts"
 import { seo } from "#/lib/seo"
@@ -33,18 +34,34 @@ export const Route = createFileRoute("/(menu)/committee")({
 
 const ALL_YEARS = null as string | null
 
+/** Years rendered up front in the "All" view; the rest load on scroll. */
+const INITIAL_YEARS = 1
+
 function CommitteePage() {
 	const [selectedYear, setSelectedYear] = useState<
 		string | null
-	>(CommitteeYears[0]?.year ?? ALL_YEARS)
+	>(ALL_YEARS)
+	const [renderedYears, setRenderedYears] =
+		useState(INITIAL_YEARS)
 
 	const years = CommitteeYears.map((year) => year.year)
 	const visibleYears =
 		selectedYear === null
-			? CommitteeYears
+			? CommitteeYears.slice(0, renderedYears)
 			: CommitteeYears.filter(
 					(year) => year.year === selectedYear,
 				)
+	const nextYear =
+		selectedYear === null
+			? CommitteeYears[renderedYears]
+			: undefined
+
+	const showAll = () => {
+		if (selectedYear !== ALL_YEARS) {
+			setRenderedYears(INITIAL_YEARS)
+		}
+		setSelectedYear(ALL_YEARS)
+	}
 
 	return (
 		<PageLayout>
@@ -61,7 +78,7 @@ function CommitteePage() {
 					data-active={
 						selectedYear === null ? true : undefined
 					}
-					onClick={() => setSelectedYear(ALL_YEARS)}
+					onClick={showAll}
 					className="px-3"
 				>
 					All
@@ -109,6 +126,17 @@ function CommitteePage() {
 						</div>
 					</div>
 				))}
+				{nextYear && (
+					<LoadMore
+						key={nextYear.year}
+						label={`Show committee ${nextYear.year}`}
+						onLoad={() =>
+							setRenderedYears((count) =>
+								Math.max(count, renderedYears + 1),
+							)
+						}
+					/>
+				)}
 			</div>
 		</PageLayout>
 	)

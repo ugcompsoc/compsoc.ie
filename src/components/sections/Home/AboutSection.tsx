@@ -170,7 +170,7 @@ const AboutSection = ({
 							You can{" "}
 							<Link
 								className="font-semibold text-accent underline underline-offset-2 transition-colors hover:text-accent/80"
-								to="/constitution"
+								to="/constitution/"
 							>
 								read the CompSoc constitution
 							</Link>

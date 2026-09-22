@@ -18,62 +18,16 @@
 	font-display: swap;
 	src: url("/fonts/poppins/poppins-v24-latin-500.woff2") format("woff2");
 }
-/* Self-hosted JetBrains Mono */
+/* Self-hosted JetBrains Mono: one variable file covering weights 100-800.
+   It replaces eight static weights; a typical page used five of them (~108 KB),
+   the variable latin subset is ~40 KB in a single request. Preloaded in
+   __root.tsx, so keep the two paths in sync. */
 @font-face {
 	font-family: "JetBrains Mono";
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 100 800;
 	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-100.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 200;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-200.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 300;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-300.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-regular.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-500.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-600.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-700.woff2") format("woff2");
-}
-@font-face {
-	font-family: "JetBrains Mono";
-	font-style: normal;
-	font-weight: 800;
-	font-display: swap;
-	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-800.woff2") format("woff2");
+	src: url("/fonts/jetbrains-mono/jetbrains-mono-v24-latin-variable.woff2") format("woff2");
 }
 
 body {

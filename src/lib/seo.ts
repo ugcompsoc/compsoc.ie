@@ -23,10 +23,22 @@ export const SOCIAL_IMAGE = `${SITE_URL}/assets/img/compsoc/compsoc_banner_blue_
 export const SOCIAL_IMAGE_ALT =
 	"CompSoc, the Computer Society of University of Galway"
 
+/**
+ * Absolute URL in the form the static host serves without a redirect: every
+ * page is prerendered as <route>/index.html, so the trailing-slash URL is the
+ * real one and "/committee" 308-redirects to "/committee/".
+ */
+export function canonicalUrl(path: string): string {
+	const trimmed = path.replace(/^\/+|\/+$/g, "")
+	return trimmed
+		? `${SITE_URL}/${trimmed}/`
+		: `${SITE_URL}/`
+}
+
 export interface SeoOptions {
 	title: string
 	description?: string
-	/** Route path with a leading slash and no trailing slash, e.g. "/committee". */
+	/** Route path with a leading slash, e.g. "/committee". */
 	path: string
 }
 
@@ -35,7 +47,7 @@ export function seo({
 	description = DEFAULT_DESCRIPTION,
 	path,
 }: SeoOptions) {
-	const url = path === "/" ? SITE_URL : `${SITE_URL}${path}`
+	const url = canonicalUrl(path)
 
 	return {
 		meta: [

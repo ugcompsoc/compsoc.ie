@@ -26,6 +26,13 @@ const OUTPUT_PATH = path.join(
 	"public",
 	"events.json",
 )
+// Events that have not ended yet. The Upcoming tab (the /events default) only
+// needs these, so it fetches this small file instead of the full history.
+const UPCOMING_OUTPUT_PATH = path.join(
+	ROOT_DIR,
+	"public",
+	"events-upcoming.json",
+)
 
 const zonePartsFormatter = new Intl.DateTimeFormat(
 	"en-IE",
@@ -191,6 +198,7 @@ async function main() {
 		`Events: ${events.length} listed, ${events.length - fetchedCount} cached, ${fetchedCount} fetched`,
 	)
 
+	let snapshot
 	if (
 		existing?.schemaVersion === 1 &&
 		existing.source === CALENDAR_URL &&
@@ -198,17 +206,36 @@ async function main() {
 			JSON.stringify(events)
 	) {
 		console.log("Events snapshot is current")
-		return
+		snapshot = existing
+	} else {
+		snapshot = {
+			schemaVersion: 1,
+			updatedAt: new Date().toISOString(),
+			source: CALENDAR_URL,
+			events,
+		}
+		await writeSnapshot(snapshot, OUTPUT_PATH)
+		console.log("Events snapshot updated")
 	}
 
-	const snapshot = {
-		schemaVersion: 1,
-		updatedAt: new Date().toISOString(),
-		source: CALENDAR_URL,
-		events,
+	// Always rewrite: which events are upcoming depends on the clock, not only
+	// on whether the portal data changed.
+	const upcoming = upcomingSnapshot(snapshot)
+	await writeSnapshot(upcoming, UPCOMING_OUTPUT_PATH)
+	console.log(`Upcoming events: ${upcoming.events.length}`)
+}
+
+/** The snapshot restricted to events that have not ended at `now`. */
+export function upcomingSnapshot(
+	snapshot,
+	now = Date.now(),
+) {
+	return {
+		...snapshot,
+		events: snapshot.events.filter(
+			(event) => Date.parse(event.EndDatetime) >= now,
+		),
 	}
-	await writeSnapshot(snapshot)
-	console.log("Events snapshot updated")
 }
 
 async function fetchEventList(existingEventCount) {
@@ -634,17 +661,17 @@ async function readExistingSnapshot() {
 	}
 }
 
-async function writeSnapshot(snapshot) {
-	await mkdir(path.dirname(OUTPUT_PATH), {
+async function writeSnapshot(snapshot, outputPath) {
+	await mkdir(path.dirname(outputPath), {
 		recursive: true,
 	})
-	const temporaryPath = `${OUTPUT_PATH}.tmp-${process.pid}`
+	const temporaryPath = `${outputPath}.tmp-${process.pid}`
 	await writeFile(
 		temporaryPath,
 		`${JSON.stringify(snapshot, null, "\t")}\n`,
 		"utf8",
 	)
-	await rename(temporaryPath, OUTPUT_PATH)
+	await rename(temporaryPath, outputPath)
 }
 
 function isObject(value) {
