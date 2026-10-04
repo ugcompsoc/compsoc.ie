@@ -12,9 +12,11 @@ export interface AllEventsType {
   upcoming: EventType[];
 }
 
-const isEvent = (value: unknown): value is EventType => {
-  if (typeof value !== "object" || value === null) return false;
-  const event = value as Record<string, unknown>;
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null;
+
+const isEvent = (event: unknown): event is EventType => {
+  if (!isRecord(event)) return false;
   return (
     typeof event.EventDetailsID === "number" &&
     typeof event.EventID === "number" &&
@@ -30,7 +32,7 @@ const getEventList = async (kind: "past" | "upcoming", signal?: AbortSignal): Pr
   if (!response.ok) throw new Error(`Could not load ${kind} events (${response.status})`);
 
   const body: unknown = await response.json();
-  if (typeof body !== "object" || body === null || !("data" in body)) {
+  if (!isRecord(body) || !("data" in body)) {
     throw new Error(`Invalid ${kind} events response`);
   }
 
