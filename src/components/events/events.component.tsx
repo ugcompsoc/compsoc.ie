@@ -4,22 +4,24 @@ import Spinner from "react-bootstrap/Spinner";
 
 const EventsComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [allEvents, setAllEvents] = useState<AllEventsType>(
-    {} as AllEventsType,
-  );
+  const [error, setError] = useState(false);
+  const [allEvents, setAllEvents] = useState<AllEventsType>({ past: [], upcoming: [] });
 
   useEffect(() => {
+    const controller = new AbortController();
     const getData = async () => {
       try {
-        var events = await getEvents();
+        const events = await getEvents(controller.signal);
         setAllEvents(events);
-        setIsLoading(false);
       } catch (e) {
-        console.log(e);
+        if (!controller.signal.aborted) setError(true);
+      } finally {
+        if (!controller.signal.aborted) setIsLoading(false);
       }
     };
 
     getData();
+    return () => controller.abort();
   }, []);
 
   const renderEvent = (e: EventType) => {
@@ -34,7 +36,7 @@ const EventsComponent = () => {
     // Using dangerouslySetInnerHTML as we know the data has been sanitised
     // Preparing to use Markdown instead of HTML
     return (
-      <div key={e.EventID + e.EventDetailsID}>
+      <div key={`${e.EventID}:${e.EventDetailsID}`}>
         <h3>{htmlDecode(e.Title)}</h3>
         <p>{e.DatetimeFormatted}</p>
 
@@ -85,6 +87,8 @@ const EventsComponent = () => {
               <div className="card-body">
                 {isLoading ? (
                   <Spinner animation="border" />
+                ) : error ? (
+                  <p role="alert">Events are unavailable right now. Please try again later.</p>
                 ) : (
                   <>
                     {allEvents?.upcoming.map((e: EventType, i) => {
@@ -122,6 +126,8 @@ const EventsComponent = () => {
               <div className="card-body">
                 {isLoading ? (
                   <Spinner animation="border" />
+                ) : error ? (
+                  <p role="alert">Events are unavailable right now. Please try again later.</p>
                 ) : (
                   <>
                     {allEvents?.past.map((e: EventType, i) => {
